@@ -1,0 +1,78 @@
+{
+  "project_info": {
+    "project_number": "587628810585",
+    "firebase_url": "https://boop-4ec7a.firebaseio.com",
+    "project_id": "boop-4ec7a",
+    "storage_bucket": "boop-4ec7a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:587628810585:android:3faa5d6741168cdf",
+        "android_client_info": {
+          "package_name": "co.revocloud.boop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "587628810585-80gpntkr3tokq0cj07ip624l72p2kr1m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBvMWSX4Y2OPL6NUceGbkNDE4oUruCQ7EQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:587628810585:android:a17696618e745dc2",
+        "android_client_info": {
+          "package_name": "com.example.cya.boop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "587628810585-80gpntkr3tokq0cj07ip624l72p2kr1m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBvMWSX4Y2OPL6NUceGbkNDE4oUruCQ7EQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "587628810585-80gpntkr3tokq0cj07ip624l72p2kr1m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
