@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -51,7 +52,7 @@ public class Login extends AppCompatActivity {
 
         //Botón de pasar a google login
         //TODO de esta nueva actividad
-        Button botonGoogle = (Button) findViewById(R.id.botonGoogle);
+        SignInButton botonGoogle = (SignInButton) findViewById(R.id.botonGoogle);
         botonGoogle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
