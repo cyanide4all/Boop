@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -96,16 +97,50 @@ public class Login extends AppCompatActivity {
     public void crearCuenta(){
         EditText inputEmail = (EditText) findViewById(R.id.inputEmail);
         EditText inputPass = (EditText) findViewById(R.id.inputPass);
-        mAuth.createUserWithEmailAndPassword(inputEmail.getText().toString(), inputPass.getText().toString());
-        //TODO redirect a actividad principal
-        //TODO blindar ante la posibilidad de que el email esté usado
+        mAuth.createUserWithEmailAndPassword(inputEmail.getText().toString(), inputPass.getText().toString())
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        Log.d(TAG, "createUserWithEmail:onComplete:" + task.isSuccessful());
+
+                        //Aqui va lo que pasa si la creación de user no vale
+                        if (!task.isSuccessful()) {
+                            Toast.makeText(Login.this, "EL email utilizado está en uso o es inválido.",
+                                    Toast.LENGTH_SHORT).show();
+                        }else{
+                        //Aqui lo que pasa cuando sale bien
+                            Toast.makeText(Login.this, "Cuenta creada correctamente",
+                                    Toast.LENGTH_SHORT).show();
+                            //TODO redirect a actividad principal, no a Login ovbiamente
+                            startActivity(new Intent(Login.this, LoginGoogle.class));
+                        }
+                    }
+                });
+
     }
     //Realiza login con una cuenta de usuario ya creada
     public void singIn(){
         EditText inputEmail = (EditText) findViewById(R.id.inputEmail);
         EditText inputPass = (EditText) findViewById(R.id.inputPass);
-        mAuth.signInWithEmailAndPassword(inputEmail.getText().toString(), inputPass.getText().toString());
-        //TODO redirect a actividad principal
-        //TODO avisar de los fallos que se puedan producir aqui
+        mAuth.signInWithEmailAndPassword(inputEmail.getText().toString(), inputPass.getText().toString())
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        Log.d(TAG, "signInWithEmail:onComplete:" + task.isSuccessful());
+
+                        //Aqui va lo que pasa si la creación de user no vale
+                        if (!task.isSuccessful()) {
+                            Log.w(TAG, "signInWithEmail", task.getException());
+                            Toast.makeText(Login.this, "Fallo en la autenticación.",
+                                    Toast.LENGTH_SHORT).show();
+                        }else{
+                        //Aqui lo que pasa cuando sale bien
+                            Toast.makeText(Login.this, "Prepárate para hacer Boop!.",
+                                    Toast.LENGTH_SHORT).show();
+                        }
+                        //TODO redirect a actividad principal, no a Login ovbiamente
+                        startActivity(new Intent(Login.this, LoginGoogle.class));
+                    }
+                });
     }
 }

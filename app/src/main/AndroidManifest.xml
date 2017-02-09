@@ -15,7 +15,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginGoogle"></activity>
+        <activity android:name=".LoginGoogle" />
+        <activity android:name=".NuevoBoop"></activity>
     </application>
 
 </manifest>

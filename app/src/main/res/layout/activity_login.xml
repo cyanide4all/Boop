@@ -13,10 +13,13 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:weightSum="1"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
 
         <TextView
-            android:text="Boop!"
+            android:text="Log in con tus credenciales"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
@@ -30,7 +33,9 @@
             android:inputType="textPersonName"
             android:ems="10"
             android:id="@+id/inputEmail"
-            android:hint="Email" />
+            android:hint="Email"
+            style="@style/Widget.AppCompat.AutoCompleteTextView"
+            android:singleLine="true" />
 
         <EditText
             android:layout_width="match_parent"
@@ -38,7 +43,8 @@
             android:inputType="textPassword"
             android:ems="10"
             android:id="@+id/inputPass"
-            android:hint="Pass" />
+            android:hint="Pass"
+            android:singleLine="true" />
 
         <LinearLayout
             android:orientation="horizontal"
@@ -47,24 +53,24 @@
 
             <Button
                 android:text="Log In"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/botonLogin"
+                android:elevation="0dp"
                 android:layout_weight="1" />
 
             <Button
                 android:text="Crear Cuenta"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/botonCrearCuenta"
                 android:layout_weight="1" />
         </LinearLayout>
 
-        <Button
-            android:text="Log In con google"
+        <com.google.android.gms.common.SignInButton
+            android:id="@+id/botonGoogle"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/botonGoogle" />
+            android:layout_height="wrap_content" />
 
     </LinearLayout>
 
