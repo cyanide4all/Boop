@@ -20,7 +20,8 @@ import com.google.firebase.auth.FirebaseUser;
 import static android.R.attr.password;
 
 public class Login extends AppCompatActivity {
-    //TODO esto es la main activity y creo que no debería ser así
+    //  Esta es la main activity. Si firebase detecta que el usuario ya esta dado de alta se le pasa a la siguiente
+    //  actividad
     //Esta actividad empieza con el login por email y pass, pero luego puede pasar a otros logins
     // con botones valeoc?
 
@@ -42,11 +43,11 @@ public class Login extends AppCompatActivity {
                 if (user != null) {
                     // User is signed in
                     Log.d(TAG, "onAuthStateChanged:signed_in:" + user.getUid());
+                    startActivity(new Intent(Login.this, BoopMap.class));
                 } else {
                     // User is signed out
                     Log.d(TAG, "onAuthStateChanged:signed_out");
                 }
-                // ...
             }
         };
 
@@ -112,8 +113,7 @@ public class Login extends AppCompatActivity {
                         //Aqui lo que pasa cuando sale bien
                             Toast.makeText(Login.this, "Cuenta creada correctamente",
                                     Toast.LENGTH_SHORT).show();
-                            //TODO redirect a actividad principal, no a Login ovbiamente
-                            startActivity(new Intent(Login.this, LoginGoogle.class));
+                            startActivity(new Intent(Login.this, BoopMap.class));
                         }
                     }
                 });

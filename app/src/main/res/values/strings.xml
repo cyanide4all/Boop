@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Boop</string>
+    <string name="title_activity_boop_map">Boop!</string>
 </resources>
