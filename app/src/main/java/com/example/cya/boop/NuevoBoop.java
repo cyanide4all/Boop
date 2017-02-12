@@ -49,7 +49,9 @@ public class NuevoBoop extends AppCompatActivity {
         //TODO pillar las excepciones que pueda soltar el apartado anterior
 
         //Publicamos el boop
-        boop.crear((Location) getIntent().getSerializableExtra("location"));
+        double latitude = getIntent().getDoubleExtra("latitude",0.0);
+        double longitude = getIntent().getDoubleExtra("longitude",0.0);
+        boop.crear(longitude,latitude);
         Toast.makeText(this,"BOOPED!",Toast.LENGTH_LONG).show();
         finish();
     }

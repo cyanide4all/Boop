@@ -37,22 +37,12 @@ public class BoopMap extends FragmentActivity implements OnMapReadyCallback, Goo
     private Location mLastLocation;
     private GeoFire geofire;
 
-
-    // Creates new boop
-    // en un futuro deberia de llamar a la actividad de crear boops.
-    // Ahora mismo solo coloca tu posicion en la base de datos.
     private void createNewBoop(){
-        // coger la localizacion del usuario
         if(mLastLocation != null){
-            // si tenemos la localizacion del senor
-            // la incluimos
-            // esto en un futuro metera como string la clave que acabamos de crear al meter los
-            // datos del boop a la base de datos.
             Intent toSend = new Intent(this,NuevoBoop.class);
-            toSend.putExtra("location", mLastLocation);
+            toSend.putExtra("longitude", mLastLocation.getLongitude());
+            toSend.putExtra("latitude",mLastLocation.getLatitude());
             startActivity(toSend);
-            //geofire.setLocation("yo", new GeoLocation(mLastLocation.getLatitude(), mLastLocation.getLongitude()));
-
         }
     }
 

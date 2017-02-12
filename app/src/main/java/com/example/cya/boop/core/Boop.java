@@ -105,7 +105,7 @@ public class Boop {
 
 
 //FUNCIONES Y METODOS IMPORTANTES
-    public void crear(Location mLastLocation) {
+    public void crear(double longitude, double latitude) {
         //Firebaseamientos para funcar
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("BoopInfo");
@@ -116,11 +116,7 @@ public class Boop {
         // /Location aqui
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference("locations");
         GeoFire geofire = new GeoFire(ref);
-        if(mLastLocation != null) {
-            geofire.setLocation(newPostRef.getKey(), new GeoLocation(mLastLocation.getLatitude(), mLastLocation.getLongitude()));
-        }else{
-            geofire.setLocation(newPostRef.getKey(), new GeoLocation(0.0, 0.0));
-        }
+        geofire.setLocation(newPostRef.getKey(), new GeoLocation(latitude, longitude));
 
         //TODO
     }
