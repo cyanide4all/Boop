@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.cya.boop.core.Boop;
 import com.firebase.geofire.GeoFire;
 import com.firebase.geofire.GeoLocation;
 import com.firebase.geofire.GeoQuery;
@@ -25,9 +26,11 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class BoopMap extends FragmentActivity implements OnMapReadyCallback, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
 
@@ -36,6 +39,8 @@ public class BoopMap extends FragmentActivity implements OnMapReadyCallback, Goo
     private Button boopBtn;
     private Location mLastLocation;
     private GeoFire geofire;
+    private DatabaseReference mDatabase;
+
 
     private void createNewBoop(){
         if(mLastLocation != null){
@@ -79,6 +84,7 @@ public class BoopMap extends FragmentActivity implements OnMapReadyCallback, Goo
         // Obtener una referencia y conectarse a firebase
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference("locations");
         geofire = new GeoFire(ref);
+        mDatabase = FirebaseDatabase.getInstance().getReference("BoopInfo");
 
     }
 
@@ -120,14 +126,28 @@ public class BoopMap extends FragmentActivity implements OnMapReadyCallback, Goo
             GeoQuery geoQuery = geofire.queryAtLocation(new GeoLocation(mLastLocation.getLatitude(), mLastLocation.getLongitude()),10);
             geoQuery.addGeoQueryEventListener(new GeoQueryEventListener() {
                 @Override
-                public void onKeyEntered(String key, GeoLocation location) {
+                public void onKeyEntered(String key, final GeoLocation location) {
                     // cuando vengan llegando los datos de la base de datos vamos rellenando
                     // el mapa de marcadores de eventos
-                    if(mMap != null){
-                        mMap.addMarker(new MarkerOptions()
-                                .position(new LatLng(location.latitude,location.longitude))
-                                );
-                    }
+                    mDatabase.child(key).addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            Boop b = dataSnapshot.getValue(Boop.class);
+                            if(mMap != null){
+                                mMap.addMarker(new MarkerOptions()
+                                        .position(new LatLng(location.latitude,location.longitude))
+                                        .title(b.getNombre())
+                                        .snippet(b.getDescripción())
+                                ).showInfoWindow();
+                            }
+                        }
+
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {
+
+                        }
+                    });
+
                 }
 
                 @Override

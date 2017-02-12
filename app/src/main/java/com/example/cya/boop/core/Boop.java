@@ -98,7 +98,7 @@ public class Boop {
         if(fechaFin.after(this.fechaIni)) {
             this.fechaFin = fechaFin;
         }else{
-            throw new Exception("La fecha fin no puede ser anterior a la de inicio");
+            //throw new Exception("La fecha fin no puede ser anterior a la de inicio");
         }
     }
 
