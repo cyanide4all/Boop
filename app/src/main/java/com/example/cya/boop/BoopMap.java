@@ -1,6 +1,7 @@
 package com.example.cya.boop;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Bundle;
@@ -47,7 +48,10 @@ public class BoopMap extends FragmentActivity implements OnMapReadyCallback, Goo
             // la incluimos
             // esto en un futuro metera como string la clave que acabamos de crear al meter los
             // datos del boop a la base de datos.
-            geofire.setLocation("yo", new GeoLocation(mLastLocation.getLatitude(), mLastLocation.getLongitude()));
+            Intent toSend = new Intent(this,NuevoBoop.class);
+            toSend.putExtra("location", mLastLocation);
+            startActivity(toSend);
+            //geofire.setLocation("yo", new GeoLocation(mLastLocation.getLatitude(), mLastLocation.getLongitude()));
 
         }
     }

@@ -1,5 +1,13 @@
 package com.example.cya.boop.core;
 
+import android.location.Location;
+
+import com.firebase.geofire.GeoFire;
+import com.firebase.geofire.GeoLocation;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -11,20 +19,33 @@ public class Boop {
     //Nombre del boop, a mostrar en el mapa. Algo descriptivo como "Quedada puchamongo equipo rojo"
     private String nombre;
     //Descripción del boop, a mostrar al seleccionar para ver los detalles del boop
-    private String descripción;
-    //Localización. Será para usar con la api hermosa de geo-firebase
-    private String localización;
+    private String descripcion;
     //Numero maximo de admitidos, 0 para sin limite
     private int maxBoopers;
     //Numero de personas actualmente admitidas, nuca superará la cifra anterior
     private int boopers;
-    //Fecha de inicio del evento
+    //Fecha y hora de inicio del evento
     private Date fechaIni;
-    //Fecha de finalización
+    //Fecha y hora de finalización
     private Date fechaFin;
-    //TODO horas y lo que surja
+    //CON ESTO BASTARA POR AHORA, pero aun asi...
+    //TODO foto, edad max/min, amigos/publico etc... Si se os ocurre más, aquí hay que ponerlo
 
-    //GETTERS & SETTERS
+
+    //Constructor vacío, montamos el boop a base de setters
+    public Boop(){
+        this.nombre = "";
+        this.descripcion = "";
+        this.maxBoopers = 0; //TODO
+        this.boopers = 0;
+        this.fechaIni = Calendar.getInstance().getTime(); //TODO
+        this.fechaFin = Calendar.getInstance().getTime(); //TODO
+    }
+
+
+    //
+    //GETTERS & SETTERS (Algunos retornan excepciones al intentar settear imposibles
+    //
     public String getNombre() {
         return nombre;
     }
@@ -34,19 +55,11 @@ public class Boop {
     }
 
     public String getDescripción() {
-        return descripción;
+        return descripcion;
     }
 
-    public void setDescripción(String descripción) {
-        this.descripción = descripción;
-    }
-
-    public String getLocalización() {
-        return localización;
-    }
-
-    public void setLocalización(String localización) {
-        this.localización = localización;
+    public void setDescripcion(String descripción) {
+        this.descripcion = descripción;
     }
 
     public int getMaxBoopers() {
@@ -89,5 +102,26 @@ public class Boop {
         }
     }
 
+
+
 //FUNCIONES Y METODOS IMPORTANTES
+    public void crear(Location mLastLocation) {
+        //Firebaseamientos para funcar
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("BoopInfo");
+
+        DatabaseReference newPostRef = myRef.push();
+        newPostRef.setValue(this);
+
+        // /Location aqui
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("locations");
+        GeoFire geofire = new GeoFire(ref);
+        if(mLastLocation != null) {
+            geofire.setLocation(newPostRef.getKey(), new GeoLocation(mLastLocation.getLatitude(), mLastLocation.getLongitude()));
+        }else{
+            geofire.setLocation(newPostRef.getKey(), new GeoLocation(0.0, 0.0));
+        }
+
+        //TODO
+    }
 }

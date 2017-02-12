@@ -139,8 +139,7 @@ public class Login extends AppCompatActivity {
                             Toast.makeText(Login.this, "Prepárate para hacer Boop!.",
                                     Toast.LENGTH_SHORT).show();
                         }
-                        //TODO redirect a actividad principal, no a Login ovbiamente
-                        startActivity(new Intent(Login.this, LoginGoogle.class));
+                        startActivity(new Intent(Login.this, BoopMap.class));
                     }
                 });
     }
