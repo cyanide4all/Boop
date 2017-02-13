@@ -1,4 +1,12 @@
 <resources>
     <string name="app_name">Boop</string>
     <string name="title_activity_boop_map">Boop!</string>
+
+    #LoginGoogle
+    <string name="firebase_status_fmt">Firebase User: %s</string>
+    <string name="firebase_user_management">Firebase User Management</string>
+    <string name="google_status_fmt">Google User: %s</string>
+    <string name="google_title_text">Google Sign In</string>
+    <string name="signed_out">Signed Out</string>
+    <string name="credencialesOAuth20">587628810585-0oqejh5oo0f9461t7v99498pi96ltl4k.apps.googleusercontent.com</string>
 </resources>

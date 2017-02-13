@@ -16,10 +16,27 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.android.gms.auth.api.Auth;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.auth.api.signin.GoogleSignInResult;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.ResultCallback;
+import com.google.android.gms.common.api.Status;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthCredential;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.GoogleAuthProvider;
 
 import static android.R.attr.password;
 
-public class Login extends AppCompatActivity {
+public class Login extends AppCompatActivity implements
+        GoogleApiClient.OnConnectionFailedListener
+{
     //  Esta es la main activity. Si firebase detecta que el usuario ya esta dado de alta se le pasa a la siguiente
     //  actividad
     //Esta actividad empieza con el login por email y pass, pero luego puede pasar a otros logins
@@ -28,6 +45,12 @@ public class Login extends AppCompatActivity {
     private static final String TAG = "Login";
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
+
+    private static final String TAGGoogle = "GoogleActivity";
+    private static final int RC_SIGN_IN = 9001;
+
+    //Almacena configuracion del cliente de Google
+    private GoogleApiClient mGoogleApiClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,7 +80,7 @@ public class Login extends AppCompatActivity {
         botonGoogle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Login.this, LoginGoogle.class));
+                signInGoogle();
             }
         });
 
@@ -78,6 +101,17 @@ public class Login extends AppCompatActivity {
                 singIn();
             }
         });
+
+        // Configure Google Sign In
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken(getString(R.string.credencialesOAuth20))
+                .requestEmail()
+                .build();
+
+        mGoogleApiClient = new GoogleApiClient.Builder(this)
+                .enableAutoManage(this /* FragmentActivity */, this /* OnConnectionFailedListener */)
+                .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
+                .build();
     }
 
 
@@ -110,7 +144,7 @@ public class Login extends AppCompatActivity {
                             Toast.makeText(Login.this, "EL email utilizado está en uso o es inválido.",
                                     Toast.LENGTH_SHORT).show();
                         }else{
-                        //Aqui lo que pasa cuando sale bien
+                            //Aqui lo que pasa cuando sale bien
                             Toast.makeText(Login.this, "Cuenta creada correctamente",
                                     Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(Login.this, BoopMap.class));
@@ -135,7 +169,7 @@ public class Login extends AppCompatActivity {
                             Toast.makeText(Login.this, "Fallo en la autenticación.",
                                     Toast.LENGTH_SHORT).show();
                         }else{
-                        //Aqui lo que pasa cuando sale bien
+                            //Aqui lo que pasa cuando sale bien
                             Toast.makeText(Login.this, "Prepárate para hacer Boop!.",
                                     Toast.LENGTH_SHORT).show();
                         }
@@ -143,4 +177,103 @@ public class Login extends AppCompatActivity {
                     }
                 });
     }
+
+    /***A partir de Aqui Inicio de Google***/
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
+        if (requestCode == RC_SIGN_IN) {
+            GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
+            if (result.isSuccess()) {
+                // Google Sign In was successful, authenticate with Firebase
+                GoogleSignInAccount account = result.getSignInAccount();
+                firebaseAuthWithGoogle(account);
+            } else {
+                // Google Sign In failed, update UI appropriately
+                Toast.makeText(this, "Inicio de sesion fallido, si no está registrado cree unh cuenta", Toast.LENGTH_SHORT);
+            }
+        }
+    }
+
+    // [START auth_with_google]
+    private void firebaseAuthWithGoogle(GoogleSignInAccount acct) {
+        Log.d(TAGGoogle, "firebaseAuthWithGoogle:" + acct.getId());
+        // [START_EXCLUDE silent]
+
+        // [END_EXCLUDE]
+
+        AuthCredential credential = GoogleAuthProvider.getCredential(acct.getIdToken(), null);
+        mAuth.signInWithCredential(credential)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        Log.d(TAGGoogle, "signInWithCredential:onComplete:" + task.isSuccessful());
+
+                        // If sign in fails, display a message to the user. If sign in succeeds
+                        // the auth state listener will be notified and logic to handle the
+                        // signed in user can be handled in the listener.
+                        if (!task.isSuccessful()) {
+                            Log.w(TAGGoogle, "signInWithCredential", task.getException());
+                            Toast.makeText(Login.this, "Authentication failed.",
+                                    Toast.LENGTH_SHORT).show();
+                        }else
+                        // [START_EXCLUDE]
+                        {
+                            Toast.makeText(Login.this, "Authentication successful.",
+                                    Toast.LENGTH_SHORT).show();
+                        }
+                        // [END_EXCLUDE]
+                    }
+                });
+    }
+    // [END auth_with_google]
+
+    // [START signin]
+    private void signInGoogle() {
+        Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(mGoogleApiClient);
+        startActivityForResult(signInIntent, RC_SIGN_IN);
+    }
+    // [END signin]
+
+    private void signOut() {
+        // Firebase sign out
+        mAuth.signOut();
+
+        // Google sign out
+        Auth.GoogleSignInApi.signOut(mGoogleApiClient).setResultCallback(
+                new ResultCallback<Status>() {
+                    @Override
+                    public void onResult(@NonNull Status status) {
+                        //updateUI(null);
+                    }
+                });
+    }
+
+    //Si se desea cancelar el acceso al usuario por algun motivo
+    private void revokeAccess() { //Opcional
+        // Firebase sign out
+        mAuth.signOut();
+
+        // Google revoke access
+        Auth.GoogleSignInApi.revokeAccess(mGoogleApiClient).setResultCallback(
+                new ResultCallback<Status>() {
+                    @Override
+                    public void onResult(@NonNull Status status) {
+                        //updateUI(null);
+                    }
+                });
+    }
+
+    @Override
+    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
+        // An unresolvable error has occurred and Google APIs (including Sign-In) will not
+        // be available.
+        Log.d(TAGGoogle, "onConnectionFailed:" + connectionResult);
+        Toast.makeText(this, "Google Play Services error.", Toast.LENGTH_SHORT).show();
+    }
 }
+
+
