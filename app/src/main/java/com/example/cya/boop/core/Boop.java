@@ -29,6 +29,7 @@ public class Boop {
     //Fecha y hora de finalización
     private Date fechaFin;
     //CON ESTO BASTARA POR AHORA, pero aun asi...
+    private String[] tags;
     //TODO foto, edad max/min, amigos/publico etc... Si se os ocurre más, aquí hay que ponerlo
 
 
@@ -102,6 +103,14 @@ public class Boop {
         }
     }
 
+    public String[] getTags() {
+        return tags;
+    }
+
+    public void setTags(String[] tags) {
+        this.tags = tags;
+    }
+
 
 
 //FUNCIONES Y METODOS IMPORTANTES
@@ -120,4 +129,5 @@ public class Boop {
 
         //TODO
     }
+
 }
