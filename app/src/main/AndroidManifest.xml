@@ -38,6 +38,8 @@
         <activity
             android:name=".BoopMap"
             android:label="@string/title_activity_boop_map" />
+        <activity android:name=".VerBoop"/>
+
         <activity android:name=".Register"/>
     </application>
 

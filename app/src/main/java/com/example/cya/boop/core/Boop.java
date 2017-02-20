@@ -7,6 +7,7 @@ import com.firebase.geofire.GeoLocation;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.io.Serializable;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -15,7 +16,7 @@ import java.util.Date;
  */
 //La clase Boop representa un Boop de hacer Boop. Guarda los datos del Boop
 //Mantengamosla ordenada y mantenible.
-public class Boop {
+public class Boop implements Serializable{
     //Nombre del boop, a mostrar en el mapa. Algo descriptivo como "Quedada puchamongo equipo rojo"
     private String nombre;
     //Descripción del boop, a mostrar al seleccionar para ver los detalles del boop
@@ -54,7 +55,7 @@ public class Boop {
         this.nombre = nombre;
     }
 
-    public String getDescripción() {
+    public String getDescripcion() {
         return descripcion;
     }
 

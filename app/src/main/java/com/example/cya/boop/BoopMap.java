@@ -9,6 +9,8 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
+import android.app.FragmentManager;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -25,12 +27,15 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import static com.google.android.gms.maps.GoogleMap.*;
 
 public class BoopMap extends FragmentActivity implements OnMapReadyCallback, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
 
@@ -40,7 +45,7 @@ public class BoopMap extends FragmentActivity implements OnMapReadyCallback, Goo
     private Location mLastLocation;
     private GeoFire geofire;
     private DatabaseReference mDatabase;
-
+    public static DisplayMetrics displayMetrics;
 
     private void createNewBoop(){
         if(mLastLocation != null){
@@ -56,6 +61,9 @@ public class BoopMap extends FragmentActivity implements OnMapReadyCallback, Goo
         // Meter el layout
         super.onCreate(savedInstanceState);
         setContentView(R.layout.boop_map);
+        //Mas manageamientos de layout
+        displayMetrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
 
         // Meter el mapa
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
@@ -102,6 +110,24 @@ public class BoopMap extends FragmentActivity implements OnMapReadyCallback, Goo
         }
         mMap.setMyLocationEnabled(true);
 
+        //ESTO LLAMA A CREAR UN POPUP CON EL INFO DEL BOOP
+        mMap.setOnMarkerClickListener(new OnMarkerClickListener() {
+            @Override
+            public boolean onMarkerClick(Marker marker) {
+                //Pillamos el boop del tag
+                Boop b = (Boop) marker.getTag();
+                //Lo metemos en un bundle porque los constructores son nuestros enemigos
+                Bundle humble = new Bundle();
+                humble.putSerializable("boop",b);
+                //Y lo mandamos a verBoop, el popup
+                VerBoop verBoop = new VerBoop();
+                verBoop.setArguments(humble);
+
+                verBoop.show(getFragmentManager(), "VerBoopTag");
+                return true;
+            }
+        });
+
     }
 
     @Override
@@ -134,11 +160,12 @@ public class BoopMap extends FragmentActivity implements OnMapReadyCallback, Goo
                         public void onDataChange(DataSnapshot dataSnapshot) {
                             Boop b = dataSnapshot.getValue(Boop.class);
                             if(mMap != null){
-                                mMap.addMarker(new MarkerOptions()
+                                Marker marker = mMap.addMarker(new MarkerOptions()
                                         .position(new LatLng(location.latitude,location.longitude))
                                         .title(b.getNombre())
-                                        .snippet(b.getDescripción())
-                                ).showInfoWindow();
+                                        .snippet(b.getDescripcion())
+                                ); //.showInfoWindow()
+                                marker.setTag(b);
                             }
                         }
 
