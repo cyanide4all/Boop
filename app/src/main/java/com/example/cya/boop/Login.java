@@ -42,6 +42,8 @@ public class Login extends AppCompatActivity implements
     //Esta actividad empieza con el login por email y pass, pero luego puede pasar a otros logins
     // con botones valeoc?
 
+    private static final int REGISTER_REQUEST = 1;
+
     private static final String TAG = "Login";
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
@@ -89,7 +91,8 @@ public class Login extends AppCompatActivity implements
         botonCrear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                crearCuenta();
+                Intent toRegister = new Intent(Login.this, Register.class);
+                startActivityForResult(toRegister, REGISTER_REQUEST);
             }
         });
 
@@ -130,10 +133,10 @@ public class Login extends AppCompatActivity implements
     }
 
     //Crea una cuenta de usuario y hace login instantaneamente
-    public void crearCuenta(){
-        EditText inputEmail = (EditText) findViewById(R.id.inputEmail);
-        EditText inputPass = (EditText) findViewById(R.id.inputPass);
-        mAuth.createUserWithEmailAndPassword(inputEmail.getText().toString(), inputPass.getText().toString())
+    public void crearCuenta(String email, String pass){
+        //EditText inputEmail = (EditText) findViewById(R.id.inputEmail);
+        //EditText inputPass = (EditText) findViewById(R.id.inputPass);
+        mAuth.createUserWithEmailAndPassword(email, pass)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -147,16 +150,15 @@ public class Login extends AppCompatActivity implements
                             //Aqui lo que pasa cuando sale bien
                             Toast.makeText(Login.this, "Cuenta creada correctamente",
                                     Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(Login.this, BoopMap.class));
+                            startActivity(new Intent(Login.this, BoopMap.class)); //ToDo "Saltar a gestion de perfil y lo primero comprobar nombre de usuario valido en BD"
                         }
                     }
                 });
-
     }
     //Realiza login con una cuenta de usuario ya creada
     public void singIn(){
-        EditText inputEmail = (EditText) findViewById(R.id.inputEmail);
-        EditText inputPass = (EditText) findViewById(R.id.inputPass);
+        final EditText inputEmail = (EditText) findViewById(R.id.inputEmail);
+        final EditText inputPass = (EditText) findViewById(R.id.inputPass);
         mAuth.signInWithEmailAndPassword(inputEmail.getText().toString(), inputPass.getText().toString())
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
@@ -168,17 +170,21 @@ public class Login extends AppCompatActivity implements
                             Log.w(TAG, "signInWithEmail", task.getException());
                             Toast.makeText(Login.this, "Fallo en la autenticación.",
                                     Toast.LENGTH_SHORT).show();
+                            inputPass.setText("");
+
                         }else{
                             //Aqui lo que pasa cuando sale bien
                             Toast.makeText(Login.this, "Prepárate para hacer Boop!.",
                                     Toast.LENGTH_SHORT).show();
+
+                            startActivity(new Intent(Login.this, BoopMap.class));
                         }
-                        startActivity(new Intent(Login.this, BoopMap.class));
+
                     }
                 });
     }
 
-    /***A partir de Aqui Inicio de Google***/
+    /***A partir de Aqui Inicio de Google y onActivityResult***/
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -194,6 +200,19 @@ public class Login extends AppCompatActivity implements
             } else {
                 // Google Sign In failed, update UI appropriately
                 Toast.makeText(this, "Inicio de sesion fallido, si no está registrado cree unh cuenta", Toast.LENGTH_SHORT);
+            }
+        }
+        if (requestCode == REGISTER_REQUEST)
+        {
+            if (resultCode == RESULT_OK) {
+                String nombre = data.getExtras().getString("nombre");
+                String correo = data.getExtras().getString("correo");
+                String pass = data.getExtras().getString("pass");
+
+                crearCuenta(correo, pass);
+            }else
+            {
+                //No hacer nada. Boton cancelar registro viene aqui
             }
         }
     }
