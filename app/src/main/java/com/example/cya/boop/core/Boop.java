@@ -28,8 +28,10 @@ public class Boop {
     private Date fechaIni;
     //Fecha y hora de finalización
     private Date fechaFin;
+    // si es un concierto, bar, museo, performance etc..
+    private String tipo;
     //CON ESTO BASTARA POR AHORA, pero aun asi...
-    private String[] tags;
+
     //TODO foto, edad max/min, amigos/publico etc... Si se os ocurre más, aquí hay que ponerlo
 
 
@@ -99,18 +101,9 @@ public class Boop {
         if(fechaFin.after(this.fechaIni)) {
             this.fechaFin = fechaFin;
         }else{
-            //throw new Exception("La fecha fin no puede ser anterior a la de inicio");
+            throw new Exception("La fecha fin no puede ser anterior a la de inicio");
         }
     }
-
-    public String[] getTags() {
-        return tags;
-    }
-
-    public void setTags(String[] tags) {
-        this.tags = tags;
-    }
-
 
 
 //FUNCIONES Y METODOS IMPORTANTES
