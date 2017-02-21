@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_nuevo_boop"
     android:layout_width="match_parent"
@@ -13,43 +14,167 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:weightSum="1">
 
-        <TextView
-            android:text="Nombre"
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView2"
-            android:textAppearance="@style/TextAppearance.AppCompat" />
+            android:layout_height="62dp">
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="5"
+                android:id="@+id/Bnombre"
+                android:hint="Ponle un titulo a tu boop"
+                android:layout_weight="0.26" />
+
+            <android.support.design.widget.FloatingActionButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                app:fabSize="normal"
+                app:srcCompat="@drawable/ic_image_black_24dp"
+                android:id="@+id/floatingActionButton"
+                android:tint="#ffff"
+                android:layout_gravity="right"
+                android:layout_marginLeft="30dp" />
+
+        </LinearLayout>
 
         <EditText
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
+            android:layout_height="86dp"
+            android:inputType="textMultiLine"
             android:ems="10"
-            android:id="@+id/Bnombre"
-            android:hint="nombre del Boop" />
+            android:id="@+id/bdescripcion"
+            android:hint="Que vamos a hacer?"
+            android:gravity="top|left" />
 
-        <TextView
-            android:text="Descripción"
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/textView3"
-            android:textAppearance="@style/TextAppearance.AppCompat" />
+            android:weightSum="1">
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:ems="10"
-            android:id="@+id/Bdescripcion"
-            android:hint="Qué vamos a hacer?" />
+            <TextView
+                android:text="Empieza dia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView2"
+                android:layout_weight="0.5" />
 
-        <Button
-            android:text="BOOP!"
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/bdia"
+                android:layout_weight="0.5" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/botonBoopear" />
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="Hora"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/bhora"
+                android:layout_weight="0.5" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="Acaba dia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/bfdia"
+                android:layout_weight="0.5" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="Hora"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/bfhora"
+                android:layout_weight="0.5" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="Max numero de personas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/bpersonas"
+                android:layout_weight="0.5"
+                android:numeric="integer"
+                android:text="dfsf"
+                android:gravity="center_vertical|center_horizontal" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="bottom"
+            android:gravity="bottom">
+
+            <Button
+                android:text="Cancelar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:id="@+id/bcancelar" />
+
+            <Button
+                android:text="BOOP!"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/botonBoopear"
+                android:layout_weight="0.5" />
+        </LinearLayout>
+
     </LinearLayout>
 
 </RelativeLayout>

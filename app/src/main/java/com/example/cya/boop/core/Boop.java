@@ -29,7 +29,10 @@ public class Boop implements Serializable{
     private Date fechaIni;
     //Fecha y hora de finalización
     private Date fechaFin;
+    // si es un concierto, bar, museo, performance etc..
+    private String tipo;
     //CON ESTO BASTARA POR AHORA, pero aun asi...
+
     //TODO foto, edad max/min, amigos/publico etc... Si se os ocurre más, aquí hay que ponerlo
 
 
@@ -99,10 +102,9 @@ public class Boop implements Serializable{
         if(fechaFin.after(this.fechaIni)) {
             this.fechaFin = fechaFin;
         }else{
-            //throw new Exception("La fecha fin no puede ser anterior a la de inicio");
+            throw new Exception("La fecha fin no puede ser anterior a la de inicio");
         }
     }
-
 
 
 //FUNCIONES Y METODOS IMPORTANTES
@@ -121,4 +123,5 @@ public class Boop implements Serializable{
 
         //TODO
     }
+
 }
