@@ -27,4 +27,13 @@
     <string name="ComprobarDatos">Comprueba que el correo sea válido y las contraseñas coencidan</string>
     <string name="ContrasenaCorta">Contraseña demasiado corta</string>
     <string name="ContrasenaVacia">La contraseña no puede estar vacía</string>
+
+    <string name="nombreRealCompleto">Nombre real, completo</string>
+    <string name="bio">Háblanos de ti</string>
+    <string name="bio2">¿Quién eres?</string>
+    <string name="fechaNac">Fecha de nacimiento</string>
+
+
+
+
 </resources>

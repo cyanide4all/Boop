@@ -107,7 +107,7 @@ public class Boop implements Serializable{
     }
 
 
-//FUNCIONES Y METODOS IMPORTANTES
+    //FUNCIONES Y METODOS IMPORTANTES
     public void crear(double longitude, double latitude) {
         //Firebaseamientos para funcar
         FirebaseDatabase database = FirebaseDatabase.getInstance();

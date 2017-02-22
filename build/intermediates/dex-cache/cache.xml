@@ -21,6 +21,15 @@
     </item>
     <item
         is-multidex="true"
+        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.android.support/multidex/1.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="6666dd525c3da197e7d07f4f23ef5fc7881a697b">
+        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-multidex-1.0.0_4136f04f3f9db18b48466e89275a2a18343b2432/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-awareness/10.0.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
@@ -151,7 +160,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="4452a495095f66d09ff169dfdbd6346e1373f406">
+        sha1="79565fddbc8bcbd3f5a1b588fae7646261ce9643">
         <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_c85bd201a40a0ef41b228c6e8ac4df271b36644c/classes.dex" />
     </item>
     <item
@@ -192,6 +201,15 @@
     </item>
     <item
         is-multidex="true"
+        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.android.support/transition/25.1.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="15b049fedbd8e3926bf99d9e45dfc9b2a1043bb9">
+        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-transition-25.1.1_fff7c50e6939dbff9867340bb84452fa69fb856e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.android.support/palette-v7/24.0.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
@@ -201,11 +219,20 @@
     </item>
     <item
         is-multidex="true"
+        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/25.1.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c9649557905bf7a80fca9e0d54cbcb7662627860">
+        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-25.1.1_9d17990a323c9e9af5a83df29328112e4c02182d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/home/cya/gitclones/Boop/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="8459c9d5a8f69150e513e50f68cbe5c11e901945">
+        sha1="eaa52c30f1522a2344d18915e89589ff496479ff">
         <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_350711ed88624d87d1ab7242725942a6f55ff7f6/classes.dex" />
     </item>
     <item
@@ -336,21 +363,21 @@
     </item>
     <item
         is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.android.support/multidex/1.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="78ea232052df889856dcb7b7b542707c89bb3bfb">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-multidex-1.0.1_08dc64a38370121708d3b49568053e141b074886/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-plus/10.0.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
         sha1="c14f0c89f28cf782e42581ab0aba5f63af39b3d2">
         <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-plus-10.0.1_874ae2929f5e3548a9d22f39447a444ffc5be34f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.android.support/design/25.1.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="cd7951e04cfb9a8bf008d544a478d9a8d8192d38">
+        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-25.1.1_eecaba9da3b55eaace3cb08b3b28b5b247496699/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -558,6 +585,15 @@
         revision="25.0.2"
         sha1="27777b3cad3c20b1acab19f6e37fe3e03371bf6e">
         <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-maps-10.0.1_0f2610c6cefbf9b29432a712b04fd847c5253671/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.android.support/gridlayout-v7/25.1.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="9c1c44672010b6847f3744ec3702624d8d16c240">
+        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-gridlayout-v7-25.1.1_19e008f128145ba77ae56204d6c53c4042d140b1/classes.dex" />
     </item>
     <item
         is-multidex="true"

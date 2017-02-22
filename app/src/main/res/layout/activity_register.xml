@@ -47,12 +47,13 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="numberPassword"
+            android:inputType="text"
             android:ems="10"
             android:id="@+id/pass"
             android:hint="@string/EscribeContrasena"
             android:textSize="14sp"
-            android:textColor="@android:color/black" />
+            android:textColor="@android:color/black"
+            android:password="true" />
 
         <TextView
             android:text="@string/pass2"
@@ -65,12 +66,13 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="numberPassword"
             android:ems="10"
             android:id="@+id/pass2"
             android:textSize="14sp"
             android:hint="@string/EscribeContrasena"
-            android:textColor="@android:color/black" />
+            android:textColor="@android:color/black"
+            android:password="true"
+            android:inputType="text" />
 
         <TextView
             android:layout_width="match_parent"

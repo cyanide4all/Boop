@@ -33,6 +33,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
 import static android.R.attr.password;
+import static android.R.attr.state_above_anchor;
 
 public class Login extends AppCompatActivity implements
         GoogleApiClient.OnConnectionFailedListener
@@ -68,7 +69,8 @@ public class Login extends AppCompatActivity implements
                 if (user != null) {
                     // User is signed in
                     Log.d(TAG, "onAuthStateChanged:signed_in:" + user.getUid());
-                    startActivity(new Intent(Login.this, BoopMap.class));
+                    //TODO he comentado esto porque no tenemos boton de logut. Cuando lo tengamos, descomentar
+                    //startActivity(new Intent(Login.this, BoopMap.class));
                 } else {
                     // User is signed out
                     Log.d(TAG, "onAuthStateChanged:signed_out");
@@ -77,7 +79,6 @@ public class Login extends AppCompatActivity implements
         };
 
         //Botón de pasar a google login
-        //TODO de esta nueva actividad
         SignInButton botonGoogle = (SignInButton) findViewById(R.id.botonGoogle);
         botonGoogle.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -150,7 +151,11 @@ public class Login extends AppCompatActivity implements
                             //Aqui lo que pasa cuando sale bien
                             Toast.makeText(Login.this, "Cuenta creada correctamente",
                                     Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(Login.this, BoopMap.class)); //ToDo "Saltar a gestion de perfil y lo primero comprobar nombre de usuario valido en BD"
+
+                            //Saltamos a la creación de perfil
+                            Intent intento = new Intent(Login.this, CrearPerfil.class);
+                            intento.putExtra("UserID", mAuth.getCurrentUser().getUid());
+                            startActivity(intento);
                         }
                     }
                 });
@@ -176,7 +181,6 @@ public class Login extends AppCompatActivity implements
                             //Aqui lo que pasa cuando sale bien
                             Toast.makeText(Login.this, "Prepárate para hacer Boop!.",
                                     Toast.LENGTH_SHORT).show();
-
                             startActivity(new Intent(Login.this, BoopMap.class));
                         }
 
@@ -205,10 +209,9 @@ public class Login extends AppCompatActivity implements
         if (requestCode == REGISTER_REQUEST)
         {
             if (resultCode == RESULT_OK) {
-                String nombre = data.getExtras().getString("nombre");
+
                 String correo = data.getExtras().getString("correo");
                 String pass = data.getExtras().getString("pass");
-
                 crearCuenta(correo, pass);
             }else
             {

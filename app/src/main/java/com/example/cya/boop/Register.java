@@ -109,7 +109,7 @@ public class Register extends AppCompatActivity {
                     String c = correo.getText().toString();
                     String p = pass.getText().toString();
 
-                    Intent i = getIntent();
+                    Intent i = new Intent();
 
                     //i.putExtra("nombre", n);
                     i.putExtra("correo", c);
