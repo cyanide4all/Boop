@@ -13,7 +13,10 @@ import android.app.FragmentManager;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import com.example.cya.boop.core.Boop;
 import com.firebase.geofire.GeoFire;
@@ -26,6 +29,8 @@ import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptor;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -41,7 +46,7 @@ public class BoopMap extends FragmentActivity implements OnMapReadyCallback, Goo
 
     private GoogleMap mMap;
     private GoogleApiClient mGoogleApiClient;
-    private Button boopBtn;
+    private ImageButton boopBtn;
     private Location mLastLocation;
     private GeoFire geofire;
     private DatabaseReference mDatabase;
@@ -60,6 +65,14 @@ public class BoopMap extends FragmentActivity implements OnMapReadyCallback, Goo
     protected void onCreate(Bundle savedInstanceState) {
         // Meter el layout
         super.onCreate(savedInstanceState);
+        // remove title
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        setContentView(R.layout.activity_login);
+        //getSupportActionBar().hide();
+
+
         setContentView(R.layout.boop_map);
         //Mas manageamientos de layout
         displayMetrics = new DisplayMetrics();
@@ -71,7 +84,7 @@ public class BoopMap extends FragmentActivity implements OnMapReadyCallback, Goo
         mapFragment.getMapAsync(this);
 
         // Meter un evento al boton boop
-        boopBtn = (Button) findViewById(R.id.boopBtn);
+        boopBtn = (ImageButton) findViewById(R.id.boopBtn);
         boopBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -164,6 +177,7 @@ public class BoopMap extends FragmentActivity implements OnMapReadyCallback, Goo
                                         .position(new LatLng(location.latitude,location.longitude))
                                         .title(b.getNombre())
                                         .snippet(b.getDescripcion())
+
                                 ); //.showInfoWindow()
                                 marker.setTag(b);
                             }

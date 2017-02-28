@@ -7,12 +7,17 @@
         tools:context="com.example.cya.boop.BoopMap">
 
 
-        <Button
+        <ImageButton
             android:id="@+id/boopBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="65dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:layout_height="65dp"
             android:layout_gravity="bottom|center_horizontal"
-            android:text="Boop!"
-            android:padding="10dp"/>
-
+            android:src="@drawable/ic_add_black_24dp"
+            android:tint="#fff"
+            android:padding="10dp"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:background="@drawable/boop_colors"
+            android:layout_marginBottom='15dp'/>
     </fragment>

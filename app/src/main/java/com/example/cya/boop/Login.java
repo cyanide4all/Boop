@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -58,7 +60,12 @@ public class Login extends AppCompatActivity implements
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // remove title
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_login);
+        getSupportActionBar().hide();
 
         //Firebase auth aqui para quitarnoslo del medio
         mAuth = FirebaseAuth.getInstance();
@@ -70,7 +77,7 @@ public class Login extends AppCompatActivity implements
                     // User is signed in
                     Log.d(TAG, "onAuthStateChanged:signed_in:" + user.getUid());
                     //TODO he comentado esto porque no tenemos boton de logut. Cuando lo tengamos, descomentar
-                    //startActivity(new Intent(Login.this, BoopMap.class));
+                    startActivity(new Intent(Login.this, BoopMap.class));
                 } else {
                     // User is signed out
                     Log.d(TAG, "onAuthStateChanged:signed_out");
@@ -79,7 +86,7 @@ public class Login extends AppCompatActivity implements
         };
 
         //Botón de pasar a google login
-        SignInButton botonGoogle = (SignInButton) findViewById(R.id.botonGoogle);
+        Button botonGoogle = (Button) findViewById(R.id.botonGoogle);
         botonGoogle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

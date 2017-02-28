@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_login"
     android:layout_width="match_parent"
@@ -8,24 +9,28 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.cya.boop.Login">
+    tools:context="com.example.cya.boop.Login"
+    android:background="#ffff">
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:weightSum="1"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentTop="false"
+        android:layout_alignParentStart="false"
+        android:background="@android:color/white"
+        android:layout_centerInParent="true">
 
-        <TextView
-            android:text="Log in con tus credenciales"
+        <ImageView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:id="@+id/textView"
-            android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+            app:srcCompat="@drawable/boop"
+            android:id="@+id/imageView2"
+            android:layout_height="100dp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="27.50dp" />
 
         <EditText
             android:layout_width="match_parent"
@@ -35,7 +40,13 @@
             android:id="@+id/inputEmail"
             android:hint="Email"
             style="@style/Widget.AppCompat.AutoCompleteTextView"
-            android:singleLine="true" />
+            android:singleLine="true"
+            android:background="@drawable/interactuable"
+            android:gravity="center_vertical|center_horizontal" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="8.09dp" />
 
         <EditText
             android:layout_width="match_parent"
@@ -44,7 +55,13 @@
             android:ems="10"
             android:id="@+id/inputPass"
             android:hint="Pass"
-            android:singleLine="true" />
+            android:singleLine="true"
+            android:background="@drawable/interactuable"
+            android:gravity="center_vertical|center_horizontal" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="27.50dp" />
 
         <LinearLayout
             android:orientation="horizontal"
@@ -57,21 +74,53 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/botonLogin"
                 android:elevation="0dp"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:background="@drawable/primary_button"
+                style="@android:style/Widget.Material.Button.Borderless" />
+
+            <Space
+                android:layout_height="wrap_content"
+                android:layout_weight="0.05"
+                android:layout_width="1dp" />
 
             <Button
                 android:text="Crear Cuenta"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/botonCrearCuenta"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:background="@drawable/interactuable"
+                android:elevation="0dp" />
         </LinearLayout>
 
-        <com.google.android.gms.common.SignInButton
-            android:id="@+id/botonGoogle"
+        <Space
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="27.50dp" />
 
+        <TextView
+            android:text="OR"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView"
+            android:gravity="center_horizontal"
+            android:textSize="30dp"
+            android:textColor="#c55756" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="27.50dp" />
+
+        <Button
+            android:text="Log-in Using google"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/botonGoogle"
+            android:background="@drawable/interactuable"
+            android:elevation="0dp" />
     </LinearLayout>
+
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
 </RelativeLayout>
