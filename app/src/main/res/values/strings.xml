@@ -33,7 +33,20 @@
     <string name="bio2">¿Quién eres?</string>
     <string name="fechaNac">Fecha de nacimiento</string>
 
-
-
+    #VerBoop
+    <string name="creador">Creado por:</string>
+    <string name="descripcion">Descripción:</string>
+    <string name="popularidad">\nPopularidad de usuario:</string>
+    <string name="nombreBoop">Nombre de BooP:</string>
+    <string name="clasificacion">Tipo de evento: </string>
+    <string name="asistir">Voy a ir</string>
+    <string name="noAsistir">No voy a ir</string>
+    <string name="dejarDeVer">Dejar de ver</string>
+    <string name="puntuacion">\nPuntua este BooP para sumar popularidad a su creador:</string>
+    <string name="botonChat">Sala de chat</string>
+    <string name="empieza">Empieza:</string>
+    <string name="acaba">Termina:</string>
+    <string name="asistentes">Asistirán:</string>
+    <string name="maxAsistentes">Aforo máximo:</string>
 
 </resources>
