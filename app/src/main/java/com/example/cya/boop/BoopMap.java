@@ -1,6 +1,7 @@
 package com.example.cya.boop;
 
 import android.Manifest;
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
@@ -50,14 +51,20 @@ public class BoopMap extends FragmentActivity implements OnMapReadyCallback, Goo
     private Location mLastLocation;
     private GeoFire geofire;
     private DatabaseReference mDatabase;
+    private Marker myEventLocation;
     public static DisplayMetrics displayMetrics;
 
     private void createNewBoop(){
-        if(mLastLocation != null){
+        if(myEventLocation != null){
             Intent toSend = new Intent(this,NuevoBoop.class);
-            toSend.putExtra("longitude", mLastLocation.getLongitude());
-            toSend.putExtra("latitude",mLastLocation.getLatitude());
+            toSend.putExtra("longitude", myEventLocation.getPosition().longitude);
+            toSend.putExtra("latitude",myEventLocation.getPosition().latitude);
             startActivity(toSend);
+        }else{
+            AlertDialog.Builder b = new AlertDialog.Builder(this);
+            b.setTitle("Where you will host your event?")
+                    .setMessage("Please, touch the place where you will host your event")
+                    .setPositiveButton("OK",null ).show();
         }
     }
 
@@ -123,6 +130,19 @@ public class BoopMap extends FragmentActivity implements OnMapReadyCallback, Goo
             return;
         }
         mMap.setMyLocationEnabled(true);
+
+        mMap.setOnMapClickListener(new OnMapClickListener() {
+            @Override
+            public void onMapClick(LatLng latLng) {
+                if(myEventLocation != null){
+                    myEventLocation.remove();
+                }
+                myEventLocation = mMap.addMarker(new MarkerOptions()
+                        .position(new LatLng(latLng.latitude,latLng.longitude))
+                ); // marcamos la posicion donde el usuario quiere crear un evento
+                    // en un futuro podra tener otro color.
+            }
+        });
 
         //ESTO LLAMA A CREAR UN POPUP CON EL INFO DEL BOOP
         mMap.setOnMarkerClickListener(new OnMarkerClickListener() {

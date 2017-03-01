@@ -60,6 +60,17 @@ public class NuevoBoop extends AppCompatActivity {
 
         fontChanger.change(this,findViewById(R.id.Bnombre),"fonts/Neris-Bold.otf");
 
+        fontChanger.change(this,findViewById(R.id.botonBoopear),"fonts/Neris-SemiBold.otf");
+        fontChanger.change(this,findViewById(R.id.bcancelar),"fonts/Neris-SemiBold.otf");
+
+        Button cancel = (Button) findViewById(R.id.bcancelar);
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
         final Calendar c = Calendar.getInstance();
         mYear = c.get(Calendar.YEAR);
         mMonth = c.get(Calendar.MONTH);
