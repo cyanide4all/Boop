@@ -65,15 +65,16 @@ public class BoopMap extends FragmentActivity implements OnMapReadyCallback, Goo
     protected void onCreate(Bundle savedInstanceState) {
         // Meter el layout
         super.onCreate(savedInstanceState);
+
+
         // remove title
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_login);
         //getSupportActionBar().hide();
 
-
         setContentView(R.layout.boop_map);
+
         //Mas manageamientos de layout
         displayMetrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);

@@ -7,6 +7,8 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -40,12 +42,23 @@ public class NuevoBoop extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        getSupportActionBar().hide();
+
         setContentView(R.layout.activity_nuevo_boop);
+
+        fontChanger.change(this,findViewById(R.id.activity_nuevo_boop),"fonts/Neris-Thin.otf");
+
         
         final Button dia = (Button) findViewById(R.id.bdia);
         final Button hora = (Button) findViewById(R.id.bhora);
         final Button fdia = (Button) findViewById(R.id.bfdia);
         final Button fhora = (Button) findViewById(R.id.bfhora);
+
+        fontChanger.change(this,findViewById(R.id.Bnombre),"fonts/Neris-Bold.otf");
 
         final Calendar c = Calendar.getInstance();
         mYear = c.get(Calendar.YEAR);

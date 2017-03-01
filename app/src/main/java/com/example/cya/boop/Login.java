@@ -67,6 +67,9 @@ public class Login extends AppCompatActivity implements
         setContentView(R.layout.activity_login);
         getSupportActionBar().hide();
 
+        // change fonts
+        fontChanger.change(this,findViewById(R.id.activity_login),"fonts/Neris-Thin.otf");
+
         //Firebase auth aqui para quitarnoslo del medio
         mAuth = FirebaseAuth.getInstance();
         mAuthListener = new FirebaseAuth.AuthStateListener() {
@@ -112,6 +115,10 @@ public class Login extends AppCompatActivity implements
                 singIn();
             }
         });
+
+        fontChanger.change(this,findViewById(R.id.botonGoogle),"fonts/Neris-SemiBold.otf");
+        fontChanger.change(this,findViewById(R.id.botonCrearCuenta),"fonts/Neris-SemiBold.otf");
+        fontChanger.change(this,findViewById(R.id.botonLogin),"fonts/Neris-SemiBold.otf");
 
         // Configure Google Sign In
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)

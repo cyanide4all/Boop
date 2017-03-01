@@ -9,13 +9,25 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.cya.boop.NuevoBoop">
+    tools:context="com.example.cya.boop.NuevoBoop"
+    android:background="#fff">
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:weightSum="1">
+
+        <ImageButton
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:srcCompat="@drawable/paperclip"
+            android:id="@+id/imageButton"
+            android:background="#fff"
+            android:layout_weight="0.03"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:layout_gravity="top|right" />
 
         <LinearLayout
             android:orientation="horizontal"
@@ -25,24 +37,22 @@
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:inputType="textPersonName"
                 android:ems="5"
                 android:id="@+id/Bnombre"
-                android:hint="Ponle un titulo a tu boop"
-                android:layout_weight="0.26" />
-
-            <android.support.design.widget.FloatingActionButton
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:clickable="true"
-                app:fabSize="normal"
-                app:srcCompat="@drawable/ic_image_black_24dp"
-                android:id="@+id/floatingActionButton"
-                android:tint="#ffff"
-                android:layout_gravity="right"
-                android:layout_marginLeft="30dp" />
+                android:background="#fff"
+                android:hint="Titulo"
+                android:layout_weight="0.15"
+                android:textAllCaps="true"
+                android:textColor="#c55756"
+                android:textSize="46sp"
+                android:inputType="text" />
 
         </LinearLayout>
+
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
         <EditText
             android:layout_width="match_parent"
@@ -51,85 +61,111 @@
             android:ems="10"
             android:id="@+id/bdescripcion"
             android:hint="Que vamos a hacer?"
+            android:background="#fff"
             android:gravity="top|left" />
+        <Space
+            android:layout_height="8.09dp"
+            android:layout_width="match_parent"/>
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:weightSum="1">
+            android:layout_height="wrap_content">
 
             <TextView
-                android:text="Empieza dia"
-                android:layout_width="match_parent"
+                android:text="Date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView6"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:textColor="#c55756"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView2"
-                android:layout_weight="0.5" />
+                android:layout_weight="1"
+                android:text="Time"
+                android:gravity="center_horizontal"
+                android:textColor="#c55756"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
             <Button
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/bdia"
-                android:layout_weight="0.5" />
+                android:layout_weight="0.5"
+                android:background="@drawable/interactuable" />
 
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:text="Hora"
-                android:layout_width="match_parent"
+            <Space
                 android:layout_height="wrap_content"
-                android:layout_weight="0.5"/>
+                android:layout_weight="0.05"
+                android:layout_width="1dp" />
 
             <Button
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/bhora"
-                android:layout_weight="0.5" />
+                android:layout_weight="0.5"
+                android:background="@drawable/interactuable" />
 
         </LinearLayout>
-
+        <Space
+            android:layout_height="8.09dp"
+            android:layout_width="match_parent"/>
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <TextView
-                android:text="Acaba dia"
+                android:text="To"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.5" />
+                android:layout_weight="0.5"
+                android:textColor="#c55756"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+        <Space
+            android:layout_height="8.09dp"
+            android:layout_width="match_parent"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
             <Button
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/bfdia"
-                android:layout_weight="0.5" />
+                android:layout_weight="0.5"
+                android:background="@drawable/interactuable" />
 
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:text="Hora"
-                android:layout_width="match_parent"
+            <Space
                 android:layout_height="wrap_content"
-                android:layout_weight="0.5" />
+                android:layout_weight="0.05"
+                android:layout_width="1dp" />
 
             <Button
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/bfhora"
-                android:layout_weight="0.5" />
+                android:layout_weight="0.5"
+                android:background="@drawable/interactuable" />
 
         </LinearLayout>
+        <Space android:layout_width="match_parent"
+            android:layout_height="27.50dp" />
 
         <LinearLayout
             android:orientation="horizontal"
@@ -148,15 +184,21 @@
                 android:id="@+id/bpersonas"
                 android:layout_weight="0.5"
                 android:numeric="integer"
-                android:text="dfsf"
-                android:gravity="center_vertical|center_horizontal" />
+                android:text="0"
+                android:gravity="center_vertical|center_horizontal"
+                android:background="@drawable/interactuable" />
 
         </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_weight="0.03"
+            android:layout_height="50dp" />
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             android:gravity="bottom">
 
@@ -165,14 +207,23 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.5"
-                android:id="@+id/bcancelar" />
+                android:id="@+id/bcancelar"
+                android:background="@drawable/boop_colors"
+                style="@style/Widget.AppCompat.Button.Borderless" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5" />
 
             <Button
                 android:text="BOOP!"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/botonBoopear"
-                android:layout_weight="0.5" />
+                android:layout_weight="0.5"
+                android:background="@drawable/primary_button"
+                style="@style/Widget.AppCompat.Button.Borderless" />
         </LinearLayout>
 
     </LinearLayout>
