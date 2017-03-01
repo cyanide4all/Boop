@@ -27,6 +27,8 @@ import com.firebase.geofire.GeoQueryEventListener;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.maps.CameraUpdate;
+import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
@@ -40,7 +42,6 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
 import static com.google.android.gms.maps.GoogleMap.*;
 
 public class BoopMap extends FragmentActivity implements OnMapReadyCallback, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
@@ -48,8 +49,10 @@ public class BoopMap extends FragmentActivity implements OnMapReadyCallback, Goo
     private GoogleMap mMap;
     private GoogleApiClient mGoogleApiClient;
     private ImageButton boopBtn;
+    private ImageButton boopCncl;
     private Location mLastLocation;
     private GeoFire geofire;
+    private Boolean aceptando_clicks = false;
     private DatabaseReference mDatabase;
     private Marker myEventLocation;
     public static DisplayMetrics displayMetrics;
@@ -59,13 +62,32 @@ public class BoopMap extends FragmentActivity implements OnMapReadyCallback, Goo
             Intent toSend = new Intent(this,NuevoBoop.class);
             toSend.putExtra("longitude", myEventLocation.getPosition().longitude);
             toSend.putExtra("latitude",myEventLocation.getPosition().latitude);
+            cancelPlacing();
             startActivity(toSend);
         }else{
-            AlertDialog.Builder b = new AlertDialog.Builder(this);
-            b.setTitle("Where you will host your event?")
-                    .setMessage("Please, touch the place where you will host your event")
-                    .setPositiveButton("OK",null ).show();
+            if(!aceptando_clicks){
+                AlertDialog.Builder b = new AlertDialog.Builder(this);
+                b.setTitle("Where you will host your event?")
+                        .setMessage("Please, touch the place where you will host your event")
+                        .setPositiveButton("OK",null ).show();
+                aceptando_clicks = true;
+                boopCncl.setVisibility(View.VISIBLE);
+            }else{
+                AlertDialog.Builder b = new AlertDialog.Builder(this);
+                b.setTitle("Oops")
+                        .setMessage("You must set a place to host your event")
+                        .setPositiveButton("OK",null ).show();
+            }
         }
+    }
+
+    private void cancelPlacing(){
+        aceptando_clicks = false;
+        if(myEventLocation != null){
+            myEventLocation.remove();
+            myEventLocation = null;
+        }
+        boopCncl.setVisibility(View.INVISIBLE);
     }
 
     @Override
@@ -97,6 +119,14 @@ public class BoopMap extends FragmentActivity implements OnMapReadyCallback, Goo
             @Override
             public void onClick(View view) {
                 createNewBoop();
+            }
+        });
+
+        boopCncl = (ImageButton) findViewById(R.id.boopCncl);
+        boopCncl.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cancelPlacing();
             }
         });
 
@@ -134,13 +164,15 @@ public class BoopMap extends FragmentActivity implements OnMapReadyCallback, Goo
         mMap.setOnMapClickListener(new OnMapClickListener() {
             @Override
             public void onMapClick(LatLng latLng) {
-                if(myEventLocation != null){
-                    myEventLocation.remove();
-                }
-                myEventLocation = mMap.addMarker(new MarkerOptions()
-                        .position(new LatLng(latLng.latitude,latLng.longitude))
-                ); // marcamos la posicion donde el usuario quiere crear un evento
+                if(aceptando_clicks){
+                    if(myEventLocation != null){
+                        myEventLocation.remove();
+                    }
+                    myEventLocation = mMap.addMarker(new MarkerOptions()
+                            .position(new LatLng(latLng.latitude,latLng.longitude))
+                    ); // marcamos la posicion donde el usuario quiere crear un evento
                     // en un futuro podra tener otro color.
+                }
             }
         });
 
@@ -181,6 +213,11 @@ public class BoopMap extends FragmentActivity implements OnMapReadyCallback, Goo
 
         // TENEMOS LATITUD Y LONGITUD AQUI DEL SENOR
         mLastLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
+
+        if (mLastLocation != null){
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(mLastLocation.getLatitude(),mLastLocation.getLongitude()),16));
+            Log.d("moved","map");
+        }
 
         if (mLastLocation != null) {
             GeoQuery geoQuery = geofire.queryAtLocation(new GeoLocation(mLastLocation.getLatitude(), mLastLocation.getLongitude()),10);

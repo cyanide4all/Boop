@@ -7,17 +7,34 @@
         tools:context="com.example.cya.boop.BoopMap">
 
 
-        <ImageButton
-            android:id="@+id/boopBtn"
-            android:layout_width="65dp"
-            android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            android:layout_height="65dp"
-            android:layout_gravity="bottom|center_horizontal"
-            android:src="@drawable/ic_add_black_24dp"
-            android:tint="#fff"
-            android:padding="10dp"
-            style="@style/Widget.AppCompat.Button.Borderless"
-            android:background="#c55756"
-            android:layout_marginBottom='15dp'/>
+
+    <ImageButton
+        android:id="@+id/boopBtn"
+        android:layout_width="65dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:layout_height="65dp"
+        android:layout_gravity="bottom|center_horizontal"
+        android:src="@drawable/ic_add_black_24dp"
+        android:tint="#fff"
+        android:padding="10dp"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:background="#c55756"
+        android:layout_marginBottom='15dp' />
+
+     <ImageButton
+         android:id="@+id/boopCncl"
+         android:visibility="invisible"
+         android:layout_width="30dp"
+         android:adjustViewBounds="true"
+         android:scaleType="fitCenter"
+         android:layout_gravity="top|left"
+         android:src="@drawable/ic_close_black_24dp"
+         android:tint="#fff"
+         android:padding="3dp"
+         style="@style/Widget.AppCompat.Button.Borderless"
+         android:background="#c55756"
+         android:layout_marginTop='15dp'
+         android:layout_marginLeft='15dp'
+         android:layout_height="30dp" />
     </fragment>
