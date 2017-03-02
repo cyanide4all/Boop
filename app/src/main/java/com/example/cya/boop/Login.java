@@ -79,7 +79,6 @@ public class Login extends AppCompatActivity implements
                 if (user != null) {
                     // User is signed in
                     Log.d(TAG, "onAuthStateChanged:signed_in:" + user.getUid());
-                    //TODO he comentado esto porque no tenemos boton de logut. Cuando lo tengamos, descomentar
                     startActivity(new Intent(Login.this, BoopMap.class));
                 } else {
                     // User is signed out

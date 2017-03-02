@@ -7,7 +7,6 @@
         tools:context="com.example.cya.boop.BoopMap">
 
 
-
     <ImageButton
         android:id="@+id/boopBtn"
         android:layout_width="65dp"
@@ -34,6 +33,22 @@
          android:padding="3dp"
          style="@style/Widget.AppCompat.Button.Borderless"
          android:background="#c55756"
+         android:layout_marginTop='15dp'
+         android:layout_marginLeft='15dp'
+         android:layout_height="30dp" />
+
+     <ImageButton
+         android:id="@+id/boopPerfil"
+         android:visibility="visible"
+         android:layout_width="30dp"
+         android:adjustViewBounds="true"
+         android:scaleType="fitCenter"
+         android:layout_gravity="bottom|left"
+         android:src="@drawable/paperclip"
+         android:tint="#000"
+         android:padding="3dp"
+         style="@style/Widget.AppCompat.Button.Borderless"
+         android:background="#fff"
          android:layout_marginTop='15dp'
          android:layout_marginLeft='15dp'
          android:layout_height="30dp" />

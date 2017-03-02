@@ -160,7 +160,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="79565fddbc8bcbd3f5a1b588fae7646261ce9643">
+        sha1="fa75b85d44f4d350a5c143f36241f948e147c42c">
         <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_c85bd201a40a0ef41b228c6e8ac4df271b36644c/classes.dex" />
     </item>
     <item
@@ -232,7 +232,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="eaa52c30f1522a2344d18915e89589ff496479ff">
+        sha1="50c629483424cb2500934b8c3b3756208575572d">
         <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_350711ed88624d87d1ab7242725942a6f55ff7f6/classes.dex" />
     </item>
     <item

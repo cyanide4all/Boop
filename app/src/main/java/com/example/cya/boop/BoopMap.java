@@ -37,6 +37,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -50,6 +51,7 @@ public class BoopMap extends FragmentActivity implements OnMapReadyCallback, Goo
     private GoogleApiClient mGoogleApiClient;
     private ImageButton boopBtn;
     private ImageButton boopCncl;
+    private ImageButton boopPerfil;
     private Location mLastLocation;
     private GeoFire geofire;
     private Boolean aceptando_clicks = false;
@@ -127,6 +129,14 @@ public class BoopMap extends FragmentActivity implements OnMapReadyCallback, Goo
             @Override
             public void onClick(View v) {
                 cancelPlacing();
+            }
+        });
+
+        boopPerfil = (ImageButton) findViewById(R.id.boopPerfil);
+        boopPerfil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(BoopMap.this, verPerfil.class));
             }
         });
 
@@ -292,5 +302,13 @@ public class BoopMap extends FragmentActivity implements OnMapReadyCallback, Goo
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
 
+    }
+
+    @Override
+    public void onResume(){
+        super.onResume();
+        if(FirebaseAuth.getInstance().getCurrentUser() == null){
+            finish();
+        }
     }
 }

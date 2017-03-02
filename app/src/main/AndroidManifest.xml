@@ -40,7 +40,8 @@
             android:label="@string/title_activity_boop_map" />
         <activity android:name=".VerBoop" />
         <activity android:name=".Register" />
-        <activity android:name=".CrearPerfil"></activity>
+        <activity android:name=".CrearPerfil" />
+        <activity android:name=".verPerfil"></activity>
     </application>
 
 </manifest>
