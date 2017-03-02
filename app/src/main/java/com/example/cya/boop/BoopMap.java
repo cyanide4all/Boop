@@ -8,6 +8,7 @@ import android.location.Location;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.app.FragmentManager;
@@ -68,12 +69,9 @@ public class BoopMap extends FragmentActivity implements OnMapReadyCallback, Goo
             startActivity(toSend);
         }else{
             if(!aceptando_clicks){
-                AlertDialog.Builder b = new AlertDialog.Builder(this);
-                b.setTitle("Where you will host your event?")
-                        .setMessage("Please, touch the place where you will host your event")
-                        .setPositiveButton("OK",null ).show();
-                aceptando_clicks = true;
+                Snackbar.make(findViewById(R.id.map),"Now touch where do you want to host your event in the map",Snackbar.LENGTH_LONG).show();
                 boopCncl.setVisibility(View.VISIBLE);
+                aceptando_clicks = true;
             }else{
                 AlertDialog.Builder b = new AlertDialog.Builder(this);
                 b.setTitle("Oops")
@@ -182,6 +180,7 @@ public class BoopMap extends FragmentActivity implements OnMapReadyCallback, Goo
                             .position(new LatLng(latLng.latitude,latLng.longitude))
                     ); // marcamos la posicion donde el usuario quiere crear un evento
                     // en un futuro podra tener otro color.
+                    createNewBoop();
                 }
             }
         });
