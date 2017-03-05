@@ -148,8 +148,9 @@ public class VerBoop extends DialogFragment {
 
     public void saberSiAsisto() {
 
-        if (boop.saberSiAsisto(this.usuario.getIdUsuario()))
-        {
+        if (true) //TODO BONITO Y GRANDE AQUI EH, PORQUE USUARIO HA CAMBIADO EN EL CORE
+        //if (boop.saberSiAsisto(this.usuario.getIdUsuario()))
+            {
             botonAsisitir.setChecked(true);
         }
         else {

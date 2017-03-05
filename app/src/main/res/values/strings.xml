@@ -49,4 +49,9 @@
     <string name="asistentes">Asistirán:</string>
     <string name="maxAsistentes">Aforo máximo:</string>
 
+    #VerPerfil
+    <string name="sobremi">Sobre mi...:</string>
+    <string name="salir">Salir</string>
+    <string name="anyos">años</string>
+
 </resources>

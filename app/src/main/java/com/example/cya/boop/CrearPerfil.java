@@ -44,9 +44,8 @@ public class CrearPerfil extends AppCompatActivity {
         user.setNombre(nombre.getText().toString());
         user.setBio(bio.getText().toString());
         user.setFechaNac(fechaNac.getText().toString());
-        user.setIdUsuario(idUser);
 
-        user.crear();
+        user.crear(idUser);
         startActivity(new Intent(this, BoopMap.class));
     }
 }
