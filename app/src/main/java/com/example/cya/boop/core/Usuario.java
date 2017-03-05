@@ -52,12 +52,8 @@ public class Usuario implements Serializable {
     //Crea un perfil de usuario con clave idUsuario
     public void crear(String idUsuario) {
         //Firebaseamientos para funcar
-
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("Usuarios");
-
-        //DatabaseReference newPostRef = myRef.push();
-        //newPostRef.setValue(this);
 
         myRef.child(idUsuario).setValue(this);
     }

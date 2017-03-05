@@ -15,6 +15,8 @@ import android.widget.ToggleButton;
 import com.example.cya.boop.core.Boop;
 import com.example.cya.boop.core.Usuario;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 import java.util.Locale;
 
 public class VerBoop extends DialogFragment {
@@ -49,7 +51,6 @@ public class VerBoop extends DialogFragment {
         //Recogemos el boop a traves de su bundle
         Bundle bundle = getArguments();
         this.boop = (Boop) bundle.getSerializable("boop");
-        this.usuario = (Usuario) bundle.getSerializable("usuario"); //Todo Martin revisa esto
 
         final View view = inflater.inflate(R.layout.activity_ver_boop, container, false);
         //Transformamos el boop en cosas visibles
@@ -148,8 +149,7 @@ public class VerBoop extends DialogFragment {
 
     public void saberSiAsisto() {
 
-        if (true) //TODO BONITO Y GRANDE AQUI EH, PORQUE USUARIO HA CAMBIADO EN EL CORE
-        //if (boop.saberSiAsisto(this.usuario.getIdUsuario()))
+        if (boop.saberSiAsisto(FirebaseAuth.getInstance().getCurrentUser().getUid()))
             {
             botonAsisitir.setChecked(true);
         }

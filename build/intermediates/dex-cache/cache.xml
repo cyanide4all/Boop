@@ -3,822 +3,183 @@
 
     <item
         is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/10.0.1/jars/classes.jar"
+        jar="/home/cya/.android/build-cache/d95e302427d9457c146756fd6bfcda7d3d3698ae/output/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="d0460bf07cc3657e0be518ca01c174493951c6b8">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-ads-10.0.1_811442c4360aef131bd25e70cdd95b47993125c7/classes.dex" />
+        sha1="df1cb17511aabbb63264a0024949d1e42502a512">
+        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_b5707f7b3c8ed2043c41ccc1cb7afe1b3fd51ea4/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.firebase/firebase-appindexing/10.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="ae80d328a8548b4610ead6c624bab8c6a6984f5b">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-appindexing-10.0.1_d7ec9ea4b2671e293cbde8cbbd74fabbdf91c55f/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-analytics/10.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="4c829ff0ccfecb28a999ee46d9e75948dfc777a4">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-analytics-10.0.1_5cc07ae2e7d054767bc2cb01069b816a288dca39/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/25.1.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="c9649557905bf7a80fca9e0d54cbcb7662627860">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-25.1.1_9d17990a323c9e9af5a83df29328112e4c02182d/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.android.support/gridlayout-v7/25.1.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="9c1c44672010b6847f3744ec3702624d8d16c240">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-gridlayout-v7-25.1.1_19e008f128145ba77ae56204d6c53c4042d140b1/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.android.support/multidex/1.0.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="6666dd525c3da197e7d07f4f23ef5fc7881a697b">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-multidex-1.0.0_4136f04f3f9db18b48466e89275a2a18343b2432/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-awareness/10.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="4385ccc0a88b33d182a836eadb47be55c8eb1107">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-awareness-10.0.1_d77d482a2d6f6fcb0da8797eabecddc9f0938e10/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.firebase/firebase-config/10.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="ffc15e965a9e8c28f24455eedd4cac215c45d1fc">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-config-10.0.1_50c60562cf89ce0eebfaf5d28aefaf87366e4afd/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-safetynet/10.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="f6cf557be4dbd0282ea2388633e5378634423226">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-safetynet-10.0.1_ef5f39f8631d51ac9dffe0ce7abb200b7ac7b0ce/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/24.0.0/jars/libs/internal_impl-24.0.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="b6763651ec29b4c95e7bbe63fc393ffcc8c4c2c5">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.0.0_d36e454d5115e54c0511d84861525f7b1ed45c3b/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/10.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="756f6297eef79784f5e356dcd4f39865028b2bd0">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-basement-10.0.1_ef3d40d85c6b7ccc9e1d79265e961b25fb3f87f1/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.firebase/firebase-common/10.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="eb0d830e3eabb9deb9ec44869cf7ac7ea1ad794c">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-common-10.0.1_a9f31513d169335285327b1e9364332951db5353/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.1.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="3e04ac8ca644ea7baddf6fdcf72e15c79e9df94a">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-25.1.1_10d701dc31ad9caac5943858a8ff79fa56aba07f/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-vision/10.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="ba6aa5e69ef31dee57208125323cee958fc67565">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-vision-10.0.1_7a7cadaef3eb591e41e97f788e395b065a47666a/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/10.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="25438f55fc6d906a0e72f30b21487541430ede43">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-base-10.0.1_59fcb44ea65709025c143488ce856adfcb58f829/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/10.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="25438f55fc6d906a0e72f30b21487541430ede43">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-base-10.0.1_59fcb44ea65709025c143488ce856adfcb58f829/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.firebase/firebase-database-connection/10.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="8010ae6ed32828a145b25ec97bc07b7a83c6318f">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-database-connection-10.0.1_5eb1ecee3a52961936345d1a562b009eb000eb9d/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.android.support/design/25.1.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="cd7951e04cfb9a8bf008d544a478d9a8d8192d38">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-25.1.1_eecaba9da3b55eaace3cb08b3b28b5b247496699/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.1.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="c03bf57f358aa10d253f21989e93bcf6014b3b17">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-25.1.1_e798259f37583675ae6700ebb0c2aec46d5739d3/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads-lite/10.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="b955cb3a1ad6f1b6ff728ce1e0cd592c1717b440">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-ads-lite-10.0.1_e885a0a54e5f357398594c2a56e4a975e82a8ca7/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-auth-base/10.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="e96c6974cf924e7ee3b230e6847d5731423388c9">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-auth-base-10.0.1_324985aa6d85a30d727557cc1f6c9f6e0d8aa238/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/10.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="44a694d4095be84c2888764b1f7256b385c030ad">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-location-10.0.1_3075ededc804cf0f44132bd30596effa00bb3782/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/10.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="27777b3cad3c20b1acab19f6e37fe3e03371bf6e">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-maps-10.0.1_0f2610c6cefbf9b29432a712b04fd847c5253671/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-auth/10.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="e2185aff89caeb337b1ffc36d5e525d8318e7cfe">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-auth-10.0.1_6d3d2391c7f76864a083dcb407b2b7e94c5c0c04/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-analytics-impl/10.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="e871881b36b32e6bfd271a830c6eeb54ff0fc185">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-analytics-impl-10.0.1_69e7b158803049021275a65978cc01f7d24f2d6c/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-games/10.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="1e11c68fec92a17c84dd8d1dd80e74c4e67b12e2">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-games-10.0.1_e19e1062da1bf98a7799034e8a5ba31c86fa62f0/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-clearcut/10.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="1d193729baf37df3d902a423291423a0df7e3779">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-clearcut-10.0.1_3713f38995eccc825cf276258859942b11dbd05d/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.1.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-25.1.1_8b69b2b52d18ea8cbb2e8f5da8a253e0cd03295f/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/10.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="d0460bf07cc3657e0be518ca01c174493951c6b8">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-ads-10.0.1_811442c4360aef131bd25e70cdd95b47993125c7/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-nearby/10.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="c6e1f361e9d61aece9dac39b77fcc98a337a144d">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-nearby-10.0.1_069dfbd1719315c8a365d1524914f757cad3afbd/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.firebase/firebase-messaging/10.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="4b17463c814bdc562fb0392fa3494063623a0904">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-messaging-10.0.1_c66863be20d7da3c5d89a127fb10662f039b6e43/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics/10.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="433f4d6aa5f21f19552afe0e6c5eff0fedba73ad">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-analytics-10.0.1_d79472016f46efda212ef71b538a83eb8793e322/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-panorama/10.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="92c871a22463a247e8a77a9f3fd231c278788c4a">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-panorama-10.0.1_8c317c5ce6f2288c811084fca24b8a35c7ab53ba/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.android.support/transition/25.1.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="15b049fedbd8e3926bf99d9e45dfc9b2a1043bb9">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-transition-25.1.1_fff7c50e6939dbff9867340bb84452fa69fb856e/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.android.support/palette-v7/24.0.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="734e80dffea7bd76c18ae256822a124c30d85850">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-palette-v7-24.0.0_7fd0cd625978cdbf46c8fd2d0af14e2ffbe617e9/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/25.1.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="c9649557905bf7a80fca9e0d54cbcb7662627860">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-25.1.1_9d17990a323c9e9af5a83df29328112e4c02182d/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.1.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="02741d05d4b697fba5e279e9881aaa1da0ca7c7f">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-25.1.1_99427271c4bd4c6f0fbf9b202fd7d883684a269b/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tagmanager-api/10.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="b1df8fa3d372a27e4e969ce00b00689ee1eed031">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tagmanager-api-10.0.1_60e4a75da44dd51afe984cf4b9c11429c26ca842/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.firebase/firebase-config/10.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="ffc15e965a9e8c28f24455eedd4cac215c45d1fc">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-config-10.0.1_50c60562cf89ce0eebfaf5d28aefaf87366e4afd/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tagmanager-v4-impl/10.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="f23ad0f8e58713ff4b55f61c0bbde3830378347c">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tagmanager-v4-impl-10.0.1_704340dfce6489b13b11953b3936821a8a957ebc/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.android.support/multidex/1.0.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="6666dd525c3da197e7d07f4f23ef5fc7881a697b">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-multidex-1.0.0_4136f04f3f9db18b48466e89275a2a18343b2432/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics-impl/10.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="6116e0e7069de7fc259aac8e08b84f32c2038231">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-analytics-impl-10.0.1_156406c3322dc93fd7798faf4815d52675dfbe46/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.firebase/firebase-appindexing/10.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="ae80d328a8548b4610ead6c624bab8c6a6984f5b">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-appindexing-10.0.1_d7ec9ea4b2671e293cbde8cbbd74fabbdf91c55f/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gass/10.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="57c2eceb8548de84509d1ebc293fedec53231f6c">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-gass-10.0.1_b83dd9ad01909c72fa4b3f23f8e7d544a4bb42bc/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.firebase/firebase-database-connection/10.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="8010ae6ed32828a145b25ec97bc07b7a83c6318f">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-database-connection-10.0.1_5eb1ecee3a52961936345d1a562b009eb000eb9d/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.1.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="3e04ac8ca644ea7baddf6fdcf72e15c79e9df94a">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-25.1.1_10d701dc31ad9caac5943858a8ff79fa56aba07f/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.1.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="e2719c102dca3a7a5b02ce07f769362da6ddb4ab">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-25.1.1_719dc9cf6287d7e520dff18af201992f39062dee/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-identity/10.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="a48dc0b148059764d32500be558702d5ff932058">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-identity-10.0.1_672ec6e20cdf8b846be83279328a45f5970c599f/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/10.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="6addaba208e21c6da776d0ca75b6b23a6ccd5499">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tasks-10.0.1_c8740e209aa5ca7d7c1df759f5564d01a0f75a98/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-fitness/10.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="7a64bf6dc775198eed9db9468a133adf7dfe6562">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-fitness-10.0.1_9bb51704af0221e224252495cb6211a0b9e24dcf/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-nearby/10.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="c6e1f361e9d61aece9dac39b77fcc98a337a144d">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-nearby-10.0.1_069dfbd1719315c8a365d1524914f757cad3afbd/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-places/10.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="f3e51e9c5233b8897f61e08a6a27bc36283c2724">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-places-10.0.1_6ea02bfa0ebf29ea3fc557e005f7c40896aa416a/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-auth-base/10.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="e96c6974cf924e7ee3b230e6847d5731423388c9">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-auth-base-10.0.1_324985aa6d85a30d727557cc1f6c9f6e0d8aa238/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/10.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="2d5d113b0352ab60946fc44c518cf68fd26cbb79">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-wallet-10.0.1_dfafdd8ea99f667c0a46d6f00206ce05e5d2d46c/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics/10.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="433f4d6aa5f21f19552afe0e6c5eff0fedba73ad">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-analytics-10.0.1_d79472016f46efda212ef71b538a83eb8793e322/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-games/10.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="1e11c68fec92a17c84dd8d1dd80e74c4e67b12e2">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-games-10.0.1_e19e1062da1bf98a7799034e8a5ba31c86fa62f0/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/10.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="44a694d4095be84c2888764b1f7256b385c030ad">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-location-10.0.1_3075ededc804cf0f44132bd30596effa00bb3782/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.firebase/firebase-storage-common/10.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="09cf6aa1390f95157e8295d02be7868f568825fc">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-storage-common-10.0.1_17968e417000189c54d9215782ec9d068c83dd0c/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics-impl/10.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="6116e0e7069de7fc259aac8e08b84f32c2038231">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-analytics-impl-10.0.1_156406c3322dc93fd7798faf4815d52675dfbe46/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tagmanager/10.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="971509bbe30bb7b971fc1c49d7b23d0d818830ac">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tagmanager-10.0.1_f7f0a825816af88d7dea04611d2dc81631c8bf94/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-drive/10.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="028f8255cb977b29cdffbfcf05caa0459686120c">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-drive-10.0.1_55cf6a406ec932ccb4b48d0e1fca70244caf729c/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appinvite/10.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="39907d5c8f5902fffef30160ca7447c93b82405c">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-appinvite-10.0.1_a0c81e66f21664b04a94495e4dad8dfd141196f3/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.firebase/firebase-crash/10.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="de29a39f9260f88151b1ef453140e71c76b6c415">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-crash-10.0.1_a70a4d132ea4e65e866a3cf08c3169f4e60bd351/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.android.support/transition/25.1.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="15b049fedbd8e3926bf99d9e45dfc9b2a1043bb9">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-transition-25.1.1_fff7c50e6939dbff9867340bb84452fa69fb856e/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wearable/10.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="408a599ac77cd17fe8e8919326bec617b3d005bd">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-wearable-10.0.1_64d5bf7db723c1d111b60f90b82079ee411251ca/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-plus/10.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="c14f0c89f28cf782e42581ab0aba5f63af39b3d2">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-plus-10.0.1_874ae2929f5e3548a9d22f39447a444ffc5be34f/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.android.support/design/25.1.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="cd7951e04cfb9a8bf008d544a478d9a8d8192d38">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-25.1.1_eecaba9da3b55eaace3cb08b3b28b5b247496699/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.firebase/geofire-android/2.1.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="0255d2343d1370f39024fb111568a705b2eb49cd">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.firebase-geofire-android-2.1.1_6a34b1b72c2f6b5dd345e17a974ac6770d0c00dd/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-identity/10.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="a48dc0b148059764d32500be558702d5ff932058">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-identity-10.0.1_672ec6e20cdf8b846be83279328a45f5970c599f/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.1.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="02741d05d4b697fba5e279e9881aaa1da0ca7c7f">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-25.1.1_99427271c4bd4c6f0fbf9b202fd7d883684a269b/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tagmanager-v4-impl/10.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="f23ad0f8e58713ff4b55f61c0bbde3830378347c">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tagmanager-v4-impl-10.0.1_704340dfce6489b13b11953b3936821a8a957ebc/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-instantapps/10.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="45305e6af414dab5aba6c3225081c2f15c3bdd1e">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-instantapps-10.0.1_da7b8f290ac873125951bc613c1a970b8983793f/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth/10.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="9cca2818594cc5348806d6662133491e7ea0fa8d">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-auth-10.0.1_ee6391c936cb66b8a4c51ac16dfbd11d18a3318e/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.1.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="0fb891e8f0cfba0513043a7bb357513d229ca2cd">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-25.1.1_e52cc0f8e389d56e529a6742c3fd738c0da22fb5/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.firebase/firebase-storage/10.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="dd39827d2067497e60e21da48a7926000b6d4b0c">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-storage-10.0.1_9a50ef82dad194692bd833a44620190dd87693e2/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-fitness/10.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="7a64bf6dc775198eed9db9468a133adf7dfe6562">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-fitness-10.0.1_9bb51704af0221e224252495cb6211a0b9e24dcf/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.1.1/jars/classes.jar"
+        jar="/home/cya/.android/build-cache/897822ba084c3555a38534b2c04ecf87b9b49c28/output/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
         sha1="0d191c1a09e4892d059e5ce749e4ad4e08129e35">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-25.1.1_aecc750ca1116d23dc0551681847888c46e1f57f/classes.dex" />
+        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_989b5f54716b1a04ba7823dc7fb2898e4cd88ca1/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tagmanager-api/10.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="b1df8fa3d372a27e4e969ce00b00689ee1eed031">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tagmanager-api-10.0.1_60e4a75da44dd51afe984cf4b9c11429c26ca842/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/24.0.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="b327fbe2fad414bc38cf0ce8f7efe1a38f572837">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-mediarouter-v7-24.0.0_c215fcb69771d9172d84074afeac6143b36f4737/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-iid/10.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="6bb5d347ebc0c6ef3c83a905222a688da5d2f7b4">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-iid-10.0.1_e040dd3bd0808674abd395bc75140f21e2791bd0/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="ecb496cc08dd52551fc5ec6db3bc0632e95a89bb">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-25.1.1_321d2ac21152126508ac255f1e6d1113d530fc5e/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gass/10.0.1/jars/classes.jar"
+        jar="/home/cya/.android/build-cache/ddfb7e62c8a98f1d92597e1ebc6394f54306362f/output/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="57c2eceb8548de84509d1ebc293fedec53231f6c">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-gass-10.0.1_b83dd9ad01909c72fa4b3f23f8e7d544a4bb42bc/classes.dex" />
+        sha1="7bde4c34162092e0a77e7f12dc85ed77c484cf5c">
+        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_bd64d9dd062abc18e4b68ce2d11fb16b68c5a873/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.1.1/jars/classes.jar"
-        jumboMode="false"
+        jar="/home/cya/.android/build-cache/9c11ea4ab4ba5cf7f9384ffd1c26087510a3817a/output/jars/classes.jar"
+        jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="e2719c102dca3a7a5b02ce07f769362da6ddb4ab">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-25.1.1_719dc9cf6287d7e520dff18af201992f39062dee/classes.dex" />
+        sha1="734e80dffea7bd76c18ae256822a124c30d85850">
+        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_34efa81bd570d7c5031b47abb1cdcddb8a14be22/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.firebase/firebase-database/10.0.1/jars/classes.jar"
-        jumboMode="false"
+        jar="/home/cya/.android/build-cache/552f4ebf0f89d7deb1cead002e071bf271548286/output/jars/classes.jar"
+        jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="8f128aeeb7e31271b28a7adb9dac1f3a6ed9f5e7">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-database-10.0.1_2085e254a783d92cf7f8ee8735ecc9d8b45c3f8b/classes.dex" />
+        sha1="9c1c44672010b6847f3744ec3702624d8d16c240">
+        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_85998c2d69ccafbca63e363ef77076960676710a/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/10.0.1/jars/classes.jar"
-        jumboMode="false"
+        jar="/home/cya/.android/build-cache/d04d8712c2d497d007fde936a917b12d0fc4f7a0/output/jars/classes.jar"
+        jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="486371f97baad8e607f332f20fee1d3dd00a731a">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-iid-10.0.1_603952a4d96f539816cd810e31f9bbf29289b064/classes.dex" />
+        sha1="d0460bf07cc3657e0be518ca01c174493951c6b8">
+        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_ad3828a294ca514aec77064e02c8940a09813b7f/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-places/10.0.1/jars/classes.jar"
-        jumboMode="false"
+        jar="/home/cya/.android/build-cache/e0d10621d659ea861fb928c86187b5b4dccca2df/output/jars/classes.jar"
+        jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="f3e51e9c5233b8897f61e08a6a27bc36283c2724">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-places-10.0.1_6ea02bfa0ebf29ea3fc557e005f7c40896aa416a/classes.dex" />
+        sha1="f23ad0f8e58713ff4b55f61c0bbde3830378347c">
+        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_9397a919fd06730844028c40f0ac9f80520bf302/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.firebase/firebase-crash/10.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="de29a39f9260f88151b1ef453140e71c76b6c415">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-crash-10.0.1_a70a4d132ea4e65e866a3cf08c3169f4e60bd351/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/10.0.1/jars/classes.jar"
+        jar="/home/cya/.android/build-cache/c98e57c3926988da1d08f001608f79798638dc7d/output/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
         sha1="2d5d113b0352ab60946fc44c518cf68fd26cbb79">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-wallet-10.0.1_dfafdd8ea99f667c0a46d6f00206ce05e5d2d46c/classes.dex" />
+        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_4534e14b94c2e4f8843aed2fca2033d1c2b07070/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast/10.0.1/jars/classes.jar"
+        jar="/home/cya/.android/build-cache/7ac56c4fe4f03258692df4e059239bd14efb4de6/output/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="771267c5b0c7a5b348d3205dcfa1f871af7e0177">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-cast-10.0.1_0f1a30ef358053bfaf001387d22b0e799949b666/classes.dex" />
+        sha1="408a599ac77cd17fe8e8919326bec617b3d005bd">
+        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_9dcb97ce22a6d81f61dacfbfea2c67695305bfa9/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-instantapps/10.0.1/jars/classes.jar"
+        jar="/home/cya/.android/build-cache/32d4788c91c7c60426979752a37c54b7c462b876/output/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="45305e6af414dab5aba6c3225081c2f15c3bdd1e">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-instantapps-10.0.1_da7b8f290ac873125951bc613c1a970b8983793f/classes.dex" />
+        sha1="6116e0e7069de7fc259aac8e08b84f32c2038231">
+        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_22ccb64d605d24d282387b5effc641ef2b5a20c9/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-plus/10.0.1/jars/classes.jar"
-        jumboMode="false"
+        jar="/home/cya/.android/build-cache/681f5f481c4962149ef2f42fcfb744d3a4f5d721/output/jars/classes.jar"
+        jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="c14f0c89f28cf782e42581ab0aba5f63af39b3d2">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-plus-10.0.1_874ae2929f5e3548a9d22f39447a444ffc5be34f/classes.dex" />
+        sha1="57c2eceb8548de84509d1ebc293fedec53231f6c">
+        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_3e518234beaebe3889a48ed90c305dc8d9fe9dc5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/cya/.android/build-cache/076d5dec4e4fff653a90839af448d61f86c65dfe/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ecb496cc08dd52551fc5ec6db3bc0632e95a89bb">
+        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_4da16b292309c30caa0188fb905a9f9b69cc4768/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/cya/.android/build-cache/35ec75c2d19cbeb8005de9bf12f9c89541fe95e2/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="756f6297eef79784f5e356dcd4f39865028b2bd0">
+        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_2017b646d1e90448a6304b9cd3010fc6abc9e79d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/cya/.android/build-cache/d60e843a2b9e9c371e3dc4f3494ec8048478912e/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="9cca2818594cc5348806d6662133491e7ea0fa8d">
+        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_426e4c9e877e0abe243741189044857a913f3d6a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/cya/.android/build-cache/3632e7d27a67735a2fc65d8754c7e26b5197bc8f/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ae80d328a8548b4610ead6c624bab8c6a6984f5b">
+        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_35f2672c6c970dcbec4d2549ff45e6acc174bb98/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/cya/.android/build-cache/3b4cec76cbb6c2fd979448ff41c3539a203fa0e0/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="de29a39f9260f88151b1ef453140e71c76b6c415">
+        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_1885ed5dd1988728d1017e13e6d21481f6738634/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/cya/.android/build-cache/1a663fc8c3dc6794fbd4b07af71318d3d5899626/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_eaea45f9dbcead1f7cfa9fd2e07021e61560cc67/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/cya/.android/build-cache/f043815d9895e63fa470350dc5ae3898d0792d8d/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="25438f55fc6d906a0e72f30b21487541430ede43">
+        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_51f358ae9f0d38b0a31e2f54fa0d64a9ce2f741d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/cya/gitclones/Boop/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c82741bc129dd5f99f11a4ab8666ae24262053b6">
+        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_c85bd201a40a0ef41b228c6e8ac4df271b36644c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/cya/.android/build-cache/6763863653fb20d532dc4bf6f1fcb3219085d64e/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="f6cf557be4dbd0282ea2388633e5378634423226">
+        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_f75a8727e0850d9dd2e08aebf28e13b9e3b83049/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -831,381 +192,435 @@
     </item>
     <item
         is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.firebase/firebase-storage/10.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="dd39827d2067497e60e21da48a7926000b6d4b0c">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-storage-10.0.1_9a50ef82dad194692bd833a44620190dd87693e2/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth/10.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="9cca2818594cc5348806d6662133491e7ea0fa8d">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-auth-10.0.1_ee6391c936cb66b8a4c51ac16dfbd11d18a3318e/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tagmanager/10.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="971509bbe30bb7b971fc1c49d7b23d0d818830ac">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tagmanager-10.0.1_f7f0a825816af88d7dea04611d2dc81631c8bf94/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.firebase/geofire-android/2.1.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="0255d2343d1370f39024fb111568a705b2eb49cd">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.firebase-geofire-android-2.1.1_6a34b1b72c2f6b5dd345e17a974ac6770d0c00dd/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.firebase/firebase-storage-common/10.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="09cf6aa1390f95157e8295d02be7868f568825fc">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-storage-common-10.0.1_17968e417000189c54d9215782ec9d068c83dd0c/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-drive/10.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="028f8255cb977b29cdffbfcf05caa0459686120c">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-drive-10.0.1_55cf6a406ec932ccb4b48d0e1fca70244caf729c/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wearable/10.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="408a599ac77cd17fe8e8919326bec617b3d005bd">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-wearable-10.0.1_64d5bf7db723c1d111b60f90b82079ee411251ca/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-iid/10.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="6bb5d347ebc0c6ef3c83a905222a688da5d2f7b4">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-iid-10.0.1_e040dd3bd0808674abd395bc75140f21e2791bd0/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.1.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="0d191c1a09e4892d059e5ce749e4ad4e08129e35">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-25.1.1_aecc750ca1116d23dc0551681847888c46e1f57f/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-analytics/10.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="4c829ff0ccfecb28a999ee46d9e75948dfc777a4">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-analytics-10.0.1_5cc07ae2e7d054767bc2cb01069b816a288dca39/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appinvite/10.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="39907d5c8f5902fffef30160ca7447c93b82405c">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-appinvite-10.0.1_a0c81e66f21664b04a94495e4dad8dfd141196f3/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-safetynet/10.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="f6cf557be4dbd0282ea2388633e5378634423226">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-safetynet-10.0.1_ef5f39f8631d51ac9dffe0ce7abb200b7ac7b0ce/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.1.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="0fb891e8f0cfba0513043a7bb357513d229ca2cd">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-25.1.1_e52cc0f8e389d56e529a6742c3fd738c0da22fb5/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast/10.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="771267c5b0c7a5b348d3205dcfa1f871af7e0177">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-cast-10.0.1_0f1a30ef358053bfaf001387d22b0e799949b666/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-awareness/10.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="4385ccc0a88b33d182a836eadb47be55c8eb1107">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-awareness-10.0.1_d77d482a2d6f6fcb0da8797eabecddc9f0938e10/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/24.0.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="b327fbe2fad414bc38cf0ce8f7efe1a38f572837">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-mediarouter-v7-24.0.0_c215fcb69771d9172d84074afeac6143b36f4737/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/10.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="df1cb17511aabbb63264a0024949d1e42502a512">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-cast-framework-10.0.1_2aae6620c716a832e89c2a69a8b79223787fa67f/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-vision/10.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="ba6aa5e69ef31dee57208125323cee958fc67565">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-vision-10.0.1_7a7cadaef3eb591e41e97f788e395b065a47666a/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/24.0.0/jars/libs/internal_impl-24.0.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="b6763651ec29b4c95e7bbe63fc393ffcc8c4c2c5">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.0.0_d36e454d5115e54c0511d84861525f7b1ed45c3b/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.1.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="7bde4c34162092e0a77e7f12dc85ed77c484cf5c">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-25.1.1_36f58e1d1ab0442ff3aa1dfda7c4ae4ee013d645/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/10.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="8308ed003522a2ee8958311afcc4cfd0470377cd">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-gcm-10.0.1_6a8133fc594807011d1c583c7d5be16d8d3a5327/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.firebase/firebase-messaging/10.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="4b17463c814bdc562fb0392fa3494063623a0904">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-messaging-10.0.1_c66863be20d7da3c5d89a127fb10662f039b6e43/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="ecb496cc08dd52551fc5ec6db3bc0632e95a89bb">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-25.1.1_321d2ac21152126508ac255f1e6d1113d530fc5e/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/10.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="6addaba208e21c6da776d0ca75b6b23a6ccd5499">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tasks-10.0.1_c8740e209aa5ca7d7c1df759f5564d01a0f75a98/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/10.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="8308ed003522a2ee8958311afcc4cfd0470377cd">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-gcm-10.0.1_6a8133fc594807011d1c583c7d5be16d8d3a5327/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.1.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="7bde4c34162092e0a77e7f12dc85ed77c484cf5c">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-25.1.1_36f58e1d1ab0442ff3aa1dfda7c4ae4ee013d645/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads-lite/10.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="b955cb3a1ad6f1b6ff728ce1e0cd592c1717b440">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-ads-lite-10.0.1_e885a0a54e5f357398594c2a56e4a975e82a8ca7/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/10.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="486371f97baad8e607f332f20fee1d3dd00a731a">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-iid-10.0.1_603952a4d96f539816cd810e31f9bbf29289b064/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/10.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="756f6297eef79784f5e356dcd4f39865028b2bd0">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-basement-10.0.1_ef3d40d85c6b7ccc9e1d79265e961b25fb3f87f1/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.1.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-25.1.1_8b69b2b52d18ea8cbb2e8f5da8a253e0cd03295f/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/10.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="df1cb17511aabbb63264a0024949d1e42502a512">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-cast-framework-10.0.1_2aae6620c716a832e89c2a69a8b79223787fa67f/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.firebase/firebase-common/10.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="eb0d830e3eabb9deb9ec44869cf7ac7ea1ad794c">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-common-10.0.1_a9f31513d169335285327b1e9364332951db5353/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-auth/10.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="e2185aff89caeb337b1ffc36d5e525d8318e7cfe">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-auth-10.0.1_6d3d2391c7f76864a083dcb407b2b7e94c5c0c04/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.1.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="c03bf57f358aa10d253f21989e93bcf6014b3b17">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-25.1.1_e798259f37583675ae6700ebb0c2aec46d5739d3/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/10.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="27777b3cad3c20b1acab19f6e37fe3e03371bf6e">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-maps-10.0.1_0f2610c6cefbf9b29432a712b04fd847c5253671/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.android.support/gridlayout-v7/25.1.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="9c1c44672010b6847f3744ec3702624d8d16c240">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-gridlayout-v7-25.1.1_19e008f128145ba77ae56204d6c53c4042d140b1/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-analytics-impl/10.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="e871881b36b32e6bfd271a830c6eeb54ff0fc185">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-analytics-impl-10.0.1_69e7b158803049021275a65978cc01f7d24f2d6c/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.firebase/firebase-database/10.0.1/jars/classes.jar"
+        jar="/home/cya/.android/build-cache/d8abdf9f140acb7da34074c4d2a8a187311cf548/output/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
         sha1="8f128aeeb7e31271b28a7adb9dac1f3a6ed9f5e7">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-database-10.0.1_2085e254a783d92cf7f8ee8735ecc9d8b45c3f8b/classes.dex" />
+        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_fc9482a1bca9b6b4c7f9ae7e42b7795efa0f1ac7/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-panorama/10.0.1/jars/classes.jar"
+        jar="/home/cya/.android/build-cache/471cc2a149711c34cc137c9424ae5d9e5d5cd560/output/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="92c871a22463a247e8a77a9f3fd231c278788c4a">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-panorama-10.0.1_8c317c5ce6f2288c811084fca24b8a35c7ab53ba/classes.dex" />
+        sha1="771267c5b0c7a5b348d3205dcfa1f871af7e0177">
+        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_90892eb2871c22e60ca5e7fb5eb18c9bf6ed22cc/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.android.support/palette-v7/24.0.0/jars/classes.jar"
-        jumboMode="false"
+        jar="/home/cya/.android/build-cache/bfb735a778dcc5cf1ccbcfe0765bfd37adcf2acd/output/jars/classes.jar"
+        jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="734e80dffea7bd76c18ae256822a124c30d85850">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-palette-v7-24.0.0_7fd0cd625978cdbf46c8fd2d0af14e2ffbe617e9/classes.dex" />
+        sha1="a48dc0b148059764d32500be558702d5ff932058">
+        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_00b369897e4cc4aa828b1c048e49e5aeea2a6ec3/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/home/cya/gitclones/Boop/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-clearcut/10.0.1/jars/classes.jar"
+        jar="/home/cya/.android/build-cache/3c726d50108dc770252165bd93507a1b37b071d0/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="cd7951e04cfb9a8bf008d544a478d9a8d8192d38">
+        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_f15dc23f36cd3f3d6fc55a05b4c183979d0137d7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/cya/.android/build-cache/d340d4f8474e6c6ffc588e5c964c0162d077a44d/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="6bb5d347ebc0c6ef3c83a905222a688da5d2f7b4">
+        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_8eab540b28f66906f5ca86d483d1670f51055a75/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/cya/.android/build-cache/871ae4fb60d8fe464c8235763cca35b53ac4daee/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e871881b36b32e6bfd271a830c6eeb54ff0fc185">
+        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_cc2321dc9fb430a46260a938958e1c323127b0f0/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/cya/gitclones/Boop/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ed8821516ec97da4648c8df2f4971a3ac4dbeb46">
+        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_350711ed88624d87d1ab7242725942a6f55ff7f6/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/cya/.android/build-cache/93a967d356b59344fd028ff658e9c258ee165753/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="971509bbe30bb7b971fc1c49d7b23d0d818830ac">
+        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_865b24ff4e69ee37b99c61e1cf91e14ab2a58ec4/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/cya/.android/build-cache/9cec29ba129d4b1e2a16239f0d8077e923019dbe/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c9649557905bf7a80fca9e0d54cbcb7662627860">
+        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_b88a9b83a6e0767f735cc7879b96d129c7804cf3/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/cya/.android/build-cache/694ead926910f97428dc213080b5956aa55404ed/output/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
         sha1="1d193729baf37df3d902a423291423a0df7e3779">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-clearcut-10.0.1_3713f38995eccc825cf276258859942b11dbd05d/classes.dex" />
+        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_655cec01b4200b951dfe8cfb440e9034068b2c98/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/home/cya/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/25.1.1/support-annotations-25.1.1.jar"
-        jumboMode="false"
+        jar="/home/cya/.android/build-cache/4f4535a159ad5feadf0ea951f4975cd34655d45f/output/jars/classes.jar"
+        jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="b59b6ee8d6ecc03e672d253800430343493a6ed8">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-25.1.1_de6d787e27028ebda35ec589227b417235f9310b/classes.dex" />
+        sha1="e96c6974cf924e7ee3b230e6847d5731423388c9">
+        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_288656d11b2ab1fcb93dbc4d7065d0e16ccb75e5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/cya/.android/build-cache/418461e5b0bfcf7e545c0666a335e21d9413a286/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e2185aff89caeb337b1ffc36d5e525d8318e7cfe">
+        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_4630054f6191b7ae38a7971ee65fed0c62f9b041/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/cya/.android/build-cache/76fb49927389fea7aee5f182865722f3b4c9c2d8/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="02741d05d4b697fba5e279e9881aaa1da0ca7c7f">
+        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_ed972d2506c4ba7a7dfe873e77b769ef1675c5ab/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/cya/.android/build-cache/fc4a9d902539dbe5e468419fec809c64293ef066/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="39907d5c8f5902fffef30160ca7447c93b82405c">
+        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_fd5f417507e83f2efbfe4baed686e9ff84122e7e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/cya/.android/build-cache/c7e963d0ad02c8716bed45cf8510e6aa8147bf5e/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c14f0c89f28cf782e42581ab0aba5f63af39b3d2">
+        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_d6dc58d23f8a318e023c9f53bbc5e58da9ff9089/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/cya/.android/build-cache/b4369cf4f78bb5c762fd931d7ec1f89c8887b929/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="4c829ff0ccfecb28a999ee46d9e75948dfc777a4">
+        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_1efdba00c3dbf0c419fa0bbae61fd81bf15c1eec/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/cya/.android/build-cache/e212bf7994d6e4d134d52b02a8b3c9300bf06b61/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ba6aa5e69ef31dee57208125323cee958fc67565">
+        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_e7951fb564eb5a6cafa316ad5271f63596df1a63/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/cya/.android/build-cache/3f163f4a97432a9a04ef5a52811a519ff178035c/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ffc15e965a9e8c28f24455eedd4cac215c45d1fc">
+        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_489e3c322cf326e767ab07b4abd412cf203300e9/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/cya/.android/build-cache/1d3e26a4bdd04da805a3659b632a77c72cfe7942/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="8010ae6ed32828a145b25ec97bc07b7a83c6318f">
+        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_9df7985969eb605e85c486a9790228e0337488cf/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/cya/.android/build-cache/be9fea28c3ce979303b9731d7fb5365c31aec787/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b955cb3a1ad6f1b6ff728ce1e0cd592c1717b440">
+        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_5c8c8cc629867a9cef4ad9f1632acce100a650f4/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/cya/.android/build-cache/57a24b982773521b91aba89620fd13eb602657c6/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="f3e51e9c5233b8897f61e08a6a27bc36283c2724">
+        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_2c1de89edb0e3c55958ea7bcbc06c1dae82c3f4e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/cya/.android/build-cache/1c6207d07221e40eeed1c74ccd8cdb3ddf8a28d8/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="1e11c68fec92a17c84dd8d1dd80e74c4e67b12e2">
+        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_2290bfb45515361f9d773976e55541b4e81a62d1/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/cya/.android/build-cache/a5f95d98cc9518815ef987d03b2e50aaf51a5e38/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c03bf57f358aa10d253f21989e93bcf6014b3b17">
+        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_bd7f2703746a50bc92d912072fda6c5238a489e8/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/cya/.android/build-cache/f8b69da0df2f566229c8477fb8f6a84c9e10b9d7/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="8308ed003522a2ee8958311afcc4cfd0470377cd">
+        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_ade3b6373000c0153243026b41ea6cba18f51c18/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/cya/.android/build-cache/4b5e06be478ad2d6e27f71f622903e85c403e250/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="45305e6af414dab5aba6c3225081c2f15c3bdd1e">
+        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_aa4b59db9135d21f62c0c57fcc6ac0fe5480eebb/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/cya/.android/build-cache/03a7dad63e29a55b19dccca2aa8709623deab6f6/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="eb0d830e3eabb9deb9ec44869cf7ac7ea1ad794c">
+        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_74cc1c2cb02f1b0bc543fc1afd0072fdf6472f5e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/cya/.android/build-cache/eeac9c4d68767cfe2f07bd149dfb66919e91dd38/output/jars/libs/internal_impl-24.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b6763651ec29b4c95e7bbe63fc393ffcc8c4c2c5">
+        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.0.0_09eb9cff0554edaf29916404deb164f60adae867/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/cya/.android/build-cache/271553a4594896e9ed46ea8f51f3f32b58427732/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b1df8fa3d372a27e4e969ce00b00689ee1eed031">
+        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_36b06d72f8164f7112c46ab1727f649a54571835/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/cya/.android/build-cache/406c25b812921a55c4515616ecd8ec2949e84724/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="3e04ac8ca644ea7baddf6fdcf72e15c79e9df94a">
+        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_af99586d6792e4a58632abc5655bae159dcce943/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/cya/.android/build-cache/a91105e0f4c657deb43199fac0f4133716cc75b0/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="44a694d4095be84c2888764b1f7256b385c030ad">
+        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_4f07923d5f24a7aaabff62cc1cf6577e8f9a7b14/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/cya/.android/build-cache/404c4b71e6a4a3db46f3f60abbc12fb7c7aba143/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="0fb891e8f0cfba0513043a7bb357513d229ca2cd">
+        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_50e1875feccae0ee10d3c8658e1e8f6b5b900632/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/cya/.android/build-cache/5322d342025acd005979491f3afd2edba15d73dd/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="433f4d6aa5f21f19552afe0e6c5eff0fedba73ad">
+        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_f5c2b36dbf001fc2864554c3a4894319c19d1c42/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/cya/.android/build-cache/a2db2a768f541f9eb2a84bb711317fa685380d09/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e2719c102dca3a7a5b02ce07f769362da6ddb4ab">
+        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_28e7b021a8982c2578da394e4b27c0b7f0f5a627/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/cya/.android/build-cache/eadeb7a499cfe5537071bc0e33d5e84701130cf7/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="6666dd525c3da197e7d07f4f23ef5fc7881a697b">
+        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_adea88ee4d8cdf01dd4e2bd0cc6672a487d22f26/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/cya/.android/build-cache/15fced774bc3c2c2371fb6169562399662d90c61/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="486371f97baad8e607f332f20fee1d3dd00a731a">
+        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_473fb070e710f27d5b722f16fd803c9cb19c67bc/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/cya/.android/build-cache/6816d2d079fcd346f251eeb09c99cadda182cccc/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="4b17463c814bdc562fb0392fa3494063623a0904">
+        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_589e8ad24053b5d318aaddc3120b5b17171b05d6/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/cya/.android/build-cache/42ef8a56f0446c8b1587496c23e8b736eaa940d2/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="09cf6aa1390f95157e8295d02be7868f568825fc">
+        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_d58d609ef6e545fcea7790c5fc990d2886daa09b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/cya/.android/build-cache/b90f57feda06ac9edf078c198b93e3514b7c7633/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="6addaba208e21c6da776d0ca75b6b23a6ccd5499">
+        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_94bad0bd313830bdc4b1fa2bff1b7c2c5f33f1f3/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/cya/.android/build-cache/81b0b27667cb1b054d3d1c35b056253c46ed6b9c/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="dd39827d2067497e60e21da48a7926000b6d4b0c">
+        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_a9ff1295af3df972c00d17f29169a15947f5ca14/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/cya/.android/build-cache/3a74d4f6002419dba7a7a4b1f341938ec84628b7/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="4385ccc0a88b33d182a836eadb47be55c8eb1107">
+        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_2961cd1f2d4720eddcc88cb2385288f23c5d0805/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/cya/.android/build-cache/f029f5f638e27fb38a287cd3b36b8b98b8cc2b7e/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="15b049fedbd8e3926bf99d9e45dfc9b2a1043bb9">
+        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_c11fc15d8dc137f76afa14e912eced6a8f7604f5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/cya/.android/build-cache/11a10738b7317977a414c6b7697d9f224a4f236c/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c6e1f361e9d61aece9dac39b77fcc98a337a144d">
+        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_e74cb7dd3b985a5a3c3824049a4ffcb638ee8ce0/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/cya/.android/build-cache/eeac9c4d68767cfe2f07bd149dfb66919e91dd38/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b327fbe2fad414bc38cf0ce8f7efe1a38f572837">
+        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_913c350da6b63622c18b4765d5f18097abdd11f1/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/cya/.android/build-cache/d32e6c52fbf5ef0310e316c84fbcc078e16cdc44/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="028f8255cb977b29cdffbfcf05caa0459686120c">
+        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_eefb1459af0d0c6f290a29d6ac9bd4fe6c69043e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/cya/.android/build-cache/1e9b47bc9b7f52740b5edca7511f34c2035a08cf/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="27777b3cad3c20b1acab19f6e37fe3e03371bf6e">
+        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_0ccf4f355675ba018a889926f14f8395037d0b72/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/cya/.android/build-cache/c5172ece5501ddb081800395d9103661411634f0/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="92c871a22463a247e8a77a9f3fd231c278788c4a">
+        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_854b6feb7aff8a7d909ff97c629d016c2fcae34b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/cya/.android/build-cache/2a9c130029f7b7cb5369f86671a06a9f3f3470c5/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="7a64bf6dc775198eed9db9468a133adf7dfe6562">
+        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_820a10df8fe0e81d682cc0fe5f59e7c06299710f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/cya/.android/build-cache/3f0cfeb14875be139cc2335a23b2352bac7a76ea/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="0255d2343d1370f39024fb111568a705b2eb49cd">
+        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_97d89b601f2cd4b7026cbc0d8bb966e24a45ee99/classes.dex" />
     </item>
 
 </items>
