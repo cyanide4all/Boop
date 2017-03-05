@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -32,7 +34,15 @@ public class Register extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        getSupportActionBar().hide();
+
         setContentView(R.layout.activity_register);
+
+        fontChanger.change(this,findViewById(R.id.activity_register),"fonts/Neris-Thin.otf");
 
         correo = (EditText) findViewById(R.id.mail);
         pass = (EditText) findViewById(R.id.pass);
@@ -71,7 +81,7 @@ public class Register extends AppCompatActivity {
                 if(pass.getText().length()==0)
                     pass.setError(getResources().getString(R.string.ContrasenaVacia));
                 else {
-                    if(pass.getText().length()<4)
+                    if(pass.getText().length()<6)
                         pass.setError(getResources().getString(R.string.ContrasenaCorta));
                     else {
                         if(!comprobarContrasenas())
@@ -156,7 +166,7 @@ public class Register extends AppCompatActivity {
 
     public boolean comprobarContrasenas()
     {
-        if (pass.getText().length()<4)
+        if (pass.getText().length()<6)
             return false;
         else
         {

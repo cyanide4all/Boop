@@ -21,7 +21,7 @@
     <string name="AceptarRegistro">Registrate</string>
     <string name="CancelarRegistro">Cancelar</string>
     <string name="CondicionesUso">Ver politica y condiciones de uso\n</string>
-    <string name="intro">\n¡Bienvenido a BooP! Para completar el proceso de registro cubra todos los campos de texto. A continuación en tu perfil podrás seleccionar una foto y poner una breve descripción sobre tu persona.\n</string>
+    <string name="intro">\n¡Bienvenido a Boop! Para completar el proceso de registro cubra todos los campos de texto. A continuación en tu perfil podrás seleccionar una foto y poner una breve descripción sobre tu persona.\n</string>
     <string name="CorreoNoValido">Correo electrónico no válido</string>
     <string name="ContrasenaFallida">No coenciden las contraseñas</string>
     <string name="ComprobarDatos">Comprueba que el correo sea válido y las contraseñas coencidan</string>
