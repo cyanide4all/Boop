@@ -23,10 +23,10 @@
             android:layout_weight="1">
 
             <TextView
-                android:text="none"
+                android:id="@+id/VPnombre"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/VPnombre"
+                android:text="..."
                 android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
 
             <TextView
@@ -36,10 +36,10 @@
                 android:id="@+id/textView8" />
 
             <TextView
-                android:text="biografía"
+                android:id="@+id/VPbio"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/VPbio"
+                android:text="..."
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
             <LinearLayout

@@ -17,6 +17,7 @@ import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.example.cya.boop.core.Boop;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -179,6 +180,10 @@ public class NuevoBoop extends AppCompatActivity {
         boop.setNombre(Bnombre.getText().toString());
         boop.setDescripcion(Bdescripcion.getText().toString());
         //TODO pillar las excepciones que pueda soltar el apartado anterior
+
+        //Metemos la id del creador en el boop
+        String idUser = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        boop.setidCreador(idUser);
 
         if(setDateAndTime(boop)){
             //Publicamos el boop

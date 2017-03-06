@@ -60,14 +60,16 @@ public class VerBoop extends DialogFragment {
         descripcion = (TextView) view.findViewById(R.id.VBdescripcion);
         descripcion.setText(boop.getDescripcion());
 
+        /*
         creador = (TextView) view.findViewById(R.id.VBCreador);
         creador.setText(boop.getNombreCreador());
+        */
 
         popularidadUsuario = (TextView) view.findViewById(R.id.VBPopularidad);
         popularidadUsuario.setText(String.format(Locale.ENGLISH, " %d" ,boop.getPopularidad()));
 
         empieza = (TextView) view.findViewById(R.id.VBhoraIni);
-        termina.setText(boop.getFechaIni().toString());
+        empieza.setText(boop.getFechaIni().toString());
 
         termina = (TextView) view.findViewById(R.id.VBhoraFin);
         termina.setText(boop.getFechaFin().toString());
