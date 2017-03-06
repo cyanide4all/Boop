@@ -27,8 +27,8 @@ public class Boop implements Serializable{
     private String nombre;
     //Descripción del boop, a mostrar al seleccionar para ver los detalles del boop
     private String descripcion;
-    //Nombre de usuario del creador
-    private String nombreCreador;
+    //ID del usuario creador del boop
+    private String idCreador;
     //Popularidad de este creador
     private int popularidad;
     //Enlazar a foto de usuario o de Boop. //ToDo foto de usuario o sacar una al instante para mostrar Boop
@@ -56,7 +56,7 @@ public class Boop implements Serializable{
     public Boop(){
         this.nombre = "";
         this.descripcion = "";
-        this.nombreCreador = "";
+        this.idCreador = "";
         this.popularidad = 0;
         this.foto = "";
         this.tipo = clasificacion.General;
@@ -138,9 +138,9 @@ public class Boop implements Serializable{
     public boolean saberSiAsisto (String idUsuario) {return asistentes.contains(idUsuario);}
 
     //RELACIONADOS CON EL USUARIO QUE CREA ESTE BOOP
-    public String getNombreCreador() {return nombreCreador;}
+    public String getidCreador() {return idCreador;}
 
-    public void setNombreCreador(String n) {this.nombreCreador = n;}
+    public void setidCreador(String n) {this.idCreador = n;}
 
     public int getPopularidad() {return popularidad;}
 
