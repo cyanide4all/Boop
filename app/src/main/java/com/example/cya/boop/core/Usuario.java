@@ -18,6 +18,8 @@ public class Usuario implements Serializable {
     //Fecha de nacimiento en principio para restringción de edad. Puede que luego se permita
     // ocultarlo para por si mujer subnormal
     private String fechaNac;
+    //Popularidad del usuario
+    private int karma;
 
     //Constructor vacío por tocarle los huevos a oskaru
     public Usuario (){}
@@ -56,5 +58,21 @@ public class Usuario implements Serializable {
         DatabaseReference myRef = database.getReference("Usuarios");
 
         myRef.child(idUsuario).setValue(this);
+    }
+
+    public int getKarma() {return this.karma;}
+
+    public void setKarma (int karma) {this.karma = karma;}
+
+    public void incrementarKarma ()
+    {
+        this.karma += Boop.KARMA_VALUE;
+    }
+
+    public void decrementarKarma ()
+    {
+        this.karma -= Boop.KARMA_VALUE;
+        //if(karma < 0)     //Todo vigilar si carma es muy bajo mirar de banear
+        //    karma = 0;
     }
 }

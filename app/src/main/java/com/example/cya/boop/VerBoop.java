@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.ToggleButton;
@@ -23,7 +24,6 @@ public class VerBoop extends DialogFragment {
 
     private int margin;
     private Boop boop;
-    private Usuario usuario;
     private TextView nombre;
     private TextView descripcion;
     private TextView creador;
@@ -35,9 +35,13 @@ public class VerBoop extends DialogFragment {
     private TextView asisten;
     private RatingBar estrellas;
 
+    private ImageButton likeBoop;
+    private ImageButton dislikeBoop;
     private Button botonSalir;
     private ToggleButton botonAsisitir;
     private Button botonChat;
+
+    private String uId;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -51,6 +55,7 @@ public class VerBoop extends DialogFragment {
         //Recogemos el boop a traves de su bundle
         Bundle bundle = getArguments();
         this.boop = (Boop) bundle.getSerializable("boop");
+        uId = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
         final View view = inflater.inflate(R.layout.activity_ver_boop, container, false);
         //Transformamos el boop en cosas visibles
@@ -84,9 +89,29 @@ public class VerBoop extends DialogFragment {
         asisten.setText(String.format(Locale.ENGLISH, " %d" ,boop.getBoopers()));
 
 
-        estrellas = (RatingBar) view.findViewById(R.id.VBratingBar);
-        estrellas.setNumStars(5);
-        estrellas.setRating((float)2.5);
+        dislikeBoop = (ImageButton) view.findViewById(R.id.noMeGusta);
+        dislikeBoop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                boop.incrementarPopularidad(uId);
+                dislikeBoop.setClickable(false);
+                likeBoop.setClickable(true);
+                //Todo Pintar o no pintar
+            }
+        });
+
+        likeBoop = (ImageButton) view.findViewById(R.id.meGusta);
+        likeBoop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                boop.decrementarPopularidad(uId);
+                dislikeBoop.setClickable(true);
+                likeBoop.setClickable(false);
+                //Todo Pintar o no pintar
+            }
+        });
+
+        //likeOdislike(); //Pinta los botones segun haya votado Todo descomentar esto cuando felipeman haga los botones
 
         botonChat = (Button) view.findViewById(R.id.VBsalaChat);
         botonChat.setFocusable(false); //ToDo para la sig iteraccion. Ver como hacer sala chat
@@ -95,15 +120,25 @@ public class VerBoop extends DialogFragment {
         botonSalir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                puntuarBoop();
                 getActivity().onBackPressed();  //Mirar si esto funca correctamente
             }
         });
 
         botonAsisitir = (ToggleButton) view.findViewById(R.id.VBasistir);
-        saberSiAsisto();
-
-        //Todo Alex se qedo haciendo listener de este boton
+        toggleAssist();
+        botonAsisitir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (!botonAsisitir.isChecked()) {
+                    boop.asistir(uId);
+                    botonAsisitir.setChecked(true);
+                }else
+                {
+                    boop.noAsistir(uId);
+                    botonAsisitir.setChecked(false);
+                }
+            }
+        });
 
         return view;
     }
@@ -116,42 +151,20 @@ public class VerBoop extends DialogFragment {
         super.onResume();
     }
 
-    //@Override
-    public boolean onKeyDown(int keyCode, KeyEvent event)
+    //Funcion de puntuacion de votar:
+    public void puntuarBoopPositivamente()
     {
-        if ((keyCode == KeyEvent.KEYCODE_BACK))
-        {
-            puntuarBoop();
-
-            return true;
-        }
-
-        return getActivity().onKeyDown(keyCode, event);
+        boop.incrementarPopularidad(uId);
     }
 
-    //Funcion de puntuacion de estrellas:
-    public void puntuarBoop() {
-        int rating = (int) this.estrellas.getRating();
-
-        switch (rating) {
-            case (1):
-                boop.decrementarPopularidad(20);
-                break;
-            case (2):
-                boop.decrementarPopularidad(10);
-                break;
-            case (4):
-                boop.incrementarPopularidad(10);
-                break;
-            case (5):
-                boop.incrementarPopularidad(20);
-                break;
-        }
+    public void puntuarBoopNegativamente()
+    {
+        boop.decrementarPopularidad(uId);
     }
 
-    public void saberSiAsisto() {
+    public void toggleAssist() {
 
-        if (boop.saberSiAsisto(FirebaseAuth.getInstance().getCurrentUser().getUid()))
+        if (boop.saberSiAsisto(uId))
             {
             botonAsisitir.setChecked(true);
         }
@@ -159,5 +172,19 @@ public class VerBoop extends DialogFragment {
             botonAsisitir.setChecked(false);
         }
     }
+
+    //Todo descomentar esto cuando felipe ponga las imagenes
+    /*public void likeOdislike ()
+    {
+        if(boop.getMiVoto(uId) == 1) {
+            likeBoop.setImageDrawable();        //Pinto like
+            dislikeBoop.setImageDrawable();
+        }
+        else{
+            likeBoop.setImageDrawable();
+            dislikeBoop.setImageDrawable();     //Pinto dislike
+        }
+    }
+    }*/
 
 }
