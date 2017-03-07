@@ -42,11 +42,16 @@
     <string name="asistir">Voy a ir</string>
     <string name="noAsistir">No voy a ir</string>
     <string name="dejarDeVer">Dejar de ver</string>
-    <string name="puntuacion">\nPuntua este BooP para sumar popularidad a su creador:</string>
+    <string name="puntuacion">\nValora este Boop:</string>
     <string name="botonChat">Sala de chat</string>
     <string name="empieza">Empieza:</string>
     <string name="acaba">Termina:</string>
     <string name="asistentes">Asistirán:</string>
     <string name="maxAsistentes">Aforo máximo:</string>
+
+    #VerPerfil
+    <string name="sobremi">Sobre mi...:</string>
+    <string name="salir">Salir</string>
+    <string name="anyos">años</string>
 
 </resources>

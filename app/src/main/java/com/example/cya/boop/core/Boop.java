@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collection;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
@@ -23,14 +24,14 @@ import java.util.ListIterator;
 //La clase Boop representa un Boop de hacer Boop. Guarda los datos del Boop
 //Mantengamosla ordenada y mantenible.
 public class Boop implements Serializable{
+    //Valor por el que se multiplica el Karma
+    public static final int KARMA_VALUE = 10;
     //Nombre del boop, a mostrar en el mapa. Algo descriptivo como "Quedada puchamongo equipo rojo"
     private String nombre;
     //Descripción del boop, a mostrar al seleccionar para ver los detalles del boop
     private String descripcion;
-    //Nombre de usuario del creador
-    private String nombreCreador;
-    //Popularidad de este creador
-    private int popularidad;
+    //ID del usuario creador del boop
+    private String idCreador;
     //Enlazar a foto de usuario o de Boop. //ToDo foto de usuario o sacar una al instante para mostrar Boop
     private String foto;
     //Numero maximo de admitidos, 0 para sin limite
@@ -45,6 +46,8 @@ public class Boop implements Serializable{
     private enum  clasificacion {General, Bar, Exposición, Concierto, Comida, Estudiar};
     //Lista de asistentes
     ArrayList<String> asistentes;
+    //Mapa de likes y dislikes
+    HashMap<String, Integer> votaron;
 
     private clasificacion tipo;
     //CON ESTO BASTARA POR AHORA, pero aun asi...
@@ -56,15 +59,15 @@ public class Boop implements Serializable{
     public Boop(){
         this.nombre = "";
         this.descripcion = "";
-        this.nombreCreador = "";
-        this.popularidad = 0;
+        this.idCreador = "";
         this.foto = "";
         this.tipo = clasificacion.General;
         this.maxBoopers = 0; //TODO
         this.boopers = 0;
         this.fechaIni = Calendar.getInstance().getTime(); //TODO
         this.fechaFin = Calendar.getInstance().getTime(); //TODO
-        this.asistentes = new ArrayList<String>();
+        this.asistentes = new ArrayList<>();
+        this.votaron = new HashMap<>();
     }
 
 
@@ -138,20 +141,38 @@ public class Boop implements Serializable{
     public boolean saberSiAsisto (String idUsuario) {return asistentes.contains(idUsuario);}
 
     //RELACIONADOS CON EL USUARIO QUE CREA ESTE BOOP
-    public String getNombreCreador() {return nombreCreador;}
+    public String getidCreador() {return idCreador;}
 
-    public void setNombreCreador(String n) {this.nombreCreador = n;}
+    public void setidCreador(String n) {this.idCreador = n;}
 
-    public int getPopularidad() {return popularidad;}
+    public int getPopularidad() {
+        Collection<Integer> valores = votaron.values();
+        Iterator<Integer> it = valores.iterator();
+        int toret = 0;
 
-    public void setPopularidad(int p) {this.popularidad = p;}
+        while (it.hasNext())
+        {
+            toret += it.next();
+        }
 
-    public void incrementarPopularidad(int i) {this.popularidad += i;}
+        return toret * KARMA_VALUE; // Todo mirar de banear si muy baja puntuacion
+    }
 
-    public void decrementarPopularidad(int i)
+    public void incrementarPopularidad(String who) //1 like, -1 no like
     {
-        this.popularidad -= i;
-        if (this.popularidad < 0 ) this.popularidad = 0;  //Popularidad nunca menor qe 0
+        this.votaron.put(who, 1);
+
+    }
+
+    public void decrementarPopularidad(String who)
+    {
+        //if (this.popularidad < 0 ) this.popularidad = 0;  //Todo mirar si controlar popularidad de Boop
+        this.votaron.put(who, -1);
+    }
+
+    public int getMiVoto (String who)
+    {
+        return votaron.get(who); //Devuelve null si no voto, 1 si like, -1 si dislike
     }
 
     public String getFoto(){return foto;}

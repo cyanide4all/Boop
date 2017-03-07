@@ -4,14 +4,13 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.io.Serializable;
+import java.io.StringReader;
 
 /**
  * Created by cya on 2/22/17.
  */
 
 public class Usuario implements Serializable {
-    //Id para ver tu perfil y esas cosas
-    private String idUsuario;
     //Nombre completo
     private String nombre;
     //Pequeña presentación personal de rellenar perfil
@@ -19,6 +18,8 @@ public class Usuario implements Serializable {
     //Fecha de nacimiento en principio para restringción de edad. Puede que luego se permita
     // ocultarlo para por si mujer subnormal
     private String fechaNac;
+    //Popularidad del usuario
+    private int karma;
 
     //Constructor vacío por tocarle los huevos a oskaru
     public Usuario (){}
@@ -30,20 +31,12 @@ public class Usuario implements Serializable {
         return bio;
     }
 
-    public String getIdUsuario() {
-        return idUsuario;
-    }
-
     public String getFechaNac() {
         return fechaNac;
     }
 
     public String getNombre() {
         return nombre;
-    }
-
-    public void setIdUsuario(String idUsuario) {
-        this.idUsuario = idUsuario;
     }
 
     public void setBio(String bio) {
@@ -58,12 +51,28 @@ public class Usuario implements Serializable {
         this.nombre = nombre;
     }
 
-    public void crear() {
+    //Crea un perfil de usuario con clave idUsuario
+    public void crear(String idUsuario) {
         //Firebaseamientos para funcar
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("Usuarios");
 
-        DatabaseReference newPostRef = myRef.push();
-        newPostRef.setValue(this);
+        myRef.child(idUsuario).setValue(this);
+    }
+
+    public int getKarma() {return this.karma;}
+
+    public void setKarma (int karma) {this.karma = karma;}
+
+    public void incrementarKarma ()
+    {
+        this.karma += Boop.KARMA_VALUE;
+    }
+
+    public void decrementarKarma ()
+    {
+        this.karma -= Boop.KARMA_VALUE;
+        //if(karma < 0)     //Todo vigilar si carma es muy bajo mirar de banear
+        //    karma = 0;
     }
 }

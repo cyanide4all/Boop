@@ -134,7 +134,7 @@ public class BoopMap extends FragmentActivity implements OnMapReadyCallback, Goo
         boopPerfil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(BoopMap.this, verPerfil.class));
+                startActivity(new Intent(BoopMap.this, VerPerfil.class));
             }
         });
 
@@ -306,8 +306,10 @@ public class BoopMap extends FragmentActivity implements OnMapReadyCallback, Goo
     @Override
     public void onResume(){
         super.onResume();
+        //TODO usar aqui un AuthStateListener en vez de esta solucion cutre
         if(FirebaseAuth.getInstance().getCurrentUser() == null){
             finish();
         }
+
     }
 }

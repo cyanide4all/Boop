@@ -213,18 +213,37 @@ tools:context="com.example.cya.boop.VerBoop"
             android:layout_height="wrap_content"
             android:weightSum="1">
 
-            <TextView
-                android:text="@string/puntuacion"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/textView12"
-                android:elevation="1dp" />
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
-            <RatingBar
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/VBratingBar"
-                android:numStars="3" />
+                <ImageButton
+                    android:id="@+id/noMeGusta"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/background_light"
+                    app:srcCompat="@drawable/thumb_down" />
+
+                <TextView
+                    android:id="@+id/textView12"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical|center"
+                    android:layout_weight="0.4"
+                    android:elevation="0dp"
+                    android:text="@string/puntuacion"
+                    android:textAlignment="gravity"
+                    android:textStyle="normal|bold" />
+
+                <ImageButton
+                    android:id="@+id/meGusta"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/background_light"
+                    app:srcCompat="@drawable/thumb_up" />
+
+            </LinearLayout>
 
             <LinearLayout
                 android:orientation="horizontal"
