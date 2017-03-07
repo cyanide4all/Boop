@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.cya.boop.util.Validator;
 import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -176,32 +177,37 @@ public class Login extends AppCompatActivity implements
     }
     //Realiza login con una cuenta de usuario ya creada
     public void singIn(){
-        final EditText inputEmail = (EditText) findViewById(R.id.inputEmail);
-        final EditText inputPass = (EditText) findViewById(R.id.inputPass);
-        final AVLoadingIndicatorView avi = (AVLoadingIndicatorView) findViewById(R.id.avi);
-        avi.show();
-        mAuth.signInWithEmailAndPassword(inputEmail.getText().toString(), inputPass.getText().toString())
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        Log.d(TAG, "signInWithEmail:onComplete:" + task.isSuccessful());
-                        avi.hide();
-                        //Aqui va lo que pasa si la creación de user no vale
-                        if (!task.isSuccessful()) {
-                            Log.w(TAG, "signInWithEmail", task.getException());
-                            Toast.makeText(Login.this, "Fallo en la autenticación.",
-                                    Toast.LENGTH_SHORT).show();
-                            inputPass.setText("");
+        Validator v = new Validator();
+        v.basicValidation(findViewById(R.id.activity_login));
+        v.shouldHaveMoreThan(6, (EditText) findViewById(R.id.inputPass));
+        if(v.isAllOk()) {
+            final EditText inputEmail = (EditText) findViewById(R.id.inputEmail);
+            final EditText inputPass = (EditText) findViewById(R.id.inputPass);
+            final AVLoadingIndicatorView avi = (AVLoadingIndicatorView) findViewById(R.id.avi);
+            avi.show();
+            mAuth.signInWithEmailAndPassword(inputEmail.getText().toString(), inputPass.getText().toString())
+                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            Log.d(TAG, "signInWithEmail:onComplete:" + task.isSuccessful());
+                            avi.hide();
+                            //Aqui va lo que pasa si la creación de user no vale
+                            if (!task.isSuccessful()) {
+                                Log.w(TAG, "signInWithEmail", task.getException());
+                                Toast.makeText(Login.this, "Fallo en la autenticación.",
+                                        Toast.LENGTH_SHORT).show();
+                                inputPass.setText("");
 
-                        }else{
-                            //Aqui lo que pasa cuando sale bien
-                            Toast.makeText(Login.this, "Prepárate para hacer Boop!.",
-                                    Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(Login.this, BoopMap.class));
+                            } else {
+                                //Aqui lo que pasa cuando sale bien
+                                Toast.makeText(Login.this, "Prepárate para hacer Boop!.",
+                                        Toast.LENGTH_SHORT).show();
+                                startActivity(new Intent(Login.this, BoopMap.class));
+                            }
+
                         }
-
-                    }
-                });
+                    });
+        }
     }
 
     /***A partir de Aqui Inicio de Google y onActivityResult***/
