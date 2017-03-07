@@ -23,36 +23,30 @@
             android:layout_height="40dp"
             app:srcCompat="@drawable/paperclip"
             android:id="@+id/imageButton"
-            android:background="#fff"
+            android:background="#0fff"
+            android:tint="#000"
             android:layout_weight="0.03"
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"
             android:layout_gravity="top|right" />
 
-        <LinearLayout
-            android:orientation="horizontal"
+        <EditText
+            android:id="@+id/Bnombre"
             android:layout_width="match_parent"
-            android:layout_height="62dp">
-
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="5"
-                android:id="@+id/Bnombre"
-                android:background="#fff"
-                android:hint="Titulo"
-                android:layout_weight="0.15"
-                android:textAllCaps="true"
-                android:textColor="#c55756"
-                android:textSize="46sp"
-                android:inputType="text" />
-
-        </LinearLayout>
+            android:layout_height="wrap_content"
+            android:layout_weight="0.03"
+            android:background="@drawable/interactuable"
+            android:ems="15"
+            android:hint="Titulo"
+            android:inputType="text"
+            android:textAllCaps="true"
+            android:textColor="#c55756"
+            android:textSize="46sp" />
 
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="8.09dp" />
 
         <EditText
             android:layout_width="match_parent"
@@ -61,7 +55,7 @@
             android:ems="10"
             android:id="@+id/bdescripcion"
             android:hint="Que vamos a hacer?"
-            android:background="#fff"
+            android:background="@drawable/interactuable"
             android:gravity="top|left" />
         <Space
             android:layout_height="8.09dp"
@@ -103,6 +97,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/bdia"
                 android:layout_weight="0.5"
+                style="@android:style/Widget.Material.Button.Borderless"
                 android:background="@drawable/interactuable" />
 
             <Space
@@ -114,6 +109,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/bhora"
+                style="@android:style/Widget.Material.Button.Borderless"
                 android:layout_weight="0.5"
                 android:background="@drawable/interactuable" />
 
@@ -121,20 +117,16 @@
         <Space
             android:layout_height="8.09dp"
             android:layout_width="match_parent"/>
-        <LinearLayout
-            android:orientation="horizontal"
+
+        <TextView
+            android:id="@+id/textView7"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_weight="0.03"
+            android:text="To"
+            android:textColor="#c55756"
+            android:textSize="20sp" />
 
-            <TextView
-                android:text="To"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.5"
-                android:textColor="#c55756"
-                android:textSize="20sp" />
-
-        </LinearLayout>
         <Space
             android:layout_height="8.09dp"
             android:layout_width="match_parent"/>
@@ -149,6 +141,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/bfdia"
                 android:layout_weight="0.5"
+                style="@android:style/Widget.Material.Button.Borderless"
                 android:background="@drawable/interactuable" />
 
             <Space
@@ -160,6 +153,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/bfhora"
+                style="@android:style/Widget.Material.Button.Borderless"
                 android:layout_weight="0.5"
                 android:background="@drawable/interactuable" />
 

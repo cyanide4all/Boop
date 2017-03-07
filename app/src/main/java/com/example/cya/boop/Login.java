@@ -33,6 +33,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.wang.avi.AVLoadingIndicatorView;
 
 import static android.R.attr.password;
 import static android.R.attr.state_above_anchor;
@@ -177,12 +178,14 @@ public class Login extends AppCompatActivity implements
     public void singIn(){
         final EditText inputEmail = (EditText) findViewById(R.id.inputEmail);
         final EditText inputPass = (EditText) findViewById(R.id.inputPass);
+        final AVLoadingIndicatorView avi = (AVLoadingIndicatorView) findViewById(R.id.avi);
+        avi.show();
         mAuth.signInWithEmailAndPassword(inputEmail.getText().toString(), inputPass.getText().toString())
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         Log.d(TAG, "signInWithEmail:onComplete:" + task.isSuccessful());
-
+                        avi.hide();
                         //Aqui va lo que pasa si la creación de user no vale
                         if (!task.isSuccessful()) {
                             Log.w(TAG, "signInWithEmail", task.getException());
@@ -236,6 +239,8 @@ public class Login extends AppCompatActivity implements
     // [START auth_with_google]
     private void firebaseAuthWithGoogle(GoogleSignInAccount acct) {
         Log.d(TAGGoogle, "firebaseAuthWithGoogle:" + acct.getId());
+        final AVLoadingIndicatorView avi = (AVLoadingIndicatorView) findViewById(R.id.avi);
+        avi.show();
         // [START_EXCLUDE silent]
 
         // [END_EXCLUDE]
@@ -246,6 +251,7 @@ public class Login extends AppCompatActivity implements
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         Log.d(TAGGoogle, "signInWithCredential:onComplete:" + task.isSuccessful());
+                        avi.hide();
 
                         // If sign in fails, display a message to the user. If sign in succeeds
                         // the auth state listener will be notified and logic to handle the

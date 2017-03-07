@@ -18,7 +18,7 @@
         android:tint="#fff"
         android:padding="10dp"
         style="@style/Widget.AppCompat.Button.Borderless"
-        android:background="#c55756"
+        android:background="@drawable/round_primary_button"
         android:layout_marginBottom='15dp' />
 
      <ImageButton

@@ -10,7 +10,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
 
     tools:context="com.example.cya.boop.Register"
-    android:background="#fff">
+    android:background="@drawable/background">
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -30,6 +30,7 @@
             android:id="@+id/imageView2"
             android:layout_width="match_parent"
             android:layout_height="100dp"
+            android:tint="#fff"
             app:srcCompat="@drawable/boop" />
         <Space android:layout_width="match_parent"
             android:layout_height="27.50dp" />
