@@ -134,7 +134,17 @@ public class Boop implements Serializable{
 
     public ArrayList<String> getAsistentes(){return asistentes;}
 
-    public void asistir (String idUsuario) {asistentes.add(idUsuario);}
+    public boolean asistir (String idUsuario) {
+        if (asistentes.size() < maxBoopers)
+        {
+            asistentes.add(idUsuario);
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 
     public void noAsistir (String idUsuario) {asistentes.remove(idUsuario);}
 

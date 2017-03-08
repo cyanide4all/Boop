@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.cya.boop.core.Usuario;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class CrearPerfil extends AppCompatActivity {
 
@@ -47,5 +48,15 @@ public class CrearPerfil extends AppCompatActivity {
 
         user.crear(idUser);
         startActivity(new Intent(this, BoopMap.class));
+    }
+
+    @Override
+    public void onResume(){
+        super.onResume();
+        //TODO usar aqui un AuthStateListener en vez de esta solucion cutre
+        if(FirebaseAuth.getInstance().getCurrentUser() == null){
+            finish();
+        }
+
     }
 }

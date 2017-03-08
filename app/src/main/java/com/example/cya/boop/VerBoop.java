@@ -11,7 +11,10 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ToggleButton;
+
+import java.text.SimpleDateFormat;
 
 import com.example.cya.boop.core.Boop;
 import com.example.cya.boop.core.Usuario;
@@ -57,6 +60,8 @@ public class VerBoop extends DialogFragment {
         this.boop = (Boop) bundle.getSerializable("boop");
         uId = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/mm/yyyy 'a las' HH:mm"); //Formato de fecha
+
         final View view = inflater.inflate(R.layout.activity_ver_boop, container, false);
         //Transformamos el boop en cosas visibles
         nombre = (TextView) view.findViewById(R.id.VBnombre);
@@ -77,7 +82,7 @@ public class VerBoop extends DialogFragment {
         empieza.setText(boop.getFechaIni().toString());
 
         termina = (TextView) view.findViewById(R.id.VBhoraFin);
-        termina.setText(boop.getFechaFin().toString());
+        termina.setText(dateFormat.format(boop.getFechaFin()));
 
         tipoEvento = (TextView) view.findViewById(R.id.VBclasificacion);
         tipoEvento.setText(boop.getTipo());
@@ -130,8 +135,12 @@ public class VerBoop extends DialogFragment {
             @Override
             public void onClick(View v) {
                 if (!botonAsisitir.isChecked()) {
-                    boop.asistir(uId);
-                    botonAsisitir.setChecked(true);
+                    if(!boop.asistir(uId))  //Devuelve false si se ha alcanzado el máximo de boopers
+                    {
+                        Toast.makeText(view.getContext(), R.string.alcanzadoMaximo, Toast.LENGTH_SHORT ).show();
+                    }
+                    else
+                        botonAsisitir.setChecked(true);
                 }else
                 {
                     boop.noAsistir(uId);
