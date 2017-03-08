@@ -1,225 +1,248 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_nuevo_boop"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.cya.boop.NuevoBoop"
-    android:background="#fff">
+    tools:context="com.example.cya.boop.NuevoBoop">
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        
+
         android:weightSum="1">
 
-        <ImageButton
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            app:srcCompat="@drawable/paperclip"
-            android:id="@+id/imageButton"
-            android:background="#0fff"
-            android:tint="#000"
-            android:layout_weight="0.03"
-            android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            android:layout_gravity="top|right" />
-
-        <EditText
-            android:id="@+id/Bnombre"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.03"
-            android:background="@drawable/interactuable"
-            android:ems="15"
-            android:hint="Titulo"
-            android:inputType="text"
-            android:textAllCaps="true"
-            android:textColor="#c55756"
-            android:textSize="46sp" />
-
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="8.09dp" />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="86dp"
-            android:inputType="textMultiLine"
-            android:ems="10"
-            android:id="@+id/bdescripcion"
-            android:hint="Que vamos a hacer?"
-            android:background="@drawable/interactuable"
-            android:gravity="top|left" />
-        <Space
-            android:layout_height="8.09dp"
-            android:layout_width="match_parent"/>
-
         <LinearLayout
-            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="160dp"
+            android:background="@drawable/nuevo_boop"
+            android:orientation="vertical"
+            android:padding="20dp">
 
-            <TextView
-                android:text="Date"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/textView6"
-                android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:textColor="#c55756"
-                android:textSize="20sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/textView2"
-                android:layout_weight="1"
-                android:text="Time"
-                android:gravity="center_horizontal"
-                android:textColor="#c55756"
-                android:textSize="20sp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/bdia"
-                android:layout_weight="0.5"
-                style="@android:style/Widget.Material.Button.Borderless"
-                android:background="@drawable/interactuable" />
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="right"
+                android:adjustViewBounds="true"
+                android:background="#0fff"
+                android:scaleType="fitCenter"
+                android:tint="#fff"
+                app:srcCompat="@drawable/paperclip" />
 
             <Space
-                android:layout_height="wrap_content"
-                android:layout_weight="0.05"
-                android:layout_width="1dp" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/bhora"
-                style="@android:style/Widget.Material.Button.Borderless"
-                android:layout_weight="0.5"
-                android:background="@drawable/interactuable" />
-
-        </LinearLayout>
-        <Space
-            android:layout_height="8.09dp"
-            android:layout_width="match_parent"/>
-
-        <TextView
-            android:id="@+id/textView7"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.03"
-            android:text="To"
-            android:textColor="#c55756"
-            android:textSize="20sp" />
-
-        <Space
-            android:layout_height="8.09dp"
-            android:layout_width="match_parent"/>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/bfdia"
-                android:layout_weight="0.5"
-                style="@android:style/Widget.Material.Button.Borderless"
-                android:background="@drawable/interactuable" />
-
-            <Space
-                android:layout_height="wrap_content"
-                android:layout_weight="0.05"
-                android:layout_width="1dp" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/bfhora"
-                style="@android:style/Widget.Material.Button.Borderless"
-                android:layout_weight="0.5"
-                android:background="@drawable/interactuable" />
-
-        </LinearLayout>
-        <Space android:layout_width="match_parent"
-            android:layout_height="27.50dp" />
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:text="Max numero de personas"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.5"/>
+                android:layout_width="20dp"
+                android:layout_height="20dp" />
 
             <EditText
+                android:id="@+id/Bnombre"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/bpersonas"
-                android:layout_weight="0.5"
-                android:numeric="integer"
-                android:text="0"
-                android:gravity="center_vertical|center_horizontal"
-                android:background="@drawable/interactuable" />
+                android:background="#0fff"
+                android:drawableTint="#efff"
+                android:drawableEnd="@drawable/ic_mode_edit_black_24dp"
+                android:ems="15"
+                android:hint="Titulo"
+                android:inputType="text"
+                android:textAllCaps="true"
+                android:textColor="#fff"
+                android:textColorHint="#fff"
+                android:textSize="26sp" />
+
 
         </LinearLayout>
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_weight="0.03"
-            android:layout_height="50dp" />
-
         <LinearLayout
-            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:gravity="bottom">
+            android:layout_height="match_parent"
+            android:padding="20dp"
+            android:orientation="vertical">
 
-            <Button
-                android:text="Cancelar"
-                android:layout_width="wrap_content"
+            <EditText
+                android:id="@+id/bdescripcion"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.5"
-                android:id="@+id/bcancelar"
-                android:background="@drawable/boop_colors"
-                style="@style/Widget.AppCompat.Button.Borderless" />
+                android:background="#0fff"
+                android:drawableEnd="@drawable/ic_mode_edit_black_24dp"
+                android:drawableTint="#333"
+                android:ems="10"
+                android:gravity="top|left"
+                android:hint="Que vamos a hacer?"
+                android:inputType="textMultiLine"
+                android:textColor="#333"
+                android:textColorHint="#333" />
 
             <Space
-                android:layout_height="wrap_content"
-                android:layout_weight="0.05"
-                android:layout_width="1dp" />
+                android:layout_width="match_parent"
+                android:layout_height="8.09dp" />
 
-            <Button
-                android:text="BOOP!"
-                android:layout_width="wrap_content"
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/botonBoopear"
-                android:layout_weight="0.5"
-                android:background="@drawable/primary_button"
-                style="@style/Widget.AppCompat.Button.Borderless" />
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:text="Date"
+                    android:textColor="#c55756"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:text="Time"
+                    android:textColor="#c55756"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/bdia"
+                    style="@android:style/Widget.Material.Button.Borderless"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/interactuable" />
+
+                <Space
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.05" />
+
+                <Button
+                    android:id="@+id/bhora"
+                    style="@android:style/Widget.Material.Button.Borderless"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/interactuable" />
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="8.09dp" />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.03"
+                android:text="To"
+                android:textColor="#c55756"
+                android:textSize="20sp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="8.09dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/bfdia"
+                    style="@android:style/Widget.Material.Button.Borderless"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/interactuable" />
+
+                <Space
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.05" />
+
+                <Button
+                    android:id="@+id/bfhora"
+                    style="@android:style/Widget.Material.Button.Borderless"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/interactuable" />
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="27.50dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="Max numero de personas" />
+
+                <EditText
+                    android:id="@+id/bpersonas"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/interactuable"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:numeric="integer"
+                    android:text="0" />
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="0.03" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:gravity="bottom"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/bcancelar"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/boop_colors"
+                    android:text="Cancelar" />
+
+                <Space
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.05" />
+
+                <Button
+                    android:id="@+id/botonBoopear"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/primary_button"
+                    android:text="BOOP!" />
+            </LinearLayout>
         </LinearLayout>
 
     </LinearLayout>
 
-</RelativeLayout>
+</ScrollView>
