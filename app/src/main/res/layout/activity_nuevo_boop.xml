@@ -16,14 +16,17 @@
         android:weightSum="1">
 
         <LinearLayout
+            android:id="@+id/nuevo_boop_imagen_fondo"
             android:layout_width="match_parent"
             android:layout_height="160dp"
+            android:adjustViewBounds="true"
             android:background="@drawable/nuevo_boop"
+            android:scaleType="centerInside"
             android:orientation="vertical"
             android:padding="20dp">
 
             <ImageButton
-                android:id="@+id/imageButton"
+                android:id="@+id/nuevo_boop_imagen"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_gravity="right"
@@ -42,8 +45,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#0fff"
-                android:drawableTint="#efff"
                 android:drawableEnd="@drawable/ic_mode_edit_black_24dp"
+                android:drawableTint="#efff"
                 android:ems="15"
                 android:hint="Titulo"
                 android:inputType="text"

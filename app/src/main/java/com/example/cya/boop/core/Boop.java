@@ -5,10 +5,19 @@ import android.support.annotation.NonNull;
 
 import com.firebase.geofire.GeoFire;
 import com.firebase.geofire.GeoLocation;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
 import java.io.Serializable;
+
+import android.net.Uri;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collection;
@@ -32,7 +41,7 @@ public class Boop implements Serializable{
     private String descripcion;
     //ID del usuario creador del boop
     private String idCreador;
-    //Enlazar a foto de usuario o de Boop. //ToDo foto de usuario o sacar una al instante para mostrar Boop
+    //Enlazar a foto de usuario o de Boop.
     private String foto;
     //Numero maximo de admitidos, 0 para sin limite
     private int maxBoopers;
@@ -48,6 +57,8 @@ public class Boop implements Serializable{
     ArrayList<String> asistentes;
     //Mapa de likes y dislikes
     HashMap<String, Integer> votaron;
+
+    private DatabaseReference db_reference;
 
     private clasificacion tipo;
     //CON ESTO BASTARA POR AHORA, pero aun asi...
@@ -195,17 +206,49 @@ public class Boop implements Serializable{
     public void crear(double longitude, double latitude) {
         //Firebaseamientos para funcar
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("BoopInfo");
 
-        DatabaseReference newPostRef = myRef.push();
-        newPostRef.setValue(this);
+        if(db_reference == null) {
+            // Si aun no habia sido guardada
+            DatabaseReference myRef = database.getReference("BoopInfo");
+            db_reference = myRef.push();
+        }
+
+        // Si ya habia datos que solo actualice el boop y no cree otro en la lista
+        db_reference.setValue(this);
 
         // /Location aqui
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference("locations");
         GeoFire geofire = new GeoFire(ref);
-        geofire.setLocation(newPostRef.getKey(), new GeoLocation(latitude, longitude));
+        geofire.setLocation(db_reference.getKey(), new GeoLocation(latitude, longitude));
 
         //TODO
+    }
+
+
+    public UploadTask uploadPhoto(Uri file_url){
+        // Conseguimos la clave del boop que vamos a crear para nombrar la foto
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("BoopInfo");
+
+        if(db_reference==null){
+            db_reference = myRef.push();
+        }
+
+        // Usamos la clave para crear un nodo en storage
+        FirebaseStorage storage = FirebaseStorage.getInstance();
+        StorageReference storageRef = storage.getReferenceFromUrl("gs://boop-4ec7a.appspot.com");
+        StorageReference boopRef = storageRef.child("Boopimages/"+db_reference.getKey());
+
+        // subimos la imagen
+        return boopRef.putFile(file_url);
+    }
+
+    public static Task<Uri> getDownloadPhoto(String key){
+        // metodo mientras no se me ocurre como coger la propia key del objeto
+        FirebaseStorage storage = FirebaseStorage.getInstance();
+        StorageReference storageRef = storage.getReferenceFromUrl("gs://boop-4ec7a.appspot.com");
+        StorageReference boopRef = storageRef.child("Boopimages/"+key);
+        return boopRef.getDownloadUrl();
     }
 
 }
