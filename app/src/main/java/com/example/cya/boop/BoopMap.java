@@ -249,61 +249,10 @@ public class BoopMap extends FragmentActivity implements OnMapReadyCallback, Goo
         // TENEMOS LATITUD Y LONGITUD AQUI DEL SENOR
         mLastLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
 
-        if (mLastLocation != null){
-            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(mLastLocation.getLatitude(),mLastLocation.getLongitude()),16));
-            Log.d("moved","map");
-        }
-
         if (mLastLocation != null) {
             GeoQuery geoQuery = geofire.queryAtLocation(new GeoLocation(mLastLocation.getLatitude(), mLastLocation.getLongitude()),10);
-            geoQuery.addGeoQueryEventListener(new GeoQueryEventListener() {
-                @Override
-                public void onKeyEntered(String key, final GeoLocation location) {
-                    // cuando vengan llegando los datos de la base de datos vamos rellenando
-                    // el mapa de marcadores de eventos
-                    mDatabase.child(key).addListenerForSingleValueEvent(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(DataSnapshot dataSnapshot) {
-                            Boop b = dataSnapshot.getValue(Boop.class);
-                            if(mMap != null){
-                                Marker marker = mMap.addMarker(new MarkerOptions()
-                                        .position(new LatLng(location.latitude,location.longitude))
-                                        .title(b.getNombre())
-                                        .snippet(b.getDescripcion())
-
-                                ); //.showInfoWindow()
-                                marker.setTag(b);
-                            }
-                        }
-
-                        @Override
-                        public void onCancelled(DatabaseError databaseError) {
-
-                        }
-                    });
-
-                }
-
-                @Override
-                public void onKeyExited(String key) {
-
-                }
-
-                @Override
-                public void onKeyMoved(String key, GeoLocation location) {
-
-                }
-
-                @Override
-                public void onGeoQueryReady() {
-
-                }
-
-                @Override
-                public void onGeoQueryError(DatabaseError error) {
-
-                }
-            });
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(mLastLocation.getLatitude(),mLastLocation.getLongitude()),10));
+            geoQuery.addGeoQueryEventListener(new MarkerManager(mMap,mDatabase,geofire));
         }
 
     }
