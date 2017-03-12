@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_crear_perfil"
     android:layout_width="match_parent"
@@ -8,12 +9,24 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/background"
     tools:context="com.example.cya.boop.CrearPerfil">
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+        <ImageButton
+            android:id="@+id/user_image_set"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:background="#0fff"
+            app:srcCompat="@drawable/ic_face_black_24dp" />
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="20dp" />
 
         <LinearLayout
             android:orientation="vertical"
@@ -27,6 +40,7 @@
                 android:id="@+id/textView3" />
 
             <EditText
+                android:background="@drawable/interactuable"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textNoSuggestions|textPersonName"
@@ -34,6 +48,9 @@
                 android:id="@+id/CPnombre"
                 android:hint="@string/nombreRealCompleto" />
         </LinearLayout>
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="20dp" />
 
         <LinearLayout
             android:orientation="vertical"
@@ -47,6 +64,7 @@
                 android:id="@+id/textView4" />
 
             <EditText
+                android:background="@drawable/interactuable"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
@@ -55,6 +73,9 @@
                 android:hint="@string/bio" />
 
         </LinearLayout>
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="20dp" />
 
         <LinearLayout
             android:orientation="horizontal"
@@ -69,6 +90,7 @@
                 android:layout_weight="1" />
 
             <EditText
+                android:background="@drawable/interactuable"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:inputType="date"
@@ -76,6 +98,9 @@
                 android:id="@+id/CPfechaNac"
                 android:layout_weight="1" />
         </LinearLayout>
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="20dp" />
 
         <LinearLayout
             android:orientation="horizontal"
@@ -83,6 +108,7 @@
             android:layout_height="wrap_content">
 
             <Button
+                android:background="@drawable/primary_button"
                 android:text="Crear mi perfil"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
