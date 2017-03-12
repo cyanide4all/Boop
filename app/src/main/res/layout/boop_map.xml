@@ -15,10 +15,10 @@
         android:layout_height="65dp"
         android:layout_gravity="bottom|center_horizontal"
         android:src="@drawable/ic_add_black_24dp"
-        android:tint="#fff"
+        android:tint="@color/colorPrimary"
         android:padding="10dp"
         style="@style/Widget.AppCompat.Button.Borderless"
-        android:background="@drawable/round_primary_button"
+        android:background="@drawable/primary_button"
         android:layout_marginBottom='15dp' />
 
      <ImageButton

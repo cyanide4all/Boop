@@ -13,6 +13,8 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.util.Date;
 import java.util.HashMap;
@@ -62,13 +64,19 @@ public class MarkerManager implements GeoQueryEventListener {
         if(b.getFechaIni().after(now)){
             // aun no ha pasado
             op.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE));
+
         }else if(b.getFechaIni().before(now) && b.getFechaFin().after(now)){
             // esta pasando
             op.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE));
+
         }else if(b.getFechaFin().before(now)){
             // el evento ya ha pasado
             mDatabase.child(key).removeValue();
             geoFire.removeLocation(key);
+            FirebaseStorage storage = FirebaseStorage.getInstance();
+            StorageReference storageRef = storage.getReferenceFromUrl("gs://boop-4ec7a.appspot.com");
+            StorageReference boopRef = storageRef.child("Boopimages/"+key);
+            boopRef.delete();
         }
 
         Marker m = mMap.addMarker(op);

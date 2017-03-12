@@ -7,17 +7,33 @@
     </item>
     <item>
         <rotate
-            android:fromDegrees="-75"
+            android:fromDegrees="-94"
             android:toDegrees="0"
             android:pivotX="0%"
             android:pivotY="30%" >
 
             <shape android:shape="rectangle">
                 <gradient
+                    android:endColor="#fe7f2d"
+
+                    android:startColor="#fe7f2d"
+                    android:angle="360" />
+            </shape>
+        </rotate>
+    </item>
+    <item>
+        <rotate
+            android:fromDegrees="-94"
+            android:toDegrees="0"
+            android:pivotX="0%"
+            android:pivotY="29.5%" >
+
+            <shape android:shape="rectangle">
+                <gradient
                     android:endColor="#05a8aa"
 
                     android:startColor="#05a8aa"
-                    android:angle="45" />
+                    android:angle="180" />
             </shape>
         </rotate>
     </item>

@@ -24,6 +24,7 @@ import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.example.cya.boop.core.Boop;
+import com.example.cya.boop.util.Validator;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
@@ -194,26 +195,29 @@ public class NuevoBoop extends AppCompatActivity {
     }
 
     private void crearBoop() {
-        //Primero pillamos las entradas del formulario
-        EditText Bnombre = (EditText) findViewById(R.id.Bnombre);
-        EditText Bdescripcion = (EditText) findViewById(R.id.bdescripcion);
+        Validator v = new Validator();
+        v.basicValidation(findViewById(R.id.activity_nuevo_boop));
+        if(v.isAllOk()){
+            //Primero pillamos las entradas del formulario
+            EditText Bnombre = (EditText) findViewById(R.id.Bnombre);
+            EditText Bdescripcion = (EditText) findViewById(R.id.bdescripcion);
 
-        //Luego metemos los datos en el boop
-        boop.setNombre(Bnombre.getText().toString());
-        boop.setDescripcion(Bdescripcion.getText().toString());
-        //TODO pillar las excepciones que pueda soltar el apartado anterior
+            //Luego metemos los datos en el boop
+            boop.setNombre(Bnombre.getText().toString());
+            boop.setDescripcion(Bdescripcion.getText().toString());
 
-        //Metemos la id del creador en el boop
-        String idUser = FirebaseAuth.getInstance().getCurrentUser().getUid();
-        boop.setidCreador(idUser);
+            //Metemos la id del creador en el boop
+            String idUser = FirebaseAuth.getInstance().getCurrentUser().getUid();
+            boop.setidCreador(idUser);
 
-        if(setDateAndTime(boop)){
-            //Publicamos el boop
-            double latitude = getIntent().getDoubleExtra("latitude",0.0);
-            double longitude = getIntent().getDoubleExtra("longitude",0.0);
-            boop.crear(longitude,latitude);
-            Toast.makeText(this,"BOOPED!",Toast.LENGTH_LONG).show();
-            finish();
+            if(setDateAndTime(boop)){
+                //Publicamos el boop
+                double latitude = getIntent().getDoubleExtra("latitude",0.0);
+                double longitude = getIntent().getDoubleExtra("longitude",0.0);
+                boop.crear(longitude,latitude);
+                Toast.makeText(this,"BOOPED!",Toast.LENGTH_LONG).show();
+                finish();
+            }
         }
     }
 

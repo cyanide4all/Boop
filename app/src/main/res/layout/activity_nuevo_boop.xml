@@ -4,14 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_nuevo_boop"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    tools:context="com.example.cya.boop.NuevoBoop">
+    android:layout_height="match_parent"
+    tools:context="com.example.cya.boop.NuevoBoop"
+    android:background="#fff">
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        
+
 
         android:weightSum="1">
 
@@ -70,7 +71,7 @@
                 android:layout_height="wrap_content"
                 android:background="#0fff"
                 android:drawableEnd="@drawable/ic_mode_edit_black_24dp"
-                android:drawableTint="#333"
+                android:drawableTint="#fff"
                 android:ems="10"
                 android:gravity="top|left"
                 android:hint="Que vamos a hacer?"

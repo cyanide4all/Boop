@@ -1,7 +1,13 @@
 package com.example.cya.boop.core;
 
+import android.net.Uri;
+
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
 import java.io.Serializable;
 import java.io.StringReader;
@@ -20,6 +26,8 @@ public class Usuario implements Serializable {
     private String fechaNac;
     //Popularidad del usuario
     private int karma;
+
+    protected DatabaseReference db_reference;
 
     //Constructor vacío por tocarle los huevos a oskaru
     public Usuario (){}
@@ -57,7 +65,8 @@ public class Usuario implements Serializable {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("Usuarios");
 
-        myRef.child(idUsuario).setValue(this);
+        db_reference = myRef.child(idUsuario);
+        db_reference.setValue(this);
     }
 
     public int getKarma() {return this.karma;}
@@ -74,5 +83,23 @@ public class Usuario implements Serializable {
         this.karma -= Boop.KARMA_VALUE;
         //if(karma < 0)     //Todo vigilar si carma es muy bajo mirar de banear
         //    karma = 0;
+    }
+
+    public UploadTask uploadPhoto(Uri file_url){
+        // Usamos la clave para crear un nodo en storage
+        FirebaseStorage storage = FirebaseStorage.getInstance();
+        StorageReference storageRef = storage.getReferenceFromUrl("gs://boop-4ec7a.appspot.com");
+        StorageReference boopRef = storageRef.child("Booppeople/"+db_reference.getKey());
+
+        // subimos la imagen
+        return boopRef.putFile(file_url);
+    }
+
+    public static Task<Uri> getDownloadPhoto(String key){
+        // metodo mientras no se me ocurre como coger la propia key del objeto
+        FirebaseStorage storage = FirebaseStorage.getInstance();
+        StorageReference storageRef = storage.getReferenceFromUrl("gs://boop-4ec7a.appspot.com");
+        StorageReference boopRef = storageRef.child("Booppeople/"+key);
+        return boopRef.getDownloadUrl();
     }
 }
