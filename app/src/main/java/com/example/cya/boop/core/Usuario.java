@@ -26,9 +26,6 @@ public class Usuario implements Serializable {
     private String fechaNac;
     //Popularidad del usuario
     private int karma;
-
-    protected DatabaseReference db_reference;
-
     //Constructor vacío por tocarle los huevos a oskaru
     public Usuario (){}
 
@@ -64,9 +61,7 @@ public class Usuario implements Serializable {
         //Firebaseamientos para funcar
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("Usuarios");
-
-        db_reference = myRef.child(idUsuario);
-        db_reference.setValue(this);
+        myRef.child(idUsuario).setValue(this);
     }
 
     public int getKarma() {return this.karma;}
@@ -85,11 +80,11 @@ public class Usuario implements Serializable {
         //    karma = 0;
     }
 
-    public UploadTask uploadPhoto(Uri file_url){
+    public UploadTask uploadPhoto(Uri file_url, String key){
         // Usamos la clave para crear un nodo en storage
         FirebaseStorage storage = FirebaseStorage.getInstance();
         StorageReference storageRef = storage.getReferenceFromUrl("gs://boop-4ec7a.appspot.com");
-        StorageReference boopRef = storageRef.child("Booppeople/"+db_reference.getKey());
+        StorageReference boopRef = storageRef.child("Booppeople/"+key);
 
         // subimos la imagen
         return boopRef.putFile(file_url);

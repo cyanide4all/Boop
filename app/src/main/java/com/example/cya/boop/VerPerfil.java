@@ -58,16 +58,17 @@ public class VerPerfil extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 //Aqui se meten en la vista las cosas que vienen de la BD
                 user = dataSnapshot.getValue(Usuario.class);
+                if(user != null){
+                    bio = (TextView) findViewById(R.id.VPbio);
+                    bio.setText(user.getBio());
 
-                bio = (TextView) findViewById(R.id.VPbio);
-                bio.setText(user.getBio());
+                    nombre = (TextView) findViewById(R.id.VPnombre);
+                    nombre.setText(user.getNombre());
 
-                nombre = (TextView) findViewById(R.id.VPnombre);
-                nombre.setText(user.getNombre());
-
-                edad = (TextView) findViewById(R.id.VPedad);
-                //TODO Tenemos fecha de nacimiento, conseguimos edad
-                //edad.setText();
+                    edad = (TextView) findViewById(R.id.VPedad);
+                    //TODO Tenemos fecha de nacimiento, conseguimos edad
+                    //edad.setText();
+                }
             }
 
             @Override
