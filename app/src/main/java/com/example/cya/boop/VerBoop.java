@@ -3,6 +3,7 @@ package com.example.cya.boop;
 
 import android.app.DialogFragment;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,6 +21,11 @@ import com.example.cya.boop.core.Boop;
 import com.example.cya.boop.core.Usuario;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.Locale;
 
@@ -43,7 +49,7 @@ public class VerBoop extends DialogFragment {
     private Button botonSalir;
     private ToggleButton botonAsisitir;
     private Button botonChat;
-
+    private DatabaseReference mDatabase;
     private String uId;
 
     @Override
@@ -70,8 +76,24 @@ public class VerBoop extends DialogFragment {
         descripcion = (TextView) view.findViewById(R.id.VBdescripcion);
         descripcion.setText(boop.getDescripcion());
 
-        /*
+
         creador = (TextView) view.findViewById(R.id.VBCreador);
+        mDatabase = FirebaseDatabase.getInstance().getReference("Usuarios").child(uId);
+        mDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                //Aqui se meten en la vista las cosas que vienen de la BD
+                Usuario user = dataSnapshot.getValue(Usuario.class);
+                creador.setText(user.getNombre());
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Log.w("VerPerfil", "onCreateValueEventListener:onCancelled", databaseError.toException());
+
+            }
+        });
+        /*
         creador.setText(boop.getNombreCreador());
         */
 
