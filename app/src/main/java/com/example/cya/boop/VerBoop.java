@@ -2,6 +2,8 @@ package com.example.cya.boop;
 
 
 import android.app.DialogFragment;
+import android.app.IntentService;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -85,6 +87,14 @@ public class VerBoop extends DialogFragment {
                 //Aqui se meten en la vista las cosas que vienen de la BD
                 Usuario user = dataSnapshot.getValue(Usuario.class);
                 creador.setText(user.getNombre());
+                creador.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intento = new Intent(getActivity(), VerPerfil.class);
+                        intento.putExtra("userID", uId);
+                        startActivity(intento);
+                    }
+                });
             }
 
             @Override

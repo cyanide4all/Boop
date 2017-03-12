@@ -1,5 +1,6 @@
 package com.example.cya.boop;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -23,14 +24,32 @@ public class VerPerfil extends AppCompatActivity {
     private TextView edad;
     private DatabaseReference mDatabase;
     private Usuario user;
+    private String idUser;
+    private boolean esMiPerfil;
+    private Button botonEditarPerfil;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ver_perfil);
 
-        //Getteamos id del usuario actual
-        String idUser = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        //Si le viene un userID en los extras del intent, muestra los datos de ese senior, si no los del propio usuario actual
+        if(getIntent().getExtras()==null) {
+            //Hemos entrado desde nuestro propio boton de ver perfil
+            //Getteamos id del usuario actual
+            idUser = FirebaseAuth.getInstance().getCurrentUser().getUid();
+            //Obviamente estamos en nuestro perfil
+            esMiPerfil = true;
+        }else{
+            //Hemos entrado desde un boop u otro sitio ajeno...
+            idUser = getIntent().getExtras().getString("userID");
+            //Debemos chekear si estamos en nuestro propio perfil
+            if(FirebaseAuth.getInstance().getCurrentUser().getUid().equals(idUser)) {
+                esMiPerfil = true;
+            }else{
+                esMiPerfil = false;
+            }
+        }
 
         //Firebasin'
         mDatabase = FirebaseDatabase.getInstance().getReference("Usuarios").child(idUser);
@@ -59,14 +78,26 @@ public class VerPerfil extends AppCompatActivity {
         });
 
         botonLogout = (Button) findViewById(R.id.VPlogout);
-        botonLogout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                logout();
-            }
-        });
+        botonEditarPerfil = (Button) findViewById(R.id.VPmodificarPerfil);
 
-
+        if(esMiPerfil) {
+            botonLogout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    logout();
+                }
+            });
+            botonEditarPerfil.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    startActivity(new Intent(VerPerfil.this, CrearPerfil.class));
+                    //TODO ENORME AQUI, ESTO ES PROVISIONAL, puede que no funque y ademas debe hacer cosas al volver y tal
+                }
+            });
+        }else{
+            botonLogout.setVisibility(View.INVISIBLE);
+            botonEditarPerfil.setVisibility(View.INVISIBLE);
+        }
 
         TextView nombre = (TextView) findViewById(R.id.VPnombre);
 
