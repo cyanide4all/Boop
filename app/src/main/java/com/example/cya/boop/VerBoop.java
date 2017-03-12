@@ -89,13 +89,10 @@ public class VerBoop extends DialogFragment {
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-                Log.w("VerPerfil", "onCreateValueEventListener:onCancelled", databaseError.toException());
+                Log.w("VerBoop", "onCreateValueEventListener:onCancelled", databaseError.toException());
 
             }
         });
-        /*
-        creador.setText(boop.getNombreCreador());
-        */
 
         popularidadUsuario = (TextView) view.findViewById(R.id.VBPopularidad);
         popularidadUsuario.setText(String.format(Locale.ENGLISH, " %d" ,boop.getPopularidad()));
