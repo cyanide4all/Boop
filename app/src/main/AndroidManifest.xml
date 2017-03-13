@@ -41,7 +41,12 @@
         <activity android:name=".VerBoop" />
         <activity android:name=".Register" />
         <activity android:name=".CrearPerfil" />
-        <activity android:name=".VerPerfil"></activity>
+        <activity android:name=".VerPerfil" />
+
+        <service
+            android:name=".NotificationWorker"
+            android:enabled="true"
+            android:exported="true"></service>
     </application>
 
 </manifest>
