@@ -54,5 +54,6 @@
     <string name="sobremi">Sobre mi...:</string>
     <string name="salir">Salir</string>
     <string name="anyos">años</string>
+    <string name="editarPerfil">Editar Perfil</string>
 
 </resources>

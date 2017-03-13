@@ -29,6 +29,7 @@ public class CrearPerfil extends AppCompatActivity {
     private EditText bio;
     private EditText fechaNac;
     private Button botonCrear;
+    private String idUser;
     private Usuario user;
     private ImageButton botonAvatar;
     private static final int READ_REQUEST_CODE = 324;
@@ -38,6 +39,7 @@ public class CrearPerfil extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_crear_perfil);
 
+        idUser = FirebaseAuth.getInstance().getCurrentUser().getUid();
         nombre = (EditText) findViewById(R.id.CPnombre);
         bio = (EditText) findViewById(R.id.CPbio);
         //TODO que fecha no sea un editText y que sea un calendario
@@ -63,7 +65,7 @@ public class CrearPerfil extends AppCompatActivity {
 
     //Mete datos al usuario user creado arriba y luego ejecuta su crear. Luego va a boopmap
     public void crearPerfil(){
-        String idUser = getIntent().getExtras().getString("UserID");
+
         user.setNombre(nombre.getText().toString());
         user.setBio(bio.getText().toString());
         user.setFechaNac(fechaNac.getText().toString());
@@ -106,7 +108,7 @@ public class CrearPerfil extends AppCompatActivity {
             Uri uri = null;
             if (resultData != null) {
                 uri = resultData.getData();
-                UploadTask up = user.uploadPhoto(uri);
+                UploadTask up = user.uploadPhoto(uri,idUser);
                 handleUploadTask(up);
             }
         }
