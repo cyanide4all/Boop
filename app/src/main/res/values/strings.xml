@@ -56,4 +56,10 @@
     <string name="anyos">años</string>
     <string name="editarPerfil">Editar Perfil</string>
 
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    #Condiciones de Uso
+    <string name="condiciones">Lea las condiciones de Uso: \n Restringido a paletos.</string>
+
 </resources>

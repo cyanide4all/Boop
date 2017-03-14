@@ -148,8 +148,8 @@ public class Register extends AppCompatActivity {
         condiciones.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                //ToDo "Saltar a nueva actividad o hiperenlace".
+                VerCondicionesUso condiciones = new VerCondicionesUso();
+                condiciones.show(getFragmentManager(), "");
             }
         });
     }

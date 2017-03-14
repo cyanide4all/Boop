@@ -41,7 +41,7 @@
         <activity android:name=".VerBoop" />
         <activity android:name=".Register" />
         <activity android:name=".CrearPerfil" />
-        <activity android:name=".VerPerfil"></activity>
+        <activity android:name=".VerPerfil" />
     </application>
 
 </manifest>
