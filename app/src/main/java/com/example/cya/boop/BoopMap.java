@@ -128,6 +128,7 @@ public class BoopMap extends FragmentActivity implements OnMapReadyCallback, Goo
                             });
             AlertDialog alert = builder.create();
             alert.show();
+            //startService()
         }
 
         //Mas manageamientos de layout
@@ -250,6 +251,9 @@ public class BoopMap extends FragmentActivity implements OnMapReadyCallback, Goo
         mLastLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
 
         if (mLastLocation != null) {
+
+            awakeNotificationWorker();
+
             GeoQuery geoQuery = geofire.queryAtLocation(new GeoLocation(mLastLocation.getLatitude(), mLastLocation.getLongitude()),10);
             mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(mLastLocation.getLatitude(),mLastLocation.getLongitude()),10));
             geoQuery.addGeoQueryEventListener(new MarkerManager(mMap,mDatabase,geofire));
@@ -310,5 +314,12 @@ public class BoopMap extends FragmentActivity implements OnMapReadyCallback, Goo
         boolean finePermissionCheck = (ContextCompat.checkSelfPermission(context, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED);
 
         return isAvailable && (coarsePermissionCheck || finePermissionCheck);
+    }
+
+    public void awakeNotificationWorker(){
+        Intent toSend = new Intent(this,NotificationWorker.class);
+        toSend.putExtra("longitude", mLastLocation.getLongitude());
+        toSend.putExtra("latitude",mLastLocation.getLatitude());
+        startService(toSend);
     }
 }
