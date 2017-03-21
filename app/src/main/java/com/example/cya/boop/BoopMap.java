@@ -273,8 +273,13 @@ public class BoopMap extends FragmentActivity implements OnMapReadyCallback, Goo
 
             awakeNotificationWorker();
 
+            // todo el numero de abajo no deberia ser hardcodeado sino deberia de estar en la config del usuario
+            // es un int
             GeoQuery geoQuery = geofire.queryAtLocation(new GeoLocation(mLastLocation.getLatitude(), mLastLocation.getLongitude()),10);
-            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(mLastLocation.getLatitude(),mLastLocation.getLongitude()),10));
+            // este de arriba ^
+
+            // este oc
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(mLastLocation.getLatitude(),mLastLocation.getLongitude()),16));
             geoQuery.addGeoQueryEventListener(new MarkerManager(mMap,mDatabase,geofire));
         }
 
