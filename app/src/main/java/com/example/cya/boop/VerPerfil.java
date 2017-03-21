@@ -55,7 +55,7 @@ public class VerPerfil extends AppCompatActivity {
 
         //Firebasin'
         mDatabase = FirebaseDatabase.getInstance().getReference("Usuarios").child(idUser);
-        mDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
+        mDatabase.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 //Aqui se meten en la vista las cosas que vienen de la BD
@@ -68,7 +68,7 @@ public class VerPerfil extends AppCompatActivity {
                     nombre.setText(user.getNombre());
 
                     edad = (TextView) findViewById(R.id.VPedad);
-                    //TODO Usar aqui cosas no deprecated
+                    //Si eso, usar cosas no deprecated
                     edad.setText(getAge(user.getFechaNac().getYear()+1900, user.getFechaNac().getMonth(),user.getFechaNac().getDay()));
                 }
             }
@@ -76,7 +76,6 @@ public class VerPerfil extends AppCompatActivity {
             @Override
             public void onCancelled(DatabaseError databaseError) {
                 Log.w("VerPerfil", "onCreateValueEventListener:onCancelled", databaseError.toException());
-
             }
         });
 
@@ -93,8 +92,9 @@ public class VerPerfil extends AppCompatActivity {
             botonEditarPerfil.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    startActivity(new Intent(VerPerfil.this, CrearPerfil.class));
-                    //TODO ENORME AQUI, ESTO ES PROVISIONAL, puede que no funque y ademas debe hacer cosas al volver y tal
+                    Intent intento = new Intent(VerPerfil.this, CrearPerfil.class);
+                    intento.putExtra("Editando", true);
+                    startActivity(intento);
                 }
             });
         }else{

@@ -169,7 +169,7 @@ public class Login extends AppCompatActivity implements
 
                             //Saltamos a la creación de perfil
                             Intent intento = new Intent(Login.this, CrearPerfil.class);
-                            intento.putExtra("UserID", mAuth.getCurrentUser().getUid());
+                            intento.putExtra("Editando", false);
                             startActivity(intento);
                         }
                     }

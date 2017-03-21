@@ -8,17 +8,26 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import com.example.cya.boop.core.Usuario;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.MemoryPolicy;
 import com.squareup.picasso.NetworkPolicy;
@@ -39,12 +48,19 @@ public class CrearPerfil extends AppCompatActivity {
     private int mYear;
     private int mMonth;
     private int mDay;
+    private FirebaseAuth mAuth;
+    private FirebaseAuth.AuthStateListener mAuthListener;
+    private Boolean editando;
+    private DatabaseReference mDatabase;
+    private Usuario userActual;
     private static final int READ_REQUEST_CODE = 324;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_crear_perfil);
+
+        editando = getIntent().getExtras().getBoolean("Editando");
 
         idUser = FirebaseAuth.getInstance().getCurrentUser().getUid();
         nombre = (EditText) findViewById(R.id.CPnombre);
@@ -85,6 +101,47 @@ public class CrearPerfil extends AppCompatActivity {
                 crearPerfil();
             }
         });
+
+        //COSAS QUE SE HACEN SI ESTAMOS EDITANDO NUESTRO PERFIL
+        if(editando){
+            mDatabase = FirebaseDatabase.getInstance().getReference("Usuarios").child(idUser);
+            mDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    //Aqui se meten en la vista las cosas que vienen de la BD
+                    userActual = dataSnapshot.getValue(Usuario.class);
+                    if(userActual != null){
+                        nombre.setText(userActual.getNombre());
+                        bio.setText(userActual.getBio());
+                        fechaNac.setVisibility(View.INVISIBLE);
+                    }
+                }
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+                    Log.w("VerPerfil", "onCreateValueEventListener:onCancelled", databaseError.toException());
+
+                }
+            });
+            TextView textoFechaNac = (TextView) findViewById(R.id.CPfechaNacText);
+            textoFechaNac.setText("");
+            botonCrear.setText("Guardar cambios");
+        }
+
+        mAuth = FirebaseAuth.getInstance();
+        mAuthListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                FirebaseUser user = firebaseAuth.getCurrentUser();
+                if (user != null) {
+                    // User is signed in
+                    Log.d("BoopMap", "onAuthStateChanged:signed_in:" + user.getUid());
+                } else {
+                    // User is signed out
+                    Log.d("BoopMap", "onAuthStateChanged:signed_out");
+                    finish();
+                }
+            }
+        };
     }
 
     //Mete datos al usuario user creado arriba y luego ejecuta su crear. Luego va a boopmap
@@ -92,21 +149,19 @@ public class CrearPerfil extends AppCompatActivity {
 
         user.setNombre(nombre.getText().toString());
         user.setBio(bio.getText().toString());
-        Calendar c = Calendar.getInstance();
-        c.set(mYear,mMonth,mDay,0,0);
-        user.setFechaNac(c.getTime());
-        user.crear(idUser);
-        startActivity(new Intent(this, BoopMap.class));
-    }
-
-    @Override
-    public void onResume(){
-        super.onResume();
-        //TODO usar aqui un AuthStateListener en vez de esta solucion cutre
-        if(FirebaseAuth.getInstance().getCurrentUser() == null){
-            finish();
+        if(editando){
+            user.setFechaNac(userActual.getFechaNac());
+        }else {
+            Calendar c = Calendar.getInstance();
+            c.set(mYear, mMonth, mDay, 0, 0);
+            user.setFechaNac(c.getTime());
         }
-
+        user.crear(idUser);
+        if(editando){
+            finish();
+        }else {
+            startActivity(new Intent(this, BoopMap.class));
+        }
     }
 
     private void pedirImagen(){
@@ -167,6 +222,20 @@ public class CrearPerfil extends AppCompatActivity {
                         });
             }
         });
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        mAuth.addAuthStateListener(mAuthListener);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        if (mAuthListener != null) {
+            mAuth.removeAuthStateListener(mAuthListener);
+        }
     }
 
 }

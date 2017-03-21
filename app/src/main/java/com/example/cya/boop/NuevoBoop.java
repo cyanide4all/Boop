@@ -105,8 +105,6 @@ public class NuevoBoop extends AppCompatActivity {
         fdia.setText(mYear+"/"+mMonth+"/"+mDay);
         fhora.setText(mHour+":"+mMinute);
 
-        // TODO refactor
-
         dia.setOnClickListener(new View.OnClickListener() {
 
             @Override
