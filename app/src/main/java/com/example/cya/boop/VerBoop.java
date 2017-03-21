@@ -154,7 +154,7 @@ public class VerBoop extends DialogFragment {
         botonSalir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getActivity().onBackPressed();  //Mirar si esto funca correctamente
+                cerrarFragment();
             }
         });
 
@@ -225,4 +225,8 @@ public class VerBoop extends DialogFragment {
     }
     }*/
 
+    private void cerrarFragment()
+    {
+        this.getActivity().onBackPressed();
+    }
 }
