@@ -180,6 +180,8 @@ public class BoopMap extends FragmentActivity implements OnMapReadyCallback, Goo
         geofire = new GeoFire(ref);
         mDatabase = FirebaseDatabase.getInstance().getReference("BoopInfo");
 
+        android.os.Debug.waitForDebugger();
+
     }
 
     @Override
@@ -321,5 +323,6 @@ public class BoopMap extends FragmentActivity implements OnMapReadyCallback, Goo
         toSend.putExtra("longitude", mLastLocation.getLongitude());
         toSend.putExtra("latitude",mLastLocation.getLatitude());
         startService(toSend);
+        Log.d("notification worker","notification worker being awaked");
     }
 }

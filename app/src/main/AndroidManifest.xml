@@ -42,6 +42,7 @@
         <activity android:name=".Register" />
         <activity android:name=".CrearPerfil" />
         <activity android:name=".VerPerfil" />
+        <service android:name=".NotificationWorker" android:exported="false" android:enabled="true"/>
     </application>
 
 </manifest>
