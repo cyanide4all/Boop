@@ -17,6 +17,7 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.SeekBar;
 import android.widget.TextView;
 
 import com.example.cya.boop.core.Usuario;
@@ -53,7 +54,10 @@ public class CrearPerfil extends AppCompatActivity {
     private Boolean editando;
     private DatabaseReference mDatabase;
     private Usuario userActual;
+    private SeekBar descubrimiento;
+    private TextView descubrimientoText;
     private static final int READ_REQUEST_CODE = 324;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,6 +70,24 @@ public class CrearPerfil extends AppCompatActivity {
         nombre = (EditText) findViewById(R.id.CPnombre);
         bio = (EditText) findViewById(R.id.CPbio);
         botonCrear = (Button) findViewById(R.id.CPconfirm);
+        descubrimientoText = (TextView) findViewById(R.id.CPdescubrimientoText);
+        descubrimiento = (SeekBar) findViewById(R.id.CPdescubrimiento);
+        descubrimiento.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                descubrimientoText.setText(Integer.toString(progress) + " Km");
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
         botonAvatar = (ImageButton) findViewById(R.id.user_image_set);
         botonAvatar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -114,6 +136,7 @@ public class CrearPerfil extends AppCompatActivity {
                         nombre.setText(userActual.getNombre());
                         bio.setText(userActual.getBio());
                         fechaNac.setVisibility(View.INVISIBLE);
+                        descubrimiento.setProgress(userActual.getRadio());
                     }
                 }
                 @Override
@@ -123,7 +146,7 @@ public class CrearPerfil extends AppCompatActivity {
                 }
             });
             TextView textoFechaNac = (TextView) findViewById(R.id.CPfechaNacText);
-            textoFechaNac.setText("");
+            textoFechaNac.setVisibility(View.INVISIBLE);
             botonCrear.setText("Guardar cambios");
         }
 
@@ -149,6 +172,7 @@ public class CrearPerfil extends AppCompatActivity {
 
         user.setNombre(nombre.getText().toString());
         user.setBio(bio.getText().toString());
+        user.setRadio(descubrimiento.getProgress());
         if(editando){
             user.setFechaNac(userActual.getFechaNac());
         }else {

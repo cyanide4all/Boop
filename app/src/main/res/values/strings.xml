@@ -55,6 +55,7 @@
     <string name="salir">Salir</string>
     <string name="anyos">años</string>
     <string name="editarPerfil">Editar Perfil</string>
+    <string name="radio">Área de descubrimiento</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

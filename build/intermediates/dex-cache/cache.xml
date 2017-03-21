@@ -7,7 +7,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="4411b63ebf8e32b3763f409b89c4994347edd138">
+        sha1="6615a07030f16ecf2b85ce4879d5db7bf52f0b1d">
         <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_350711ed88624d87d1ab7242725942a6f55ff7f6/classes.dex" />
     </item>
     <item
@@ -39,69 +39,6 @@
     </item>
     <item
         is-multidex="true"
-        jar="/home/cya/.android/build-cache/f2915086f31aece893194ca52a5cfdb87edda7ce/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="734e80dffea7bd76c18ae256822a124c30d85850">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_567e805bda281f44363a4b8faa418b80b83762f1/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/.android/build-cache/49e90e4488489a8b903251bb9479dee0a18b5921/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="e820b7be8c035dd522da4bc822e8a76c8e27921a">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_e7abb83f00ae41ad971558f34f56a62218a4ea40/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/.android/build-cache/2e4a21eeac07a06a8bb3bfd808dc40fc87fd654d/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="c03bf57f358aa10d253f21989e93bcf6014b3b17">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_9317864061d65ef00964e2a87e9bfae60fe97567/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/.android/build-cache/8402b1d845eacf4534eb71ee08fa405508a39e94/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="67eb33110dbacb46a48175b08ae0c96761d2c17d">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_d90f4f37e1b39d1f5427832bb8997ebdfc36e3f1/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/.android/build-cache/b3fa612fa72bd74142e641478a0291cf09aca7d6/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="cd7951e04cfb9a8bf008d544a478d9a8d8192d38">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_068aa237e654aa53f245b9ba8c7cdf4186c7acf5/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/.android/build-cache/a368904cb037c939c81afc799eb0c1744cf39750/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="6666dd525c3da197e7d07f4f23ef5fc7881a697b">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_b343178ac559b659784b7d631155ba345137f8a4/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/cya/.android/build-cache/cb71158cb507896aab8bddc66ed50fadfa7426df/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="15b049fedbd8e3926bf99d9e45dfc9b2a1043bb9">
-        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_cefedf9e09303db12869628a8adc1c71b3c00511/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="/home/cya/.android/build-cache/9468654eb3682a13ace30ed3478f94c1029b8fe3/output/jars/classes.jar"
         jumboMode="true"
         optimize="true"
@@ -117,6 +54,15 @@
         revision="25.0.2"
         sha1="b6763651ec29b4c95e7bbe63fc393ffcc8c4c2c5">
         <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.0.0_c4079688839383a4bfee669cc9cd702cfc205701/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/cya/.android/build-cache/f2915086f31aece893194ca52a5cfdb87edda7ce/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="734e80dffea7bd76c18ae256822a124c30d85850">
+        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_567e805bda281f44363a4b8faa418b80b83762f1/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -156,6 +102,15 @@
     </item>
     <item
         is-multidex="true"
+        jar="/home/cya/.android/build-cache/49e90e4488489a8b903251bb9479dee0a18b5921/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e820b7be8c035dd522da4bc822e8a76c8e27921a">
+        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_e7abb83f00ae41ad971558f34f56a62218a4ea40/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/home/cya/.android/build-cache/9e2d591ae71130bd78251ad12171413d9c19eb7c/output/jars/classes.jar"
         jumboMode="true"
         optimize="true"
@@ -165,12 +120,57 @@
     </item>
     <item
         is-multidex="true"
+        jar="/home/cya/.android/build-cache/2e4a21eeac07a06a8bb3bfd808dc40fc87fd654d/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c03bf57f358aa10d253f21989e93bcf6014b3b17">
+        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_9317864061d65ef00964e2a87e9bfae60fe97567/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/cya/.android/build-cache/8402b1d845eacf4534eb71ee08fa405508a39e94/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="67eb33110dbacb46a48175b08ae0c96761d2c17d">
+        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_d90f4f37e1b39d1f5427832bb8997ebdfc36e3f1/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/home/cya/.android/build-cache/d159b04e3a6b8be7e5680f5a11dcb061c0b96646/output/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
         sha1="b327fbe2fad414bc38cf0ce8f7efe1a38f572837">
         <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_769fb784ba2b5975e7e01f522ecf5c8ecce07818/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/cya/.android/build-cache/b3fa612fa72bd74142e641478a0291cf09aca7d6/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="cd7951e04cfb9a8bf008d544a478d9a8d8192d38">
+        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_068aa237e654aa53f245b9ba8c7cdf4186c7acf5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/cya/.android/build-cache/a368904cb037c939c81afc799eb0c1744cf39750/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="6666dd525c3da197e7d07f4f23ef5fc7881a697b">
+        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_b343178ac559b659784b7d631155ba345137f8a4/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/cya/.android/build-cache/cb71158cb507896aab8bddc66ed50fadfa7426df/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="15b049fedbd8e3926bf99d9e45dfc9b2a1043bb9">
+        <dex dex="/home/cya/gitclones/Boop/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_cefedf9e09303db12869628a8adc1c71b3c00511/classes.dex" />
     </item>
     <item
         is-multidex="true"

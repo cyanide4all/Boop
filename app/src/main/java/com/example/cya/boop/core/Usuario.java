@@ -27,6 +27,9 @@ public class Usuario implements Serializable {
     private Date fechaNac;
     //Popularidad del usuario
     private int karma;
+    //Radio de accion
+    private int radio;
+
     //Constructor vacío por tocarle los huevos a oskaru
     public Usuario (){}
 
@@ -35,6 +38,10 @@ public class Usuario implements Serializable {
     //
     public String getBio() {
         return bio;
+    }
+
+    public int getRadio() {
+        return radio;
     }
 
     public Date getFechaNac() {
@@ -55,6 +62,10 @@ public class Usuario implements Serializable {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public void setRadio(int radio) {
+        this.radio = radio;
     }
 
     //Crea un perfil de usuario con clave idUsuario
