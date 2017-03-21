@@ -16,6 +16,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.Calendar;
+
 public class VerPerfil extends AppCompatActivity {
 
     private Button botonLogout;
@@ -66,8 +68,8 @@ public class VerPerfil extends AppCompatActivity {
                     nombre.setText(user.getNombre());
 
                     edad = (TextView) findViewById(R.id.VPedad);
-                    //TODO Tenemos fecha de nacimiento, conseguimos edad
-                    //edad.setText();
+                    //TODO fechaNac no es string tiene que ser otro tipo
+                    edad.setText(getAge(null, null, null));
                 }
             }
 
@@ -108,4 +110,24 @@ public class VerPerfil extends AppCompatActivity {
         FirebaseAuth.getInstance().signOut();
         finish();
     }
+
+    //Devuelve edad como string a partir de nacimiento. (src StackOverflow)
+    private String getAge(int year, int month, int day){
+        Calendar dob = Calendar.getInstance();
+        Calendar today = Calendar.getInstance();
+
+        dob.set(year, month, day);
+
+        int age = today.get(Calendar.YEAR) - dob.get(Calendar.YEAR);
+
+        if (today.get(Calendar.DAY_OF_YEAR) < dob.get(Calendar.DAY_OF_YEAR)){
+            age--;
+        }
+
+        Integer ageInt = new Integer(age);
+        String ageS = ageInt.toString();
+
+        return ageS;
+    }
+
 }
