@@ -68,8 +68,8 @@ public class VerPerfil extends AppCompatActivity {
                     nombre.setText(user.getNombre());
 
                     edad = (TextView) findViewById(R.id.VPedad);
-                    //TODO fechaNac no es string tiene que ser otro tipo
-                    edad.setText(getAge(null, null, null));
+                    //TODO Usar aqui cosas no deprecated
+                    edad.setText(getAge(user.getFechaNac().getYear()+1900, user.getFechaNac().getMonth(),user.getFechaNac().getDay()));
                 }
             }
 

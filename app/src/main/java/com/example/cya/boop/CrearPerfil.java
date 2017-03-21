@@ -1,6 +1,7 @@
 package com.example.cya.boop;
 
 import android.app.Activity;
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
@@ -11,6 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
@@ -23,15 +25,20 @@ import com.squareup.picasso.NetworkPolicy;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Target;
 
+import java.util.Calendar;
+
 public class CrearPerfil extends AppCompatActivity {
 
     private EditText nombre;
     private EditText bio;
-    private EditText fechaNac;
+    private Button fechaNac;
     private Button botonCrear;
     private String idUser;
     private Usuario user;
     private ImageButton botonAvatar;
+    private int mYear;
+    private int mMonth;
+    private int mDay;
     private static final int READ_REQUEST_CODE = 324;
 
     @Override
@@ -42,14 +49,31 @@ public class CrearPerfil extends AppCompatActivity {
         idUser = FirebaseAuth.getInstance().getCurrentUser().getUid();
         nombre = (EditText) findViewById(R.id.CPnombre);
         bio = (EditText) findViewById(R.id.CPbio);
-        //TODO que fecha no sea un editText y que sea un calendario
-        fechaNac = (EditText) findViewById(R.id.CPfechaNac);
         botonCrear = (Button) findViewById(R.id.CPconfirm);
         botonAvatar = (ImageButton) findViewById(R.id.user_image_set);
         botonAvatar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 pedirImagen();
+            }
+        });
+
+        fechaNac = (Button) findViewById(R.id.CPfechaNac);
+
+        fechaNac.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                DatePickerDialog d = new DatePickerDialog(CrearPerfil.this, new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
+                        fechaNac.setText(i+"/"+i1+"/"+i2);
+                        mYear = i;
+                        mMonth = i1;
+                        mDay = i2;
+                    }
+                }, mYear, mMonth, mDay);
+                d.show();
             }
         });
 
@@ -68,8 +92,9 @@ public class CrearPerfil extends AppCompatActivity {
 
         user.setNombre(nombre.getText().toString());
         user.setBio(bio.getText().toString());
-        user.setFechaNac(fechaNac.getText().toString());
-
+        Calendar c = Calendar.getInstance();
+        c.set(mYear,mMonth,mDay,0,0);
+        user.setFechaNac(c.getTime());
         user.crear(idUser);
         startActivity(new Intent(this, BoopMap.class));
     }

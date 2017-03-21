@@ -223,7 +223,7 @@ public class NuevoBoop extends AppCompatActivity {
 
     private boolean setDateAndTime(Boop b){
         Calendar c = Calendar.getInstance();
-        c.set(mYear,mMonth,mDay,mDay,mMinute);
+        c.set(mYear,mMonth,mDay,mHour,mMinute);
         boop.setFechaIni(c.getTime());
 
         c.set(fmYear,fmMonth,fmDay,fmDay,fmMinute);

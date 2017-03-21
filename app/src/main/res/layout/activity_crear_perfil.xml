@@ -83,20 +83,20 @@
             android:layout_height="wrap_content">
 
             <TextView
-                android:text="@string/fechaNac"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:id="@+id/textView5"
-                android:layout_weight="1" />
-
-            <EditText
-                android:background="@drawable/interactuable"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:inputType="date"
-                android:ems="10"
+                android:text="@string/fechaNac"
+                android:layout_weight="0.29" />
+
+            <Button
                 android:id="@+id/CPfechaNac"
-                android:layout_weight="1" />
+                style="@android:style/Widget.Material.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:background="@drawable/interactuable" />
+
         </LinearLayout>
         <Space
             android:layout_width="20dp"
