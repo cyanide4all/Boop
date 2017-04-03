@@ -11,6 +11,7 @@ import com.google.firebase.storage.UploadTask;
 
 import java.io.Serializable;
 import java.io.StringReader;
+import java.util.Date;
 
 /**
  * Created by cya on 2/22/17.
@@ -23,9 +24,12 @@ public class Usuario implements Serializable {
     private String bio;
     //Fecha de nacimiento en principio para restringción de edad. Puede que luego se permita
     // ocultarlo para por si mujer subnormal
-    private String fechaNac;
+    private Date fechaNac;
     //Popularidad del usuario
     private int karma;
+    //Radio de accion
+    private int radio;
+
     //Constructor vacío por tocarle los huevos a oskaru
     public Usuario (){}
 
@@ -36,7 +40,11 @@ public class Usuario implements Serializable {
         return bio;
     }
 
-    public String getFechaNac() {
+    public int getRadio() {
+        return radio;
+    }
+
+    public Date getFechaNac() {
         return fechaNac;
     }
 
@@ -48,12 +56,16 @@ public class Usuario implements Serializable {
         this.bio = bio;
     }
 
-    public void setFechaNac(String fechaNac) {
+    public void setFechaNac(Date fechaNac) {
         this.fechaNac = fechaNac;
     }
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public void setRadio(int radio) {
+        this.radio = radio;
     }
 
     //Crea un perfil de usuario con clave idUsuario

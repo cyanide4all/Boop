@@ -4,6 +4,7 @@ import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
+import android.util.Log;
 
 import com.firebase.geofire.GeoFire;
 import com.firebase.geofire.GeoLocation;
@@ -14,13 +15,14 @@ import com.google.firebase.database.FirebaseDatabase;
 public class NotificationWorker extends Service {
     protected GeoLocation user_location;
 
-    public NotificationWorker() {
-    }
-
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        double latitude = intent.getDoubleExtra("latitude",0.0);
-        double longitude = intent.getDoubleExtra("longitude",0.0);
+        double latitude = intent.getDoubleExtra("latitude",5);
+        double longitude = intent.getDoubleExtra("longitude",5);
+        Log.e("notification latlog",Double.toString(latitude));
+        Log.e("notification latlog",Double.toString(longitude));
+        Log.d("notification worker","notification worker awaked");
+
         this.user_location = new GeoLocation(latitude, longitude);
 
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference("locations");
@@ -29,9 +31,7 @@ public class NotificationWorker extends Service {
         GeoQuery query = geofire.queryAtLocation(this.user_location,16);
         query.addGeoQueryEventListener(new NotificationBManager(this));
 
-
-
-        return Service.START_STICKY;
+        return START_STICKY;
     }
 
     @Nullable

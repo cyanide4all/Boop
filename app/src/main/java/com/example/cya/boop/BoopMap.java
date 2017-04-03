@@ -45,6 +45,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -64,6 +65,8 @@ public class BoopMap extends FragmentActivity implements OnMapReadyCallback, Goo
     private Boolean aceptando_clicks = false;
     private DatabaseReference mDatabase;
     private Marker myEventLocation;
+    private FirebaseAuth.AuthStateListener mAuthListener;
+    private FirebaseAuth mAuth;
     public static DisplayMetrics displayMetrics;
 
     private void createNewBoop(){
@@ -180,6 +183,21 @@ public class BoopMap extends FragmentActivity implements OnMapReadyCallback, Goo
         geofire = new GeoFire(ref);
         mDatabase = FirebaseDatabase.getInstance().getReference("BoopInfo");
 
+        mAuth = FirebaseAuth.getInstance();
+        mAuthListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                FirebaseUser user = firebaseAuth.getCurrentUser();
+                if (user != null) {
+                    // User is signed in
+                    Log.d("BoopMap", "onAuthStateChanged:signed_in:" + user.getUid());
+                } else {
+                    // User is signed out
+                    Log.d("BoopMap", "onAuthStateChanged:signed_out");
+                    finish();
+                }
+            }
+        };
     }
 
     @Override
@@ -236,7 +254,8 @@ public class BoopMap extends FragmentActivity implements OnMapReadyCallback, Goo
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         if (requestCode == 1001 && grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
             // me han dado permisos top!
-            // TODO SI no permisos pues cerrar la aplicacion o algo
+        }else{
+            finish();
         }
     }
 
@@ -254,8 +273,13 @@ public class BoopMap extends FragmentActivity implements OnMapReadyCallback, Goo
 
             awakeNotificationWorker();
 
+            // todo el numero de abajo no deberia ser hardcodeado sino deberia de estar en la config del usuario
+            // es un int
             GeoQuery geoQuery = geofire.queryAtLocation(new GeoLocation(mLastLocation.getLatitude(), mLastLocation.getLongitude()),10);
-            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(mLastLocation.getLatitude(),mLastLocation.getLongitude()),10));
+            // este de arriba ^
+
+            // este oc
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(mLastLocation.getLatitude(),mLastLocation.getLongitude()),16));
             geoQuery.addGeoQueryEventListener(new MarkerManager(mMap,mDatabase,geofire));
         }
 
@@ -269,11 +293,16 @@ public class BoopMap extends FragmentActivity implements OnMapReadyCallback, Goo
     protected void onStart() {
         mGoogleApiClient.connect();
         super.onStart();
+        mAuth.addAuthStateListener(mAuthListener);
     }
 
     protected void onStop() {
         mGoogleApiClient.disconnect();
         super.onStop();
+        if (mAuthListener != null) {
+            mAuth.removeAuthStateListener(mAuthListener);
+        }
+
     }
 
 
@@ -282,15 +311,6 @@ public class BoopMap extends FragmentActivity implements OnMapReadyCallback, Goo
 
     }
 
-    @Override
-    public void onResume(){
-        super.onResume();
-        //TODO usar aqui un AuthStateListener en vez de esta solucion cutre
-        if(FirebaseAuth.getInstance().getCurrentUser() == null){
-            finish();
-        }
-
-    }
 
     public static boolean isLocationEnabled(Context context) {
         int locationMode = 0;
@@ -321,5 +341,6 @@ public class BoopMap extends FragmentActivity implements OnMapReadyCallback, Goo
         toSend.putExtra("longitude", mLastLocation.getLongitude());
         toSend.putExtra("latitude",mLastLocation.getLatitude());
         startService(toSend);
+        Log.d("notification worker","notification worker being awaked");
     }
 }

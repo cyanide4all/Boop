@@ -1,55 +1,117 @@
 package com.example.cya.boop;
 
 import android.app.Activity;
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.SeekBar;
+import android.widget.TextView;
 
 import com.example.cya.boop.core.Usuario;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.MemoryPolicy;
 import com.squareup.picasso.NetworkPolicy;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Target;
 
+import java.util.Calendar;
+
 public class CrearPerfil extends AppCompatActivity {
 
     private EditText nombre;
     private EditText bio;
-    private EditText fechaNac;
+    private Button fechaNac;
     private Button botonCrear;
     private String idUser;
     private Usuario user;
     private ImageButton botonAvatar;
+    private int mYear;
+    private int mMonth;
+    private int mDay;
+    private FirebaseAuth mAuth;
+    private FirebaseAuth.AuthStateListener mAuthListener;
+    private Boolean editando;
+    private DatabaseReference mDatabase;
+    private Usuario userActual;
+    private SeekBar descubrimiento;
+    private TextView descubrimientoText;
     private static final int READ_REQUEST_CODE = 324;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_crear_perfil);
 
+        editando = getIntent().getExtras().getBoolean("Editando");
+
         idUser = FirebaseAuth.getInstance().getCurrentUser().getUid();
         nombre = (EditText) findViewById(R.id.CPnombre);
         bio = (EditText) findViewById(R.id.CPbio);
-        //TODO que fecha no sea un editText y que sea un calendario
-        fechaNac = (EditText) findViewById(R.id.CPfechaNac);
         botonCrear = (Button) findViewById(R.id.CPconfirm);
+        descubrimientoText = (TextView) findViewById(R.id.CPdescubrimientoText);
+        descubrimiento = (SeekBar) findViewById(R.id.CPdescubrimiento);
+        descubrimiento.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                descubrimientoText.setText(Integer.toString(progress) + " Km");
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
         botonAvatar = (ImageButton) findViewById(R.id.user_image_set);
         botonAvatar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 pedirImagen();
+            }
+        });
+
+        fechaNac = (Button) findViewById(R.id.CPfechaNac);
+
+        fechaNac.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                DatePickerDialog d = new DatePickerDialog(CrearPerfil.this, new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
+                        fechaNac.setText(i+"/"+i1+"/"+i2);
+                        mYear = i;
+                        mMonth = i1;
+                        mDay = i2;
+                    }
+                }, mYear, mMonth, mDay);
+                d.show();
             }
         });
 
@@ -61,6 +123,48 @@ public class CrearPerfil extends AppCompatActivity {
                 crearPerfil();
             }
         });
+
+        //COSAS QUE SE HACEN SI ESTAMOS EDITANDO NUESTRO PERFIL
+        if(editando){
+            mDatabase = FirebaseDatabase.getInstance().getReference("Usuarios").child(idUser);
+            mDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    //Aqui se meten en la vista las cosas que vienen de la BD
+                    userActual = dataSnapshot.getValue(Usuario.class);
+                    if(userActual != null){
+                        nombre.setText(userActual.getNombre());
+                        bio.setText(userActual.getBio());
+                        fechaNac.setVisibility(View.INVISIBLE);
+                        descubrimiento.setProgress(userActual.getRadio());
+                    }
+                }
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+                    Log.w("VerPerfil", "onCreateValueEventListener:onCancelled", databaseError.toException());
+
+                }
+            });
+            TextView textoFechaNac = (TextView) findViewById(R.id.CPfechaNacText);
+            textoFechaNac.setVisibility(View.INVISIBLE);
+            botonCrear.setText("Guardar cambios");
+        }
+
+        mAuth = FirebaseAuth.getInstance();
+        mAuthListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                FirebaseUser user = firebaseAuth.getCurrentUser();
+                if (user != null) {
+                    // User is signed in
+                    Log.d("BoopMap", "onAuthStateChanged:signed_in:" + user.getUid());
+                } else {
+                    // User is signed out
+                    Log.d("BoopMap", "onAuthStateChanged:signed_out");
+                    finish();
+                }
+            }
+        };
     }
 
     //Mete datos al usuario user creado arriba y luego ejecuta su crear. Luego va a boopmap
@@ -68,20 +172,20 @@ public class CrearPerfil extends AppCompatActivity {
 
         user.setNombre(nombre.getText().toString());
         user.setBio(bio.getText().toString());
-        user.setFechaNac(fechaNac.getText().toString());
-
-        user.crear(idUser);
-        startActivity(new Intent(this, BoopMap.class));
-    }
-
-    @Override
-    public void onResume(){
-        super.onResume();
-        //TODO usar aqui un AuthStateListener en vez de esta solucion cutre
-        if(FirebaseAuth.getInstance().getCurrentUser() == null){
-            finish();
+        user.setRadio(descubrimiento.getProgress());
+        if(editando){
+            user.setFechaNac(userActual.getFechaNac());
+        }else {
+            Calendar c = Calendar.getInstance();
+            c.set(mYear, mMonth, mDay, 0, 0);
+            user.setFechaNac(c.getTime());
         }
-
+        user.crear(idUser);
+        if(editando){
+            finish();
+        }else {
+            startActivity(new Intent(this, BoopMap.class));
+        }
     }
 
     private void pedirImagen(){
@@ -142,6 +246,20 @@ public class CrearPerfil extends AppCompatActivity {
                         });
             }
         });
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        mAuth.addAuthStateListener(mAuthListener);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        if (mAuthListener != null) {
+            mAuth.removeAuthStateListener(mAuthListener);
+        }
     }
 
 }

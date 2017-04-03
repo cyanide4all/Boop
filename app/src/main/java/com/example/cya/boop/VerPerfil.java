@@ -16,6 +16,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.Calendar;
+
 public class VerPerfil extends AppCompatActivity {
 
     private Button botonLogout;
@@ -53,7 +55,7 @@ public class VerPerfil extends AppCompatActivity {
 
         //Firebasin'
         mDatabase = FirebaseDatabase.getInstance().getReference("Usuarios").child(idUser);
-        mDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
+        mDatabase.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 //Aqui se meten en la vista las cosas que vienen de la BD
@@ -66,15 +68,14 @@ public class VerPerfil extends AppCompatActivity {
                     nombre.setText(user.getNombre());
 
                     edad = (TextView) findViewById(R.id.VPedad);
-                    //TODO Tenemos fecha de nacimiento, conseguimos edad
-                    //edad.setText();
+                    //Si eso, usar cosas no deprecated
+                    edad.setText(getAge(user.getFechaNac().getYear()+1900, user.getFechaNac().getMonth(),user.getFechaNac().getDay()));
                 }
             }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
                 Log.w("VerPerfil", "onCreateValueEventListener:onCancelled", databaseError.toException());
-
             }
         });
 
@@ -91,8 +92,9 @@ public class VerPerfil extends AppCompatActivity {
             botonEditarPerfil.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    startActivity(new Intent(VerPerfil.this, CrearPerfil.class));
-                    //TODO ENORME AQUI, ESTO ES PROVISIONAL, puede que no funque y ademas debe hacer cosas al volver y tal
+                    Intent intento = new Intent(VerPerfil.this, CrearPerfil.class);
+                    intento.putExtra("Editando", true);
+                    startActivity(intento);
                 }
             });
         }else{
@@ -108,4 +110,24 @@ public class VerPerfil extends AppCompatActivity {
         FirebaseAuth.getInstance().signOut();
         finish();
     }
+
+    //Devuelve edad como string a partir de nacimiento. (src StackOverflow)
+    private String getAge(int year, int month, int day){
+        Calendar dob = Calendar.getInstance();
+        Calendar today = Calendar.getInstance();
+
+        dob.set(year, month, day);
+
+        int age = today.get(Calendar.YEAR) - dob.get(Calendar.YEAR);
+
+        if (today.get(Calendar.DAY_OF_YEAR) < dob.get(Calendar.DAY_OF_YEAR)){
+            age--;
+        }
+
+        Integer ageInt = new Integer(age);
+        String ageS = ageInt.toString();
+
+        return ageS;
+    }
+
 }
