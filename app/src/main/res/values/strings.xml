@@ -14,7 +14,7 @@
     <string name="nombre">Nombre</string>
     <string name="EscribeNombre">Podrás asignar nombre de usuario en Perfil</string>
     <string name="correo">E-mail</string>
-    <string name="EscribeCorreo">Escribe aquí tu correo electrónico</string>
+    <string name="EscribeCorreo">mi correo</string>
     <string name="pass">Contraseña</string>
     <string name="pass2">Validar Contraseña</string>
     <string name="EscribeContrasena">****</string>

@@ -121,7 +121,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.5"
-                    android:background="@drawable/interactuable" />
+                    android:background="@drawable/textfield" />
 
                 <Space
                     android:layout_width="1dp"
@@ -134,7 +134,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.5"
-                    android:background="@drawable/interactuable" />
+                    android:background="@drawable/textfield" />
 
             </LinearLayout>
 
@@ -166,7 +166,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.5"
-                    android:background="@drawable/interactuable" />
+                    android:background="@drawable/textfield" />
 
                 <Space
                     android:layout_width="1dp"
@@ -179,7 +179,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.5"
-                    android:background="@drawable/interactuable" />
+                    android:background="@drawable/textfield" />
 
             </LinearLayout>
 
@@ -203,7 +203,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.5"
-                    android:background="@drawable/interactuable"
+                    android:background="@drawable/textfield"
                     android:gravity="center_vertical|center_horizontal"
                     android:numeric="integer"
                     android:text="0" />

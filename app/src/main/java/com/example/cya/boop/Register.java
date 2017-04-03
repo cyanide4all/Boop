@@ -10,6 +10,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,7 +26,7 @@ public class Register extends AppCompatActivity {
     private EditText pass;
     private EditText pass2;
     private Button aceptar;
-    private Button cancelar;
+    private ImageButton cancelar;
     private TextView condiciones;
 
     private TextView t, tt;
@@ -49,7 +50,7 @@ public class Register extends AppCompatActivity {
         pass2 = (EditText) findViewById(R.id.pass2);
 
         aceptar = (Button) findViewById(R.id.accept);
-        cancelar = (Button) findViewById(R.id.cancel);
+        cancelar = (ImageButton) findViewById(R.id.cancel);
 
         condiciones = (TextView) findViewById(R.id.useConditions);
 

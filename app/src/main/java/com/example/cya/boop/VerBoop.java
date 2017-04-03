@@ -22,6 +22,8 @@ import java.text.SimpleDateFormat;
 import com.example.cya.boop.core.Boop;
 import com.example.cya.boop.core.Usuario;
 
+import com.example.cya.boop.util.LetterAvatar;
+import com.google.android.gms.ads.formats.NativeAd;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -79,105 +81,8 @@ public class VerBoop extends DialogFragment {
         descripcion.setText(boop.getDescripcion());
 
 
-        creador = (TextView) view.findViewById(R.id.VBCreador);
-        mDatabase = FirebaseDatabase.getInstance().getReference("Usuarios").child(uId);
-        mDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                //Aqui se meten en la vista las cosas que vienen de la BD
-                Usuario user = dataSnapshot.getValue(Usuario.class);
-                creador.setText(user.getNombre());
-                creador.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Intent intento = new Intent(getActivity(), VerPerfil.class);
-                        intento.putExtra("userID", uId);
-                        startActivity(intento);
-                    }
-                });
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                Log.w("VerBoop", "onCreateValueEventListener:onCancelled", databaseError.toException());
-
-            }
-        });
-
-        popularidadUsuario = (TextView) view.findViewById(R.id.VBPopularidad);
-        popularidadUsuario.setText(String.format(Locale.ENGLISH, " %d" ,boop.getPopularidad()));
-
-        empieza = (TextView) view.findViewById(R.id.VBhoraIni);
-        empieza.setText(boop.getFechaIni().toString());
-
-        termina = (TextView) view.findViewById(R.id.VBhoraFin);
-        termina.setText(dateFormat.format(boop.getFechaFin()));
-
-        tipoEvento = (TextView) view.findViewById(R.id.VBclasificacion);
-        tipoEvento.setText(boop.getTipo());
-
-        aforo = (TextView) view.findViewById(R.id.VBmaxAsistentes);
-        aforo.setText(String.format(Locale.ENGLISH, " %d" ,boop.getMaxBoopers()));
-
-        asisten = (TextView) view.findViewById(R.id.VBasistentes);
-        asisten.setText(String.format(Locale.ENGLISH, " %d" ,boop.getBoopers()));
-
-
-        dislikeBoop = (ImageButton) view.findViewById(R.id.noMeGusta);
-        dislikeBoop.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                boop.incrementarPopularidad(uId);
-                dislikeBoop.setClickable(false);
-                likeBoop.setClickable(true);
-                //Todo Pintar o no pintar
-            }
-        });
-
-        likeBoop = (ImageButton) view.findViewById(R.id.meGusta);
-        likeBoop.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                boop.decrementarPopularidad(uId);
-                dislikeBoop.setClickable(true);
-                likeBoop.setClickable(false);
-                //Todo Pintar o no pintar
-            }
-        });
-
-        //likeOdislike(); //Pinta los botones segun haya votado Todo descomentar esto cuando felipeman haga los botones
-
-        botonChat = (Button) view.findViewById(R.id.VBsalaChat);
-        botonChat.setFocusable(false); //ToDo para la sig iteraccion. Ver como hacer sala chat
-
-        botonSalir = (Button) view.findViewById(R.id.VBdejarDeVer);
-        botonSalir.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getActivity().onBackPressed();  //Mirar si esto funca correctamente
-            }
-        });
-
-        botonAsisitir = (ToggleButton) view.findViewById(R.id.VBasistir);
-        toggleAssist();
-        botonAsisitir.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (!botonAsisitir.isChecked()) {
-                    if(!boop.asistir(uId))  //Devuelve false si se ha alcanzado el máximo de boopers
-                    {
-                        Toast.makeText(view.getContext(), R.string.alcanzadoMaximo, Toast.LENGTH_SHORT ).show();
-                    }
-                    else
-                        botonAsisitir.setChecked(true);
-                }else
-                {
-                    boop.noAsistir(uId);
-                    botonAsisitir.setChecked(false);
-                }
-            }
-        });
-
+        ImageButton avatar = (ImageButton) view.findViewById(R.id.boopavatar);
+        avatar.setImageDrawable(new LetterAvatar(view.getContext(), 0,"F",40));
         return view;
     }
 

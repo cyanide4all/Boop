@@ -40,7 +40,7 @@
                 android:id="@+id/textView3" />
 
             <EditText
-                android:background="@drawable/interactuable"
+                android:background="@drawable/textfield"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textNoSuggestions|textPersonName"
@@ -64,7 +64,7 @@
                 android:id="@+id/textView4" />
 
             <EditText
-                android:background="@drawable/interactuable"
+                android:background="@drawable/textfield"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
@@ -90,7 +90,7 @@
                 android:layout_weight="1" />
 
             <EditText
-                android:background="@drawable/interactuable"
+                android:background="@drawable/textfield"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:inputType="date"
