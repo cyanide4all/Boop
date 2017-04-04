@@ -274,15 +274,10 @@ public class BoopMap extends FragmentActivity implements OnMapReadyCallback, Goo
             @Override
             public boolean onMarkerClick(Marker marker) {
                 //Pillamos el boop del tag
-                Boop b = (Boop) marker.getTag();
-                //Lo metemos en un bundle porque los constructores son nuestros enemigos
-                Bundle humble = new Bundle();
-                humble.putSerializable("boop",b);
-                //Y lo mandamos a verBoop, el popup
-                VerBoop verBoop = new VerBoop();
-                verBoop.setArguments(humble);
-
-                verBoop.show(getFragmentManager(), "VerBoopTag");
+                String claveBoop = (String) marker.getTag();
+                Intent intento = new Intent(BoopMap.this, VerBoop.class);
+                intento.putExtra("boopClave", claveBoop);
+                startActivity(intento);
                 return true;
             }
         });

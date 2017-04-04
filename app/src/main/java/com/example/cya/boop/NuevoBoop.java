@@ -199,11 +199,11 @@ public class NuevoBoop extends AppCompatActivity {
             //Primero pillamos las entradas del formulario
             EditText Bnombre = (EditText) findViewById(R.id.Bnombre);
             EditText Bdescripcion = (EditText) findViewById(R.id.bdescripcion);
-
+            EditText BmaxBoopers = (EditText) findViewById(R.id.bpersonas);
             //Luego metemos los datos en el boop
             boop.setNombre(Bnombre.getText().toString());
             boop.setDescripcion(Bdescripcion.getText().toString());
-
+            boop.setMaxBoopers(Integer.parseInt(BmaxBoopers.getText().toString()));
             //Metemos la id del creador en el boop
             String idUser = FirebaseAuth.getInstance().getCurrentUser().getUid();
             boop.setidCreador(idUser);
