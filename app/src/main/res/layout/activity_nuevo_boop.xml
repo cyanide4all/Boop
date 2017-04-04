@@ -204,9 +204,10 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="0.5"
                     android:background="@drawable/textfield"
+                    android:contentDescription="0"
                     android:gravity="center_vertical|center_horizontal"
-                    android:numeric="integer"
-                    android:text="0" />
+                    android:hint="0"
+                    android:numeric="integer" />
 
             </LinearLayout>
 

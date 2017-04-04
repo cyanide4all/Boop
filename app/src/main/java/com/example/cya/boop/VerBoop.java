@@ -1,10 +1,9 @@
 package com.example.cya.boop;
 
 
-import android.app.DialogFragment;
-import android.app.IntentService;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -17,13 +16,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
-import java.text.SimpleDateFormat;
-
 import com.example.cya.boop.core.Boop;
 import com.example.cya.boop.core.Usuario;
 
-import com.example.cya.boop.util.LetterAvatar;
-import com.google.android.gms.ads.formats.NativeAd;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -33,9 +28,10 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.Locale;
 
-public class VerBoop extends DialogFragment {
+public class VerBoop extends AppCompatActivity {
 
     private int margin;
+    private String boopClave;
     private Boop boop;
     private TextView nombre;
     private TextView descripcion;
@@ -46,59 +42,66 @@ public class VerBoop extends DialogFragment {
     private TextView tipoEvento;
     private TextView aforo;
     private TextView asisten;
-    private RatingBar estrellas;
 
     private ImageButton likeBoop;
     private ImageButton dislikeBoop;
     private Button botonSalir;
-    private ToggleButton botonAsisitir;
+    private Button botonAsisitir;
     private Button botonChat;
+
     private DatabaseReference mDatabase;
+    private DatabaseReference mDatabaseCreador;
     private String uId;
+    private String idCreador;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        margin = 10;
-    }
+        setContentView(R.layout.activity_ver_boop);
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
         //Recogemos el boop a traves de su bundle
-        Bundle bundle = getArguments();
-        this.boop = (Boop) bundle.getSerializable("boop");
+
+        this.boopClave = getIntent().getStringExtra("boopClave");
         uId = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        idCreador= "";
 
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/mm/yyyy 'a las' HH:mm"); //Formato de fecha
-
-        final View view = inflater.inflate(R.layout.activity_ver_boop, container, false);
         //Transformamos el boop en cosas visibles
-        nombre = (TextView) view.findViewById(R.id.VBnombre);
-        nombre.setText(boop.getNombre());
-
-        descripcion = (TextView) view.findViewById(R.id.VBdescripcion);
-        descripcion.setText(boop.getDescripcion());
-
-        ImageButton avatar = (ImageButton) view.findViewById(R.id.boopavatar);
-        avatar.setImageDrawable(new LetterAvatar(view.getContext(), 0,"F",40));
-
-        creador = (TextView) view.findViewById(R.id.VBCreador);
-        mDatabase = FirebaseDatabase.getInstance().getReference("Usuarios").child(uId);
+        mDatabase = FirebaseDatabase.getInstance().getReference("BoopInfo").child(boopClave);
         mDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 //Aqui se meten en la vista las cosas que vienen de la BD
-                Usuario user = dataSnapshot.getValue(Usuario.class);
-                creador.setText(user.getNombre());
-                creador.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Intent intento = new Intent(getActivity(), VerPerfil.class);
-                        intento.putExtra("userID", uId);
-                        startActivity(intento);
-                    }
-                });
+                boop = dataSnapshot.getValue(Boop.class);
+                if(boop != null){
+                    nombre = (TextView) findViewById(R.id.VBnombre);
+                    nombre.setText(boop.getNombre());
+
+                    descripcion = (TextView) findViewById(R.id.VBdescripcion);
+                    descripcion.setText(boop.getDescripcion());
+                    creador = (TextView) findViewById(R.id.VBCreador);
+
+                    popularidadUsuario = (TextView) findViewById(R.id.VBPopularidad);
+                    popularidadUsuario.setText(String.format(Locale.ENGLISH, " %d" ,boop.getPopularidad()));
+
+                    empieza = (TextView) findViewById(R.id.VBhoraIni);
+                    empieza.setText(boop.getFechaFin().toString());                      //ToDo "Controlar formato fecha para ingles"
+
+                    termina = (TextView) findViewById(R.id.VBhoraFin);
+                    termina.setText(boop.getFechaFin().toString());
+
+                    tipoEvento = (TextView) findViewById(R.id.VBclasificacion);
+                    tipoEvento.setText(boop.getTipo());
+
+                    aforo = (TextView) findViewById(R.id.VBmaxAsistentes);
+                    aforo.setText(String.format(Locale.ENGLISH, " %d" ,boop.getMaxBoopers()));
+
+                    asisten = (TextView) findViewById(R.id.VBasistentes);
+                    asisten.setText(String.format(Locale.ENGLISH, " %d" ,boop.getBoopers()));
+
+                    idCreador = boop.getidCreador();
+
+                    toggleAssist();
+                }
             }
 
             @Override
@@ -108,26 +111,7 @@ public class VerBoop extends DialogFragment {
             }
         });
 
-        popularidadUsuario = (TextView) view.findViewById(R.id.VBPopularidad);
-        popularidadUsuario.setText(String.format(Locale.ENGLISH, " %d" ,boop.getPopularidad()));
-
-        empieza = (TextView) view.findViewById(R.id.VBhoraIni);
-        empieza.setText(boop.getFechaIni().toString());
-
-        termina = (TextView) view.findViewById(R.id.VBhoraFin);
-        termina.setText(dateFormat.format(boop.getFechaFin()));
-
-        tipoEvento = (TextView) view.findViewById(R.id.VBclasificacion);
-        tipoEvento.setText(boop.getTipo());
-
-        aforo = (TextView) view.findViewById(R.id.VBmaxAsistentes);
-        aforo.setText(String.format(Locale.ENGLISH, " %d" ,boop.getMaxBoopers()));
-
-        asisten = (TextView) view.findViewById(R.id.VBasistentes);
-        asisten.setText(String.format(Locale.ENGLISH, " %d" ,boop.getBoopers()));
-
-
-        dislikeBoop = (ImageButton) view.findViewById(R.id.noMeGusta);
+        dislikeBoop = (ImageButton) findViewById(R.id.noMeGusta);
         dislikeBoop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -138,7 +122,7 @@ public class VerBoop extends DialogFragment {
             }
         });
 
-        likeBoop = (ImageButton) view.findViewById(R.id.meGusta);
+        likeBoop = (ImageButton) findViewById(R.id.meGusta);
         likeBoop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -151,45 +135,59 @@ public class VerBoop extends DialogFragment {
 
         //likeOdislike(); //Pinta los botones segun haya votado Todo descomentar esto cuando felipeman haga los botones
 
-        botonChat = (Button) view.findViewById(R.id.VBsalaChat);
+        botonChat = (Button) findViewById(R.id.VBsalaChat);
         botonChat.setFocusable(false); //ToDo para la sig iteraccion. Ver como hacer sala chat
 
-        botonSalir = (Button) view.findViewById(R.id.VBdejarDeVer);
+        botonSalir = (Button) findViewById(R.id.VBdejarDeVer);
         botonSalir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                cerrarFragment();
+                onBackPressed();
             }
         });
 
-        botonAsisitir = (ToggleButton) view.findViewById(R.id.VBasistir);
-        toggleAssist();
+        botonAsisitir = (Button) findViewById(R.id.VBasistir);
         botonAsisitir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!botonAsisitir.isChecked()) {
-                    if(!boop.asistir(uId))  //Devuelve false si se ha alcanzado el máximo de boopers
-                    {
-                        Toast.makeText(view.getContext(), R.string.alcanzadoMaximo, Toast.LENGTH_SHORT ).show();
-                    }
-                    else
-                        botonAsisitir.setChecked(true);
-                }else
-                {
+                if(!boop.saberSiAsisto(uId)){
+                    boop.asistir(uId);
+                    toggleAssist();
+                    mDatabase.setValue(boop);
+                }else{
                     boop.noAsistir(uId);
-                    botonAsisitir.setChecked(false);
+                    toggleAssist();
+                    mDatabase.setValue(boop);
                 }
             }
         });
 
-        return view;
+
+        mDatabaseCreador = FirebaseDatabase.getInstance().getReference("Usuarios").child(idCreador); //Posible peligro troll
+        mDatabaseCreador.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                //Aqui se meten en la vista las cosas que vienen de la BD
+                Usuario user = dataSnapshot.getValue(Usuario.class);
+                creador.setText(user.getNombre());
+                creador.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intento = new Intent(VerBoop.super.getApplicationContext(), VerPerfil.class);
+                        intento.putExtra("userID", boop.getidCreador());
+                        startActivity(intento);
+                    }
+                });
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Log.w("VerBoop", "onCreateValueEventListener:onCancelled", databaseError.toException());
+            }
+        });
     }
 
     @Override
     public void onResume() {
-        int dialogHeight = BoopMap.displayMetrics.heightPixels - (margin * 2);
-        int dialogWidth = BoopMap.displayMetrics.widthPixels - (margin * 2);
-        getDialog().getWindow().setLayout(dialogWidth, dialogHeight);
         super.onResume();
     }
 
@@ -205,16 +203,23 @@ public class VerBoop extends DialogFragment {
     }
 
     public void toggleAssist() {
-
-        if (boop.saberSiAsisto(uId))
-            {
-            botonAsisitir.setChecked(true);
-        }
-        else {
-            botonAsisitir.setChecked(false);
+        if (boop.quedanPlazas()) {
+            botonAsisitir.setClickable(true);
+            if (boop.saberSiAsisto(uId)) {
+                botonAsisitir.setText("Cancelar asistencia");
+            } else {
+                botonAsisitir.setText("Asistir");
+            }
+        } else {
+            if (boop.saberSiAsisto(uId)) {
+                botonAsisitir.setClickable(true);
+                botonAsisitir.setText("Cancelar asistencia");
+            } else {
+                botonAsisitir.setText("No quedan plazas");
+                botonAsisitir.setClickable(false);
+            }
         }
     }
-
     //Todo descomentar esto cuando felipe ponga las imagenes
     /*public void likeOdislike ()
     {
@@ -227,10 +232,5 @@ public class VerBoop extends DialogFragment {
             dislikeBoop.setImageDrawable();     //Pinto dislike
         }
     }
-    }*/
-
-    private void cerrarFragment()
-    {
-        this.getActivity().onBackPressed();
-    }
+    */
 }

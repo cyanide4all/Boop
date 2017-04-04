@@ -74,7 +74,6 @@ public class Boop implements Serializable{
         this.foto = "";
         this.tipo = clasificacion.General;
         this.maxBoopers = 0; //TODO
-        this.boopers = 0;
         this.fechaIni = Calendar.getInstance().getTime(); //TODO
         this.fechaFin = Calendar.getInstance().getTime(); //TODO
         this.asistentes = new ArrayList<>();
@@ -110,18 +109,10 @@ public class Boop implements Serializable{
     }
 
     public int getBoopers() {
-        return boopers;
+        return asistentes.size();
     }
 
     public String getTipo() {return tipo.name();}
-
-    public void setBoopers(int boopers) throws Exception {
-        if(maxBoopers == 0 || (this.boopers + boopers) <= maxBoopers) {
-            this.boopers = boopers;
-        }else{
-            throw new Exception("Excedido el número de participantes");
-        }
-    }
 
     public Date getFechaIni() {
         return fechaIni;
@@ -146,7 +137,7 @@ public class Boop implements Serializable{
     public ArrayList<String> getAsistentes(){return asistentes;}
 
     public boolean asistir (String idUsuario) {
-        if (asistentes.size() < maxBoopers)
+        if (this.getBoopers() < maxBoopers)
         {
             asistentes.add(idUsuario);
             return true;
@@ -155,6 +146,10 @@ public class Boop implements Serializable{
         {
             return false;
         }
+    }
+
+    public boolean quedanPlazas(){
+        return (this.getBoopers()<maxBoopers);
     }
 
     public void noAsistir (String idUsuario) {asistentes.remove(idUsuario);}

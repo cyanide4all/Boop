@@ -5,9 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.cya.boop.VerBoop"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#fff"
-    >
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:orientation="vertical"
@@ -18,160 +16,280 @@
         android:layout_alignParentStart="true">
 
         <LinearLayout
-            android:id="@+id/boop_imagen_fondo"
+            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            android:background="@drawable/nuevo_boop"
-            android:scaleType="centerInside"
-            android:orientation="vertical"
-            android:padding="20dp">
+            android:layout_height="92dp"
+            android:layout_weight="0.3">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/ic_image_black_24dp"
+                android:id="@+id/imageView"
+                android:layout_weight="0.4" />
+
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <ImageView
-                    android:id="@+id/donated_icon"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:adjustViewBounds="true"
-                    android:scaleType="fitCenter"
-                    
-                    app:srcCompat="@drawable/ic_favorite_border_black_24dp" />
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.6">
+
                 <TextView
-                    android:text="12"
-                    android:layout_width="wrap_content"
+                    android:text="@string/creador"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/VBkarma"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:textColor="#fff"
-                    android:textSize="28sp"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                    android:id="@+id/VBcrea"
+                    android:textStyle="normal|bold"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:text="TextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/VBCreador"
                     android:layout_gravity="center" />
+
+                <TextView
+                    android:text="@string/popularidad"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/VBpopu"
+                    android:textStyle="normal|bold" />
+
+                <TextView
+                    android:text="TextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/VBPopularidad"
+                    android:gravity="center" />
+
             </LinearLayout>
 
-
-            <ImageButton
-                android:id="@+id/boopavatar"
-                android:layout_width="110dp"
-                android:layout_height="110dp"
-                android:layout_gravity="center"
-                android:adjustViewBounds="true"
-                android:background="@drawable/round_primary_button"
-                android:scaleType="fitCenter"
-                android:tint="#fff"
-                app:srcCompat="@drawable/paperclip" />
-
-            <Space
-                android:layout_width="20dp"
-                android:layout_height="20dp" />
-            <TextView
-                android:text="Que es un programador agil?"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/VBnombre"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:ems="15"
-                android:textColor="#fff"
-                android:textSize="28sp"
-                android:textAppearance="@style/TextAppearance.AppCompat.Title"
-                android:layout_gravity="center" />
         </LinearLayout>
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="8.09dp" />
+
         <TextView
-            android:text="Evento en curso"
+            android:id="@+id/VBnom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/nombreBoop"
+            android:textSize="16sp"
+            android:textStyle="normal|bold" />
+
+        <TextView
+            android:text="nombre boop"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/VBnombre"
             android:layout_weight="1"
             android:gravity="center"
-            android:ems="15"
-            android:textColor="#fe7f2d"
-            android:textSize="28sp"
             android:textAppearance="@style/TextAppearance.AppCompat.Title"
             android:layout_gravity="center" />
-        <Space
+
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="8.09dp" />
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="@string/empieza"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/VBhoraIni"
+                android:layout_weight="0.2"
+                android:textStyle="normal|bold"
+                android:textSize="16sp" />
+
+            <TextView
+                android:text="TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/VBInicio"
+                android:layout_weight="0.3"
+                android:gravity="left|center_vertical" />
+
+            <TextView
+                android:text="@string/acaba"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/VBhoraFin"
+                android:layout_weight="0.2"
+                android:textStyle="normal|bold"
+                android:textSize="16sp" />
+
+            <TextView
+                android:text="TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/VBfinal"
+                android:layout_weight="0.3"
+                android:layout_gravity="left|center_vertical" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="@string/clasificacion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/VBclas"
+                android:textStyle="normal|bold"
+                android:textSize="16sp" />
+
+            <TextView
+                android:text="TextView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/VBclasificacion"
+                android:layout_weight="1"
+                android:gravity="left|center_vertical" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="@string/maxAsistentes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/VBmax"
+                android:layout_weight="0.2"
+                android:textStyle="normal|bold"
+                android:textSize="16sp" />
+
+            <TextView
+                android:text="TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/VBmaxAsistentes"
+                android:layout_weight="0.3"
+                android:gravity="left|center_vertical" />
+
+            <TextView
+                android:text="@string/asistentes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/VBasist"
+                android:layout_weight="0.2"
+                android:textStyle="normal|bold"
+                android:textSize="16sp" />
+
+            <TextView
+                android:text="TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/VBasistentes"
+                android:layout_weight="0.3"
+                android:gravity="left|center_vertical" />
+
+        </LinearLayout>
+
         <TextView
-            android:text="Desde el GDG de ourense haremos una charla sobre programacion agil. y polymer."
+            android:text="@string/descripcion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/VBDesc"
+            android:textStyle="normal|bold"
+            android:textSize="16sp" />
+
+        <TextView
+            android:text="TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/VBdescripcion"
             android:layout_weight="1"
-            android:gravity="center"
-            android:textColor="#05a8aa"
-            android:ems="15"
-            android:textSize="20sp"
-            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:textAppearance="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Small"
             android:layout_gravity="center" />
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="8.09dp" />
-        <TextView
-            android:text="este evento ocurre a las 17:00 el 21/04/2017"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/VBfecha"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:textColor="#05a8aa"
-            android:ems="15"
-            android:textSize="20sp"
-            android:textAppearance="@style/TextAppearance.AppCompat.Title"
-            android:layout_gravity="center" />
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="8.09dp" />
+
         <LinearLayout
-            android:layout_width="match_parent"
-            android:padding="13dp"
             android:orientation="vertical"
-            android:layout_height="match_parent">
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/textfield"
-                android:text="Quien va?"/>
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="8.09dp" />
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/textfield"
-                android:text="Voy a ir"/>
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="8.09dp" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="1">
+
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:orientation="horizontal">
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.5"
-                    android:background="@drawable/textfield"
-                    android:text="Upvote"/>
-                <Space
-                    android:layout_width="1dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.1"/>
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.5"
-                    android:background="@drawable/textfield"
-                    android:text="Downvote"/>
+
+                <ImageButton
+                    android:id="@+id/noMeGusta"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/background_light"
+                    android:src="@drawable/button1"
+                    app:srcCompat="@drawable/button1" />
+
+                <TextView
+                    android:id="@+id/textView12"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical|center"
+                    android:layout_weight="0.4"
+                    android:elevation="0dp"
+                    android:text="@string/puntuacion"
+                    android:textAlignment="gravity"
+                    android:textStyle="normal|bold" />
+
+                <ImageButton
+                    android:id="@+id/meGusta"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/background_light"
+                    android:src="@drawable/button2"
+                    app:srcCompat="@drawable/button2" />
+
             </LinearLayout>
 
-        </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.44">
 
+                <Button
+                    android:text="@string/botonChat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/VBsalaChat"
+                    android:layout_weight="0.33"
+                    android:elevation="5dp"
+                    android:padding="2dp"
+                    android:paddingBottom="2dp"
+                    android:paddingEnd="2dp"
+                    android:paddingLeft="2dp"
+                    android:paddingRight="2dp"
+                    android:paddingStart="2dp"
+                    android:paddingTop="2dp" />
+
+                <Button
+                    android:id="@+id/VBasistir"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.33"
+                    android:text="Button" />
+
+                <Button
+                    android:text="@string/dejarDeVer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/VBdejarDeVer"
+                    android:layout_weight="0.33"
+                    android:padding="2dp"
+                    android:paddingBottom="2dp"
+                    android:paddingEnd="2dp"
+                    android:paddingLeft="2dp"
+                    android:paddingRight="2dp"
+                    android:paddingStart="2dp"
+                    android:paddingTop="2dp"
+                    android:elevation="5dp" />
+            </LinearLayout>
+        </LinearLayout>
 
     </LinearLayout>
 

@@ -80,7 +80,7 @@ public class MarkerManager implements GeoQueryEventListener {
         }
 
         Marker m = mMap.addMarker(op);
-        m.setTag(b);
+        m.setTag(key);
         markers.put(key,m);
     }
 
