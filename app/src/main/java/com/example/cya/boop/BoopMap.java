@@ -12,11 +12,15 @@ import android.os.Bundle;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.annotation.RequiresApi;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.app.FragmentManager;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -25,6 +29,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ListView;
 
 import com.example.cya.boop.core.Boop;
 import com.firebase.geofire.GeoFire;
@@ -51,6 +56,10 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import static com.google.android.gms.maps.GoogleMap.*;
 
 public class BoopMap extends FragmentActivity implements OnMapReadyCallback, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
@@ -99,10 +108,19 @@ public class BoopMap extends FragmentActivity implements OnMapReadyCallback, Goo
         boopCncl.setVisibility(View.INVISIBLE);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         // Meter el layout
         super.onCreate(savedInstanceState);
+
+        // Spike de cardview sobre mapa
+        List l = new ArrayList<String>();
+        l.add("Uno");
+        l.add("Dos");
+        l.add("Tres");
+
+
 
 
         // remove title
@@ -112,6 +130,27 @@ public class BoopMap extends FragmentActivity implements OnMapReadyCallback, Goo
         //getSupportActionBar().hide();
 
         setContentView(R.layout.boop_map);
+
+        final RecyclerView recyclerView = (RecyclerView) findViewById(R.id.boopFragmentsView);
+
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+        recyclerView.setLayoutManager(layoutManager);
+
+        final BoopCardsManager adapter = new BoopCardsManager(l);
+        recyclerView.setAdapter(adapter);
+        recyclerView.setOnScrollChangeListener(new View.OnScrollChangeListener() {
+            @Override
+            public void onScrollChange(View v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
+                LinearLayoutManager layoutManager = ((LinearLayoutManager) recyclerView.getLayoutManager());
+                int status = layoutManager.findFirstCompletelyVisibleItemPosition();
+                if(status<0){
+                    status = layoutManager.findFirstVisibleItemPosition();
+                }
+                status++;
+                Snackbar.make(findViewById(R.id.map),"Estas en el : "+status,Snackbar.LENGTH_LONG).show();
+            }
+        });
 
         if(!isLocationEnabled(BoopMap.this)) {
             AlertDialog.Builder builder = new AlertDialog.Builder(BoopMap.this);

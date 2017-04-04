@@ -73,6 +73,7 @@ public class VerBoop extends DialogFragment {
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/mm/yyyy 'a las' HH:mm"); //Formato de fecha
 
         final View view = inflater.inflate(R.layout.activity_ver_boop, container, false);
+        /*
         //Transformamos el boop en cosas visibles
         nombre = (TextView) view.findViewById(R.id.VBnombre);
         nombre.setText(boop.getNombre());
@@ -180,7 +181,7 @@ public class VerBoop extends DialogFragment {
                     botonAsisitir.setChecked(false);
                 }
             }
-        });
+        });*/
 
         return view;
     }
