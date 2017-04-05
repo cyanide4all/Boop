@@ -16,9 +16,7 @@ import android.support.annotation.RequiresApi;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
-import android.app.FragmentManager;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
@@ -27,38 +25,26 @@ import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.ListView;
 
-import com.example.cya.boop.core.Boop;
+import com.example.cya.boop.util.CardMargin;
 import com.firebase.geofire.GeoFire;
 import com.firebase.geofire.GeoLocation;
 import com.firebase.geofire.GeoQuery;
-import com.firebase.geofire.GeoQueryEventListener;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationServices;
-import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.BitmapDescriptor;
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import static com.google.android.gms.maps.GoogleMap.*;
 
@@ -77,6 +63,7 @@ public class BoopMap extends FragmentActivity implements OnMapReadyCallback, Goo
     private FirebaseAuth.AuthStateListener mAuthListener;
     private FirebaseAuth mAuth;
     public static DisplayMetrics displayMetrics;
+    protected RecyclerView recyclerView;
 
     private void createNewBoop(){
         if(myEventLocation != null){
@@ -114,15 +101,6 @@ public class BoopMap extends FragmentActivity implements OnMapReadyCallback, Goo
         // Meter el layout
         super.onCreate(savedInstanceState);
 
-        // Spike de cardview sobre mapa
-        List l = new ArrayList<String>();
-        l.add("Uno");
-        l.add("Dos");
-        l.add("Tres");
-
-
-
-
         // remove title
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
@@ -131,26 +109,15 @@ public class BoopMap extends FragmentActivity implements OnMapReadyCallback, Goo
 
         setContentView(R.layout.boop_map);
 
-        final RecyclerView recyclerView = (RecyclerView) findViewById(R.id.boopFragmentsView);
+        recyclerView = (RecyclerView) findViewById(R.id.boopFragmentsView);
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+        recyclerView.addItemDecoration(new CardMargin());
         recyclerView.setLayoutManager(layoutManager);
 
-        final BoopCardsManager adapter = new BoopCardsManager(l);
-        recyclerView.setAdapter(adapter);
-        recyclerView.setOnScrollChangeListener(new View.OnScrollChangeListener() {
-            @Override
-            public void onScrollChange(View v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
-                LinearLayoutManager layoutManager = ((LinearLayoutManager) recyclerView.getLayoutManager());
-                int status = layoutManager.findFirstCompletelyVisibleItemPosition();
-                if(status<0){
-                    status = layoutManager.findFirstVisibleItemPosition();
-                }
-                status++;
-                Snackbar.make(findViewById(R.id.map),"Estas en el : "+status,Snackbar.LENGTH_LONG).show();
-            }
-        });
+        BoopCardsManager cardsManager = new BoopCardsManager();
+        recyclerView.setAdapter(cardsManager);
 
         if(!isLocationEnabled(BoopMap.this)) {
             AlertDialog.Builder builder = new AlertDialog.Builder(BoopMap.this);
@@ -314,7 +281,7 @@ public class BoopMap extends FragmentActivity implements OnMapReadyCallback, Goo
 
             // este oc
             mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(mLastLocation.getLatitude(),mLastLocation.getLongitude()),16));
-            geoQuery.addGeoQueryEventListener(new MarkerManager(mMap,mDatabase,geofire));
+            geoQuery.addGeoQueryEventListener(new MarkerManager(mMap, mDatabase,geofire, recyclerView));
         }
 
     }

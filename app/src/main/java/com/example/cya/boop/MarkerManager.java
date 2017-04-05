@@ -1,9 +1,17 @@
 package com.example.cya.boop;
 
+import android.os.Build;
+import android.support.annotation.RequiresApi;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.view.View;
+
 import com.example.cya.boop.core.Boop;
 import com.firebase.geofire.GeoFire;
 import com.firebase.geofire.GeoLocation;
 import com.firebase.geofire.GeoQueryEventListener;
+import com.google.android.gms.maps.CameraUpdate;
+import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
@@ -16,8 +24,10 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 
 /**
  * Created by noboru on 12/03/17.
@@ -28,13 +38,44 @@ public class MarkerManager implements GeoQueryEventListener {
     protected GoogleMap mMap;
     protected DatabaseReference mDatabase;
     protected GeoFire geoFire;
-    protected HashMap<String,Marker> markers;
+    protected HashMap<String,mapBundle> markers;
+    protected RecyclerView cardsView;
+    protected BoopCardsManager manager;
 
-    public MarkerManager(GoogleMap map, DatabaseReference mDatabase, GeoFire geoFire){
+    protected class mapBundle {
+        public Marker marker;
+        public Boop boop;
+
+        public mapBundle(Marker m, Boop b){
+            this.marker = m;
+            this.boop = b;
+        }
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.M)
+    public MarkerManager(GoogleMap map, DatabaseReference mDatabase, GeoFire geoFire, RecyclerView view){
         this.mMap = map;
         this.mDatabase = mDatabase;
         this.geoFire = geoFire;
         this.markers = new HashMap<>();
+        this.cardsView = view;
+        this.manager = (BoopCardsManager) view.getAdapter();
+        manager.clear();
+
+        cardsView.setOnScrollChangeListener(new View.OnScrollChangeListener() {
+            @Override
+            public void onScrollChange(View v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
+                if(cardsView.getScrollState() == RecyclerView.SCROLL_STATE_SETTLING){
+                    LinearLayoutManager layoutManager = ((LinearLayoutManager) cardsView.getLayoutManager());
+                    int status = layoutManager.findFirstCompletelyVisibleItemPosition();
+                    if(status<0){
+                        status = layoutManager.findLastVisibleItemPosition();
+                    }
+                    zoomToBoop(status);
+                }
+            }
+        });
+
     }
 
     @Override
@@ -46,6 +87,7 @@ public class MarkerManager implements GeoQueryEventListener {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 Boop b = dataSnapshot.getValue(Boop.class);
                 manageBoop(b,location,key);
+                manager.insert(b);
             }
 
             @Override
@@ -81,13 +123,15 @@ public class MarkerManager implements GeoQueryEventListener {
 
         Marker m = mMap.addMarker(op);
         m.setTag(key);
-        markers.put(key,m);
+        markers.put(key,new mapBundle(m,b));
     }
 
     @Override
     public void onKeyExited(String key) {
-        Marker m = markers.get(key);
-        m.remove();
+        // todo borrar tambien las locations
+        mapBundle m = markers.get(key);
+        m.marker.remove();
+        manager.remove(m.boop);
         markers.remove(m);
     }
 
@@ -105,4 +149,21 @@ public class MarkerManager implements GeoQueryEventListener {
     public void onGeoQueryError(DatabaseError error) {
 
     }
+
+    protected void zoomToBoop(int pos){
+        try {
+            Boop targetBoop = manager.get(pos);
+            for (mapBundle i : markers.values()) {
+                if (i.boop == targetBoop) {
+                    CameraUpdate yourLocation = CameraUpdateFactory.newLatLngZoom(i.marker.getPosition(), 16);
+                    mMap.animateCamera(yourLocation);
+                    break;
+                }
+            }
+        } catch (Exception e){
+            // none it's just a scroll event the user does this all the time
+        }
+    }
+
+
 }

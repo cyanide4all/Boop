@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import com.example.cya.boop.core.Boop;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -21,11 +22,11 @@ import java.util.List;
  */
 public class BoopCardsManager extends RecyclerView.Adapter<BoopCardsManager.ImageHolder> {
 
-    List<String> f;
+    List<Boop> f;
 
-    public BoopCardsManager(List<String> list) {
+    public BoopCardsManager() {
 
-        f = list;
+        f = new ArrayList<>();
 
     }
 
@@ -37,7 +38,7 @@ public class BoopCardsManager extends RecyclerView.Adapter<BoopCardsManager.Imag
 
     @Override
     public void onBindViewHolder(final ImageHolder holder, final int position) {
-        holder.text_info.setText(f.get(position));
+        holder.text_info.setText(f.get(position).getNombre());
     }
 
     @Override
@@ -55,5 +56,25 @@ public class BoopCardsManager extends RecyclerView.Adapter<BoopCardsManager.Imag
             text_info = (TextView) itemView.findViewById(R.id.info_text);
         }
 
+    }
+
+    public void insert(Boop b){
+        if(!f.contains(b)){
+            f.add(b);
+            this.notifyDataSetChanged();
+        }
+    }
+
+    public Boop get(int i){
+        return f.get(i);
+    }
+
+    public void remove(Boop b){
+        f.remove(b);
+        this.notifyDataSetChanged();
+    }
+
+    public void clear(){
+        f.clear();
     }
 }
