@@ -81,6 +81,10 @@ public class Usuario implements Serializable {
         myRef.child(idUsuario).setValue(this);
     }
 
+    public ArrayList<String> getBoopsQueAsisto() {
+        return boopsQueAsisto;
+    }
+
     public int getKarma() {return this.karma;}
 
     public void setKarma (int karma) {this.karma = karma;}
