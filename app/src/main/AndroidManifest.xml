@@ -15,7 +15,8 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Splash"
+        <activity
+            android:name=".Splash"
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,7 +25,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".NuevoBoop" />
-        <activity android:name=".Login"/>
+        <activity android:name=".Login" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -44,7 +45,13 @@
         <activity android:name=".Register" />
         <activity android:name=".CrearPerfil" />
         <activity android:name=".VerPerfil" />
-        <service android:name=".NotificationWorker" android:exported="false" android:enabled="true"/>
+
+        <service
+            android:name=".NotificationWorker"
+            android:enabled="true"
+            android:exported="false" />
+
+        <activity android:name=".VerMisAsistencias"></activity>
     </application>
 
 </manifest>

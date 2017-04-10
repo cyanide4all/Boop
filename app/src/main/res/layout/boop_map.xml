@@ -53,6 +53,22 @@
          android:layout_marginLeft='15dp'
          android:layout_height="30dp" />
 
+     <ImageButton
+         android:id="@+id/boopMisAsistencias"
+         android:visibility="visible"
+         android:layout_width="30dp"
+         android:adjustViewBounds="true"
+         android:scaleType="fitCenter"
+         android:layout_gravity="bottom|right"
+         android:src="@drawable/paperclip"
+         android:tint="#000"
+         android:padding="3dp"
+         style="@style/Widget.AppCompat.Button.Borderless"
+         android:background="#fff"
+         android:layout_marginTop='15dp'
+         android:layout_marginLeft='15dp'
+         android:layout_height="30dp" />
+
      <android.support.v7.widget.RecyclerView
          android:layout_gravity='top'
          android:id="@+id/boopFragmentsView"

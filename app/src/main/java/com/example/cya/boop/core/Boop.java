@@ -246,4 +246,7 @@ public class Boop implements Serializable{
         return boopRef.getDownloadUrl();
     }
 
+    public String toString(){
+        return this.nombre+", "+this.fechaIni;
+    }
 }

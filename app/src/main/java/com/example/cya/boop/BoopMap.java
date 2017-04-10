@@ -55,6 +55,7 @@ public class BoopMap extends FragmentActivity implements OnMapReadyCallback, Goo
     private ImageButton boopBtn;
     private ImageButton boopCncl;
     private ImageButton boopPerfil;
+    private ImageButton boopMisAsistencias;
     private Location mLastLocation;
     private GeoFire geofire;
     private Boolean aceptando_clicks = false;
@@ -171,6 +172,14 @@ public class BoopMap extends FragmentActivity implements OnMapReadyCallback, Goo
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(BoopMap.this, VerPerfil.class));
+            }
+        });
+
+        boopMisAsistencias = (ImageButton) findViewById(R.id.boopMisAsistencias);
+        boopMisAsistencias.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(BoopMap.this, VerMisAsistencias.class));
             }
         });
 
