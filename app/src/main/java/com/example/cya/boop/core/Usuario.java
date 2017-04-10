@@ -11,6 +11,7 @@ import com.google.firebase.storage.UploadTask;
 
 import java.io.Serializable;
 import java.io.StringReader;
+import java.util.ArrayList;
 import java.util.Date;
 
 /**
@@ -29,9 +30,13 @@ public class Usuario implements Serializable {
     private int karma;
     //Radio de accion
     private int radio;
+    //Lista de boops a los que asisto
+    private ArrayList<String> boopsQueAsisto;
 
     //Constructor vacío por tocarle los huevos a oskaru
-    public Usuario (){}
+    public Usuario (){
+        this.boopsQueAsisto = new ArrayList<>();
+    }
 
     //
     //GETTERS & SETTERS (Algunos retornan excepciones al intentar settear imposibles
@@ -90,6 +95,14 @@ public class Usuario implements Serializable {
         this.karma -= Boop.KARMA_VALUE;
         //if(karma < 0)     //Todo vigilar si carma es muy bajo mirar de banear
         //    karma = 0;
+    }
+
+    public void asistir(String boopID){
+        boopsQueAsisto.add(boopID);
+    }
+
+    public void noAsistir(String boopID){
+        boopsQueAsisto.remove(boopsQueAsisto.indexOf(boopID));
     }
 
     public UploadTask uploadPhoto(Uri file_url, String key){

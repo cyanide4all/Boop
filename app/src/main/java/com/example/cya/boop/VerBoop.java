@@ -53,6 +53,7 @@ public class VerBoop extends AppCompatActivity {
     private DatabaseReference mDatabaseCreador;
     private String uId;
     private String idCreador;
+    private DatabaseReference mDatabaseUser;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -99,8 +100,6 @@ public class VerBoop extends AppCompatActivity {
                     asisten.setText(String.format(Locale.ENGLISH, " %d" ,boop.getBoopers()));
 
                     idCreador = boop.getidCreador();
-
-                    toggleAssist();
                 }
             }
 
@@ -146,29 +145,44 @@ public class VerBoop extends AppCompatActivity {
             }
         });
 
-        botonAsisitir = (Button) findViewById(R.id.VBasistir);
-        botonAsisitir.setOnClickListener(new View.OnClickListener() {
+        mDatabaseUser = FirebaseDatabase.getInstance().getReference("Usuarios").child(FirebaseAuth.getInstance().getCurrentUser().getUid()); //Posible peligro troll
+        mDatabaseUser.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
-            public void onClick(View v) {
-                if(!boop.saberSiAsisto(uId)){
-                    boop.asistir(uId);
-                    toggleAssist();
-                    mDatabase.setValue(boop);
-                }else{
-                    boop.noAsistir(uId);
-                    toggleAssist();
-                    mDatabase.setValue(boop);
-                }
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                //Aqui se meten en la vista las cosas que vienen de la BD
+                final Usuario user = dataSnapshot.getValue(Usuario.class);
+                botonAsisitir = (Button) findViewById(R.id.VBasistir);
+                toggleAssist();
+                botonAsisitir.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if(!boop.saberSiAsisto(uId)){
+                            boop.asistir(uId);
+                            toggleAssist();
+                            user.asistir(boopClave);
+                            mDatabaseUser.setValue(user);
+                        }else{
+                            boop.noAsistir(uId);
+                            toggleAssist();
+                            user.noAsistir(boopClave);
+                            mDatabaseUser.setValue(user);
+                        }
+                        mDatabaseUser.setValue(user);
+                    }
+                });
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Log.w("VerBoop", "onCreateValueEventListener:onCancelled", databaseError.toException());
             }
         });
-
 
         mDatabaseCreador = FirebaseDatabase.getInstance().getReference("Usuarios").child(idCreador); //Posible peligro troll
         mDatabaseCreador.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 //Aqui se meten en la vista las cosas que vienen de la BD
-                Usuario user = dataSnapshot.getValue(Usuario.class);
+                final Usuario user = dataSnapshot.getValue(Usuario.class);
                 creador.setText(user.getNombre());
                 creador.setOnClickListener(new View.OnClickListener() {
                     @Override

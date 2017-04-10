@@ -17,20 +17,22 @@ public class NotificationWorker extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        double latitude = intent.getDoubleExtra("latitude",5);
-        double longitude = intent.getDoubleExtra("longitude",5);
-        Log.e("notification latlog",Double.toString(latitude));
-        Log.e("notification latlog",Double.toString(longitude));
-        Log.d("notification worker","notification worker awaked");
+        //TODO FUERTE FELIPE HALP
+        if(intent != null) {
+            double latitude = intent.getDoubleExtra("latitude", 5);
+            double longitude = intent.getDoubleExtra("longitude", 5);
+            Log.e("notification latlog", Double.toString(latitude));
+            Log.e("notification latlog", Double.toString(longitude));
+            Log.d("notification worker", "notification worker awaked");
 
-        this.user_location = new GeoLocation(latitude, longitude);
+            this.user_location = new GeoLocation(latitude, longitude);
 
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("locations");
-        GeoFire geofire = new GeoFire(ref);
+            DatabaseReference ref = FirebaseDatabase.getInstance().getReference("locations");
+            GeoFire geofire = new GeoFire(ref);
 
-        GeoQuery query = geofire.queryAtLocation(this.user_location,16);
-        query.addGeoQueryEventListener(new NotificationBManager(this));
-
+            GeoQuery query = geofire.queryAtLocation(this.user_location, 16);
+            query.addGeoQueryEventListener(new NotificationBManager(this));
+        }
         return START_STICKY;
     }
 
