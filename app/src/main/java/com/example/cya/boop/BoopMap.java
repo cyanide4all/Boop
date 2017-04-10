@@ -12,45 +12,40 @@ import android.os.Bundle;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.annotation.RequiresApi;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
-import android.app.FragmentManager;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.ImageButton;
 
-import com.example.cya.boop.core.Boop;
+import com.example.cya.boop.util.CardMargin;
 import com.firebase.geofire.GeoFire;
 import com.firebase.geofire.GeoLocation;
 import com.firebase.geofire.GeoQuery;
-import com.firebase.geofire.GeoQueryEventListener;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationServices;
-import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.BitmapDescriptor;
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
+
 import static com.google.android.gms.maps.GoogleMap.*;
 
 public class BoopMap extends FragmentActivity implements OnMapReadyCallback, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
@@ -68,6 +63,7 @@ public class BoopMap extends FragmentActivity implements OnMapReadyCallback, Goo
     private FirebaseAuth.AuthStateListener mAuthListener;
     private FirebaseAuth mAuth;
     public static DisplayMetrics displayMetrics;
+    protected RecyclerView recyclerView;
 
     private void createNewBoop(){
         if(myEventLocation != null){
@@ -99,11 +95,11 @@ public class BoopMap extends FragmentActivity implements OnMapReadyCallback, Goo
         boopCncl.setVisibility(View.INVISIBLE);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         // Meter el layout
         super.onCreate(savedInstanceState);
-
 
         // remove title
         requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -112,6 +108,16 @@ public class BoopMap extends FragmentActivity implements OnMapReadyCallback, Goo
         //getSupportActionBar().hide();
 
         setContentView(R.layout.boop_map);
+
+        recyclerView = (RecyclerView) findViewById(R.id.boopFragmentsView);
+
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+        recyclerView.addItemDecoration(new CardMargin());
+        recyclerView.setLayoutManager(layoutManager);
+
+        BoopCardsManager cardsManager = new BoopCardsManager();
+        recyclerView.setAdapter(cardsManager);
 
         if(!isLocationEnabled(BoopMap.this)) {
             AlertDialog.Builder builder = new AlertDialog.Builder(BoopMap.this);
@@ -275,7 +281,7 @@ public class BoopMap extends FragmentActivity implements OnMapReadyCallback, Goo
 
             // este oc
             mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(mLastLocation.getLatitude(),mLastLocation.getLongitude()),16));
-            geoQuery.addGeoQueryEventListener(new MarkerManager(mMap,mDatabase,geofire));
+            geoQuery.addGeoQueryEventListener(new MarkerManager(mMap, mDatabase,geofire, recyclerView));
         }
 
     }

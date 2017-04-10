@@ -65,7 +65,8 @@ public class VerBoop extends AppCompatActivity {
         this.boopClave = getIntent().getStringExtra("boopClave");
         uId = FirebaseAuth.getInstance().getCurrentUser().getUid();
         idCreador= "";
-
+        
+        final View view = inflater.inflate(R.layout.activity_ver_boop, container, false);
         //Transformamos el boop en cosas visibles
         mDatabase = FirebaseDatabase.getInstance().getReference("BoopInfo").child(boopClave);
         mDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -175,7 +176,7 @@ public class VerBoop extends AppCompatActivity {
             public void onCancelled(DatabaseError databaseError) {
                 Log.w("VerBoop", "onCreateValueEventListener:onCancelled", databaseError.toException());
             }
-        });
+        });*/
 
         mDatabaseCreador = FirebaseDatabase.getInstance().getReference("Usuarios").child(idCreador); //Posible peligro troll
         mDatabaseCreador.addListenerForSingleValueEvent(new ValueEventListener() {
